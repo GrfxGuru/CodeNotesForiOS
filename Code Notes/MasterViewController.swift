@@ -60,6 +60,7 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return objects.count
+        // TODO: Replace with proper data source count
         return 10
     }
 
