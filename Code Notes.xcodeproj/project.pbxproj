@@ -16,6 +16,7 @@
 		D069F0801E1CAE91008C79E7 /* Code_NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F07F1E1CAE91008C79E7 /* Code_NotesTests.swift */; };
 		D069F08B1E1CAE91008C79E7 /* Code_NotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F08A1E1CAE91008C79E7 /* Code_NotesUITests.swift */; };
 		D069F0991E1CC416008C79E7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F0981E1CC416008C79E7 /* Note.swift */; };
+		D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D069F08A1E1CAE91008C79E7 /* Code_NotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code_NotesUITests.swift; sourceTree = "<group>"; };
 		D069F08C1E1CAE91008C79E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D069F0981E1CC416008C79E7 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = ValueObjects/Note.swift; sourceTree = "<group>"; };
+		D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteListTableViewCell.swift; path = ValueObjects/NoteListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		D069F09B1E1CC43F008C79E7 /* ValueObjects */ = {
 			isa = PBXGroup;
 			children = (
+				D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */,
 				D069F0981E1CC416008C79E7 /* Note.swift */,
 			);
 			name = ValueObjects;
@@ -287,6 +290,7 @@
 				D069F06D1E1CAE91008C79E7 /* DetailViewController.swift in Sources */,
 				D069F06B1E1CAE91008C79E7 /* MasterViewController.swift in Sources */,
 				D069F0691E1CAE91008C79E7 /* AppDelegate.swift in Sources */,
+				D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */,
 				D069F0991E1CC416008C79E7 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +542,7 @@
 				D069F0911E1CAE91008C79E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D069F0921E1CAE91008C79E7 /* Build configuration list for PBXNativeTarget "Code NotesTests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +551,7 @@
 				D069F0941E1CAE91008C79E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D069F0951E1CAE91008C79E7 /* Build configuration list for PBXNativeTarget "Code NotesUITests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +560,7 @@
 				D069F0971E1CAE91008C79E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
