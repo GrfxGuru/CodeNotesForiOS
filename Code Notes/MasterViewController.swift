@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [Any]()
+    var notesData = [Note]()
 
 
     override func viewDidLoad() {
@@ -22,6 +22,7 @@ class MasterViewController: UITableViewController {
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
             self.tableView.rowHeight = 80
         }
+        notesData = loadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,12 +33,6 @@ class MasterViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    func insertNewObject(_ sender: Any) {
-        objects.insert(NSDate(), at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
-        self.tableView.insertRows(at: [indexPath], with: .automatic)
     }
 
     // MARK: - Segues
@@ -59,14 +54,11 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return objects.count
-        // TODO: Replace with proper data source count
-        return 10
+        return notesData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath)
-        //let object = objects[indexPath.row] as! NSObject
         return cell
     }
 
@@ -75,5 +67,16 @@ class MasterViewController: UITableViewController {
         return true
     }
 
-}
+    // MARK: - Data Handling
+    
+    func loadData() -> [Note] {
+        var loadedNotes = [Note]()
+        let newNote = Note()
+        newNote.name = "Test"
+        newNote.language = "Swift"
+        newNote.note = "let thisVar = \"Hello There!\""
+        loadedNotes.append(newNote)
+        return loadedNotes
+    }
 
+}

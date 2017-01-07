@@ -9,5 +9,8 @@
 import UIKit
 
 class Note: NSObject {
-
+    var name: String = ""
+    var language: String = ""
+    var note: String = ""
+    var date:Date = Date()
 }

@@ -45,7 +45,15 @@
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RKV-sz-Na9" kind="show" id="6HV-sm-cZz"/>
+                                    <segue destination="RKV-sz-Na9" kind="show" identifier="addNote" id="6HV-sm-cZz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6i-WD-fZr">
+                                <rect key="frame" x="20" y="974" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="a4k-al-UDe" kind="show" identifier="settings" action="showDetailViewController:sender:" id="aWQ-oK-17K"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -57,6 +65,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-328.1112737920937" y="90.8203125"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="R4x-SH-gJh">
+            <objects>
+                <viewController title="Settings" id="a4k-al-UDe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hCu-jy-x8p"/>
+                        <viewControllerLayoutGuide type="bottom" id="PFR-Oe-fsg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gVL-8f-FZB">
+                        <rect key="frame" x="0.0" y="0.0" width="1045" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z1w-cr-46N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-328" y="793"/>
         </scene>
         <!--Add Note-->
         <scene sceneID="FnS-BM-Mq6">
@@ -362,7 +388,13 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Notes" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Notes" id="Zdf-7t-Un8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="w2x-Q1-Omt">
+                            <connections>
+                                <segue destination="RKV-sz-Na9" kind="showDetail" id="g2i-pV-e9a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -385,4 +417,7 @@
             <point key="canvasLocation" x="-1020" y="91"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="6HV-sm-cZz"/>
+    </inferredMetricsTieBreakers>
 </document>
