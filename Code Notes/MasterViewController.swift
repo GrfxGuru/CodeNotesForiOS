@@ -61,7 +61,7 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! NoteListTableViewCell
         let note = notesData[indexPath.row]
         cell.noteName.text = note.name
-        //cell.noteDate.text = note.date
+        //cell.noteDate.text = dateComponentsFormatter.string(from: Date(), to: note.date)
         cell.noteLanguage.text = note.language
         return cell
     }
@@ -79,8 +79,17 @@ class MasterViewController: UITableViewController {
         newNote.name = "Test"
         newNote.language = "Swift"
         newNote.note = "let thisVar = \"Hello There!\""
+        newNote.date = Date()
         loadedNotes.append(newNote)
         return loadedNotes
     }
+    
+    let dateComponentsFormatter: DateComponentsFormatter = {
+        let _formatter = DateComponentsFormatter()
+        _formatter.allowedUnits = [.day, .month, .year]
+        _formatter.unitsStyle = .positional
+        _formatter.zeroFormattingBehavior = .pad
+        return _formatter
+    }()
 
 }
