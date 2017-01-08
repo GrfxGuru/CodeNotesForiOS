@@ -58,7 +58,11 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! NoteListTableViewCell
+        let note = notesData[indexPath.row]
+        cell.noteName.text = note.name
+        //cell.noteDate.text = note.date
+        cell.noteLanguage.text = note.language
         return cell
     }
 
