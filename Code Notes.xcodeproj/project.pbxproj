@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0351FB51E24168A00C1DF53 /* ViewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */; };
 		D069F0691E1CAE91008C79E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F0681E1CAE91008C79E7 /* AppDelegate.swift */; };
 		D069F06B1E1CAE91008C79E7 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F06A1E1CAE91008C79E7 /* MasterViewController.swift */; };
 		D069F06D1E1CAE91008C79E7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F06C1E1CAE91008C79E7 /* DetailViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewNoteViewController.swift; sourceTree = "<group>"; };
 		D069F0651E1CAE91008C79E7 /* Code Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D069F0681E1CAE91008C79E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D069F06A1E1CAE91008C79E7 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				D069F06A1E1CAE91008C79E7 /* MasterViewController.swift */,
 				D069F06C1E1CAE91008C79E7 /* DetailViewController.swift */,
+				D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D069F06D1E1CAE91008C79E7 /* DetailViewController.swift in Sources */,
+				D0351FB51E24168A00C1DF53 /* ViewNoteViewController.swift in Sources */,
 				D069F06B1E1CAE91008C79E7 /* MasterViewController.swift in Sources */,
 				D069F0691E1CAE91008C79E7 /* AppDelegate.swift in Sources */,
 				D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */,

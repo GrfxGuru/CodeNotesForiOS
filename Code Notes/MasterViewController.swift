@@ -17,12 +17,11 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        notesData = loadData()
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-            self.tableView.rowHeight = 80
         }
-        notesData = loadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -38,11 +37,12 @@ class MasterViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            if self.tableView.indexPathForSelectedRow != nil {
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+        if segue.identifier == "showNote" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let controller = (segue.destination as! UINavigationController).topViewController as! ViewNoteViewController
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
+                controller.detailItem = notesData[indexPath.row]
             }
         }
     }
