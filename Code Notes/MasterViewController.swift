@@ -75,13 +75,19 @@ class MasterViewController: UITableViewController {
     
     func loadData() -> [Note] {
         var loadedNotes = [Note]()
-        let newNote = Note()
-        newNote.name = "Test"
-        newNote.language = "Swift"
-        newNote.note = "let thisVar = \"Hello There!\""
-        newNote.date = Date()
-        loadedNotes.append(newNote)
+        loadedNotes.append(createNote(name: "Swift Variable Note", language: "Swift", note: "var something:String", date: Date()))
+        loadedNotes.append(createNote(name: "JavaScript Opinion Note", language: "JavaScript", note: "JavaScript is a pain", date: Date()))
         return loadedNotes
+    }
+    
+    func createNote(name: String, language:String, note:String, date:Date) -> Note {
+        let newNote = Note()
+        newNote.name = name
+        newNote.language = language
+        newNote.note = note
+        newNote.date = date
+        return newNote
+        
     }
     
     let dateFormatter: DateFormatter = {
