@@ -45,6 +45,13 @@ class MasterViewController: UITableViewController {
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 controller.detailItem = notesData[indexPath.row]
             }
+        } else if segue.identifier == "addNote" {
+            if self.tableView.indexPathForSelectedRow != nil {
+                let controller = (segue.destination as! UINavigationController).topViewController as! AddNoteViewController
+                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+                controller.dataSource = notesData
+            }
         }
     }
 
