@@ -20,6 +20,7 @@ class AddNoteViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        title = "Add a New Note"
     }
 
     override func didReceiveMemoryWarning() {

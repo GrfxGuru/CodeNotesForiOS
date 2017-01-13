@@ -43,6 +43,7 @@ class ViewNoteViewController: UIViewController {
             lblNoteName.text = detailItem?.name
             lblNoteLanguage.text = detailItem?.language
             noteCode.text = detailItem?.note
+            title = detailItem?.name
         }
     }
 
