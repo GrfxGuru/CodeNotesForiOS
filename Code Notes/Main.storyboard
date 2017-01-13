@@ -96,7 +96,7 @@
         <!--Edit Note-->
         <scene sceneID="YAY-Kx-XKX">
             <objects>
-                <viewController title="Edit Note" id="xxY-85-dSs" sceneMemberID="viewController">
+                <viewController title="Edit Note" id="xxY-85-dSs" customClass="EditNoteViewController" customModule="Code_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J8l-Fy-foS"/>
                         <viewControllerLayoutGuide type="bottom" id="Pct-5y-sSe"/>
@@ -151,7 +151,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptC-UY-4Bb">
-                                <rect key="frame" x="31" y="123" width="114" height="21"/>
+                                <rect key="frame" x="31" y="122.5" width="114" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -184,10 +184,16 @@
                             <constraint firstItem="ViT-Ov-FJh" firstAttribute="leading" secondItem="4bA-le-OFY" secondAttribute="trailing" constant="12" id="vzQ-lg-KQF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CDc-lc-NBg"/>
+                    <connections>
+                        <outlet property="fieldNoteContent" destination="ViT-Ov-FJh" id="oh4-lU-Lbo"/>
+                        <outlet property="fieldNoteLanguage" destination="zcv-DL-kTV" id="LE5-nk-U38"/>
+                        <outlet property="fieldNoteName" destination="lW0-em-yV1" id="IMb-wA-jgF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82V-H6-KV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="105"/>
+            <point key="canvasLocation" x="1002" y="91"/>
         </scene>
         <!--View Note-->
         <scene sceneID="j9M-2l-SIk">
@@ -205,7 +211,7 @@
                                 <rect key="frame" x="31" y="974" width="30" height="30"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
-                                    <segue destination="xxY-85-dSs" kind="show" id="cas-py-WcE"/>
+                                    <segue destination="ryv-QQ-65y" kind="show" id="cas-py-WcE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8O-Xh-RbJ">
@@ -390,7 +396,7 @@
                     <navigationItem key="navigationItem" title="Notes" id="Zdf-7t-Un8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="w2x-Q1-Omt">
                             <connections>
-                                <segue destination="xxY-85-dSs" kind="showDetail" identifier="addNote" id="oeQ-QD-S3F"/>
+                                <segue destination="ryv-QQ-65y" kind="showDetail" identifier="addNote" id="oeQ-QD-S3F"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -432,6 +438,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5I-oz-OxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="308.78477306002924" y="-596.484375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="d92-wR-DhP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ryv-QQ-65y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ldR-RV-IfF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xxY-85-dSs" kind="relationship" relationship="rootViewController" id="yJd-f8-pPB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Y1-kB-FQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="309" y="91"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

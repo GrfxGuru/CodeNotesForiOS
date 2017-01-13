@@ -50,12 +50,11 @@ class MasterViewController: UITableViewController {
             self.tableView.reloadData()
             let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)
             self.tableView.selectRow(at: newRow as IndexPath, animated: true, scrollPosition: .bottom)
-            /*
-                let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
-                controller.dataSource = notesData
-             */
+            let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
+            controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+            controller.navigationItem.leftItemsSupplementBackButton = true
+            let indexPath = self.tableView.indexPathForSelectedRow
+            controller.note = notesData[(indexPath?.row)!]
         }
     }
 
