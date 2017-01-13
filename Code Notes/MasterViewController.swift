@@ -46,12 +46,16 @@ class MasterViewController: UITableViewController {
                 controller.detailItem = notesData[indexPath.row]
             }
         } else if segue.identifier == "addNote" {
-            if self.tableView.indexPathForSelectedRow != nil {
-                let controller = (segue.destination as! UINavigationController).topViewController as! AddNoteViewController
+            notesData.append(createNote(name: "New name", language: "New language", note: "new note", date: Date()))
+            self.tableView.reloadData()
+            let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)
+            self.tableView.selectRow(at: newRow as IndexPath, animated: true, scrollPosition: .bottom)
+            /*
+                let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 controller.dataSource = notesData
-            }
+             */
         }
     }
 
@@ -95,7 +99,6 @@ class MasterViewController: UITableViewController {
         newNote.note = note
         newNote.date = date
         return newNote
-        
     }
     
     let dateFormatter: DateFormatter = {
