@@ -157,7 +157,11 @@
                                 <segue destination="vC3-pB-5Vb" kind="showDetail" id="Udk-DC-hn1"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="xrC-Qd-JhA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="xrC-Qd-JhA">
+                            <connections>
+                                <segue destination="vC3-pB-5Vb" kind="showDetail" id="CEq-4u-NrN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="fieldNoteContent" destination="ViT-Ov-FJh" id="oh4-lU-Lbo"/>

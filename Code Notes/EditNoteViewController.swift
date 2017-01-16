@@ -50,6 +50,7 @@ class EditNoteViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "storeNote" {
+            // TODO: Store the new data, this should trigger a master list refresh
         }
     }
     
