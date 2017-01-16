@@ -11,6 +11,8 @@ import UIKit
 class EditNoteViewController: UIViewController {
     
     var note:Note = Note()
+    var dataSource: [Note] = []
+    var noteDataIndex = 0
     @IBOutlet weak var fieldNoteName: UITextField!
     @IBOutlet weak var fieldNoteLanguage: UITextField!
     @IBOutlet weak var fieldNoteContent: UITextView!
@@ -43,5 +45,20 @@ class EditNoteViewController: UIViewController {
         fieldNoteLanguage.text  = note.language
         fieldNoteContent.text   = note.note
     }
-
+    
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "storeNote" {
+        }
+    }
+    
+    func createNote(name: String, language:String, note:String, date:Date) -> Note {
+        let newNote = Note()
+        newNote.name = name
+        newNote.language = language
+        newNote.note = note
+        newNote.date = date
+        return newNote
+    }
 }

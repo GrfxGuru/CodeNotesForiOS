@@ -11,8 +11,11 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var notesData = [Note]()
-
+    var notesData = [Note]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,15 +49,14 @@ class MasterViewController: UITableViewController {
                 controller.detailItem = notesData[indexPath.row]
             }
         } else if segue.identifier == "addNote" {
-            notesData.append(createNote(name: "New name", language: "New language", note: "new note", date: Date()))
-            self.tableView.reloadData()
+            notesData.append(createNote(name: "", language: "", note: "", date: Date()))
             let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)
             self.tableView.selectRow(at: newRow as IndexPath, animated: true, scrollPosition: .bottom)
             let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
-            controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-            controller.navigationItem.leftItemsSupplementBackButton = true
             let indexPath = self.tableView.indexPathForSelectedRow
             controller.note = notesData[(indexPath?.row)!]
+            controller.dataSource = notesData
+            controller.title = "Add Note"
         }
     }
 
@@ -105,5 +107,4 @@ class MasterViewController: UITableViewController {
         _formatter.dateStyle = .short
         return _formatter
     }()
-
 }
