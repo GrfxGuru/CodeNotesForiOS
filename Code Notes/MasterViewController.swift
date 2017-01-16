@@ -52,11 +52,12 @@ class MasterViewController: UITableViewController {
             notesData.append(createNote(name: "", language: "", note: "", date: Date()))
             let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)
             self.tableView.selectRow(at: newRow as IndexPath, animated: true, scrollPosition: .bottom)
-            let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
-            let indexPath = self.tableView.indexPathForSelectedRow
-            controller.note = notesData[(indexPath?.row)!]
-            controller.dataSource = notesData
-            controller.title = "Add Note"
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
+                controller.note = notesData[(indexPath.row)]
+                controller.dataSource = notesData
+                controller.title = "Add Note"
+            }
         }
     }
 
