@@ -103,4 +103,8 @@ class MasterViewController: UITableViewController {
         _formatter.dateStyle = .short
         return _formatter
     }()
+    
+    func something() {
+        print("Something")
+    }
 }

@@ -14,6 +14,5 @@ class DataStoreSingleton: NSObject {
     var dataArray = [Note]()
     
     override init() {
-        print("DataStoreSingleton Initialized")
     }
 }

@@ -16,7 +16,6 @@ class EditNoteViewController: UIViewController {
     @IBOutlet weak var fieldNoteName: UITextField!
     @IBOutlet weak var fieldNoteLanguage: UITextField!
     @IBOutlet weak var fieldNoteContent: UITextView!
-    var appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +49,19 @@ class EditNoteViewController: UIViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
+        let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
         if segue.identifier == "storeNote" {
-            DataStoreSingleton.dataContainer.dataArray.append(createNote(name: fieldNoteName.text!, language: fieldNoteLanguage.text!, note: fieldNoteContent.text!, date: Date()))
+            let updatedNoteData = createNote(name: fieldNoteName.text!,
+                                             language: fieldNoteLanguage.text!,
+                                             note: fieldNoteContent.text!,
+                                             date: Date())
+            DataStoreSingleton.dataContainer.dataArray[DataStoreSingleton.dataContainer.dataArray.count-1] = updatedNoteData
+            sectionsVC.tableView.reloadData()
+        } else {
+            DataStoreSingleton.dataContainer.dataArray.remove(at: DataStoreSingleton.dataContainer.dataArray.count-1)
+            sectionsVC.tableView.reloadData()
+
         }
     }
     

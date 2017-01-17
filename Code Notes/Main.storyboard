@@ -155,12 +155,12 @@
                     <navigationItem key="navigationItem" id="CDc-lc-NBg">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="yRG-cM-hwh">
                             <connections>
-                                <segue destination="vC3-pB-5Vb" kind="showDetail" id="Udk-DC-hn1"/>
+                                <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="cancelNote" id="Udk-DC-hn1"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="xrC-Qd-JhA">
                             <connections>
-                                <segue destination="vC3-pB-5Vb" kind="showDetail" id="CEq-4u-NrN"/>
+                                <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="storeNote" id="CEq-4u-NrN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -438,7 +438,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oeQ-QD-S3F"/>
         <segue reference="Udk-DC-hn1"/>
+        <segue reference="oeQ-QD-S3F"/>
     </inferredMetricsTieBreakers>
 </document>
