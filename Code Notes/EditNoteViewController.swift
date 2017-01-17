@@ -51,8 +51,7 @@ class EditNoteViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "storeNote" {
-            // TODO: Store the new data, this should trigger a master list refresh
-            appDelegate.myAppData.append(createNote(name: fieldNoteName.text!, language: fieldNoteLanguage.text!, note: fieldNoteContent.text!, date: Date()))
+            DataStoreSingleton.dataContainer.dataArray.append(createNote(name: fieldNoteName.text!, language: fieldNoteLanguage.text!, note: fieldNoteContent.text!, date: Date()))
         }
     }
     

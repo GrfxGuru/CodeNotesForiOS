@@ -18,6 +18,7 @@
 		D069F08B1E1CAE91008C79E7 /* Code_NotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F08A1E1CAE91008C79E7 /* Code_NotesUITests.swift */; };
 		D069F0991E1CC416008C79E7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F0981E1CC416008C79E7 /* Note.swift */; };
 		D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */; };
+		D0B909B21E2E9A110058DECA /* DataStoreSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B909B11E2E9A110058DECA /* DataStoreSingleton.swift */; };
 		D0FF5E771E29841600F4678E /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF5E761E29841600F4678E /* EditNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		D069F08C1E1CAE91008C79E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D069F0981E1CC416008C79E7 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = ValueObjects/Note.swift; sourceTree = "<group>"; };
 		D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteListTableViewCell.swift; path = ValueObjects/NoteListTableViewCell.swift; sourceTree = "<group>"; };
+		D0B909B11E2E9A110058DECA /* DataStoreSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreSingleton.swift; sourceTree = "<group>"; };
 		D0FF5E761E29841600F4678E /* EditNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 		D069F0671E1CAE91008C79E7 /* Code Notes */ = {
 			isa = PBXGroup;
 			children = (
+				D0B909B01E2E99DA0058DECA /* Data Handling */,
 				D00FB67B1E26F06100DAA7C7 /* Main.storyboard */,
 				D069F09B1E1CC43F008C79E7 /* ValueObjects */,
 				D069F09A1E1CC426008C79E7 /* Controllers */,
@@ -154,6 +157,14 @@
 				D069F0981E1CC416008C79E7 /* Note.swift */,
 			);
 			name = ValueObjects;
+			sourceTree = "<group>";
+		};
+		D0B909B01E2E99DA0058DECA /* Data Handling */ = {
+			isa = PBXGroup;
+			children = (
+				D0B909B11E2E9A110058DECA /* DataStoreSingleton.swift */,
+			);
+			name = "Data Handling";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 				D069F06B1E1CAE91008C79E7 /* MasterViewController.swift in Sources */,
 				D0FF5E771E29841600F4678E /* EditNoteViewController.swift in Sources */,
 				D069F0691E1CAE91008C79E7 /* AppDelegate.swift in Sources */,
+				D0B909B21E2E9A110058DECA /* DataStoreSingleton.swift in Sources */,
 				D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */,
 				D069F0991E1CC416008C79E7 /* Note.swift in Sources */,
 			);

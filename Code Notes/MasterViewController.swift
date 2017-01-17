@@ -11,13 +11,11 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let notesData = loadData()
-        self.appDelegate.myAppData = notesData
+        DataStoreSingleton.dataContainer.dataArray = loadData()
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
@@ -43,15 +41,16 @@ class MasterViewController: UITableViewController {
                 let controller = (segue.destination as! UINavigationController).topViewController as! ViewNoteViewController
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
-                controller.detailItem = appDelegate.myAppData[indexPath.row]
+                controller.detailItem = DataStoreSingleton.dataContainer.dataArray[indexPath.row]
             }
         } else if segue.identifier == "addNote" {
-            appDelegate.myAppData.append(createNote(name: "", language: "", note: "", date: Date()))
+            DataStoreSingleton.dataContainer.dataArray.append(createNote(name: "", language: "", note: "", date: Date()))
+            self.tableView.reloadData()
             let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)
             self.tableView.selectRow(at: newRow as IndexPath, animated: true, scrollPosition: .bottom)
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
-                controller.note = appDelegate.myAppData[(indexPath.row)]
+                controller.note = DataStoreSingleton.dataContainer.dataArray[(indexPath.row)]
                 controller.title = "Add Note"
             }
         }
@@ -64,12 +63,12 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return appDelegate.myAppData.count
+        return DataStoreSingleton.dataContainer.dataArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! NoteListTableViewCell
-        let note = appDelegate.myAppData[indexPath.row]
+        let note = DataStoreSingleton.dataContainer.dataArray[indexPath.row]
         cell.noteName.text = note.name
         cell.noteDate.text = dateFormatter.string(from: note.date)
         cell.noteLanguage.text = note.language
