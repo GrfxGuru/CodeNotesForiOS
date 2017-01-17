@@ -11,16 +11,13 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var notesData = [Note]() {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        notesData = loadData()
+        let notesData = loadData()
+        self.appDelegate.myAppData = notesData
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
@@ -46,16 +43,15 @@ class MasterViewController: UITableViewController {
                 let controller = (segue.destination as! UINavigationController).topViewController as! ViewNoteViewController
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
-                controller.detailItem = notesData[indexPath.row]
+                controller.detailItem = appDelegate.myAppData[indexPath.row]
             }
         } else if segue.identifier == "addNote" {
-            notesData.append(createNote(name: "", language: "", note: "", date: Date()))
+            appDelegate.myAppData.append(createNote(name: "", language: "", note: "", date: Date()))
             let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)
             self.tableView.selectRow(at: newRow as IndexPath, animated: true, scrollPosition: .bottom)
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
-                controller.note = notesData[(indexPath.row)]
-                controller.dataSource = notesData
+                controller.note = appDelegate.myAppData[(indexPath.row)]
                 controller.title = "Add Note"
             }
         }
@@ -68,12 +64,12 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notesData.count
+        return appDelegate.myAppData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! NoteListTableViewCell
-        let note = notesData[indexPath.row]
+        let note = appDelegate.myAppData[indexPath.row]
         cell.noteName.text = note.name
         cell.noteDate.text = dateFormatter.string(from: note.date)
         cell.noteLanguage.text = note.language

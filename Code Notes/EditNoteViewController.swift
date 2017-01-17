@@ -16,6 +16,7 @@ class EditNoteViewController: UIViewController {
     @IBOutlet weak var fieldNoteName: UITextField!
     @IBOutlet weak var fieldNoteLanguage: UITextField!
     @IBOutlet weak var fieldNoteContent: UITextView!
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +52,12 @@ class EditNoteViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "storeNote" {
             // TODO: Store the new data, this should trigger a master list refresh
+            appDelegate.myAppData.append(createNote(name: fieldNoteName.text!, language: fieldNoteLanguage.text!, note: fieldNoteContent.text!, date: Date()))
         }
     }
     
     func createNote(name: String, language:String, note:String, date:Date) -> Note {
+        print();
         let newNote = Note()
         newNote.name = name
         newNote.language = language
