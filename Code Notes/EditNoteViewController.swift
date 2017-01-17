@@ -21,6 +21,7 @@ class EditNoteViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.configureView()
+        fieldNoteName.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
