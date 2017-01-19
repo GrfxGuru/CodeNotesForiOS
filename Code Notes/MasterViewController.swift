@@ -54,6 +54,10 @@ class MasterViewController: UITableViewController {
                 controller.note = DataStoreSingleton.dataContainer.dataArray[(indexPath.row)]
                 controller.title = "Add Note"
             }
+        } else if segue.identifier == "appSettings" {
+            if ((self.tableView.indexPathForSelectedRow) != nil) {
+                self.tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
+            }
         }
     }
 
