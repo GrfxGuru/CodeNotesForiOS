@@ -14,6 +14,7 @@ class ViewNoteViewController: UIViewController {
     @IBOutlet weak var lblNoteLanguage: UILabel!
     @IBOutlet weak var noteCode: UITextView!
     var detailItem: Note?
+    var displayedNoteDataIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,12 +59,12 @@ class ViewNoteViewController: UIViewController {
         let alertController = UIAlertController(title: "Delete Note?", message: "Are you sure you want to delete this note?", preferredStyle: .alert)
         let YesAction = UIAlertAction(title: "Yes", style: .default) {
             (action:UIAlertAction!) in
-            print("Yes button")
+            DataStoreSingleton.dataContainer.dataArray.remove(at: self.displayedNoteDataIndex)
             sectionsVC.tableView.reloadData()
+            self.performSegue(withIdentifier: "unloadView", sender: nil)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
             (action:UIAlertAction!) in
-            print("Cancel button")
         }
         alertController.addAction(YesAction)
         alertController.addAction(cancelAction)

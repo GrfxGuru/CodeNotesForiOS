@@ -42,6 +42,7 @@ class MasterViewController: UITableViewController {
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 controller.detailItem = DataStoreSingleton.dataContainer.dataArray[indexPath.row]
+                controller.displayedNoteDataIndex = indexPath.row
             }
         } else if segue.identifier == "addNote" {
             DataStoreSingleton.dataContainer.dataArray.append(createNote(name: "", language: "", note: "", date: Date()))
