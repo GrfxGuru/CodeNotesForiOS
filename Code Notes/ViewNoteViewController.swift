@@ -37,6 +37,11 @@ class ViewNoteViewController: UIViewController {
     }
     */
     
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
+    
     func configureView() {
         // Update the user interface for the detail item.
         if (detailItem) != nil {
@@ -46,5 +51,22 @@ class ViewNoteViewController: UIViewController {
             title = detailItem?.name
         }
     }
-
+    
+    @IBAction func btnDeleteNote(_ sender: UIButton) {
+        let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
+        let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
+        let alertController = UIAlertController(title: "Delete Note?", message: "Are you sure you want to delete this note?", preferredStyle: .alert)
+        let YesAction = UIAlertAction(title: "Yes", style: .default) {
+            (action:UIAlertAction!) in
+            print("Yes button")
+            sectionsVC.tableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+            (action:UIAlertAction!) in
+            print("Cancel button")
+        }
+        alertController.addAction(YesAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

@@ -52,7 +52,7 @@ class EditNoteViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
         let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
-        if segue.identifier == "storeNote" {
+        if (segue.identifier == "storeNote") {
             let updatedNoteData = createNote(name: fieldNoteName.text!,
                                              language: fieldNoteLanguage.text!,
                                              note: fieldNoteContent.text!,
