@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
+        configureUserSettings()
         return true
     }
 
@@ -50,6 +51,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
         guard (secondaryAsNavController.topViewController as? DetailViewController) != nil else { return false }
         return false
+    }
+    
+    // Configure user settings for the application if they exist, if they do not (this could be first time running) then set the defaults
+    func configureUserSettings() {
+        if (UserDefaults.standard.bool(forKey: "confirmNoteDeletion")) {
+            UserDefaults.standard.set(true, forKey: "confirmNoteDeletion")
+        }
     }
 
 }

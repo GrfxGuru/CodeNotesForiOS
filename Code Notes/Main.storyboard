@@ -49,7 +49,7 @@
         <!--Settings-->
         <scene sceneID="R4x-SH-gJh">
             <objects>
-                <viewController title="Settings" id="a4k-al-UDe" sceneMemberID="viewController">
+                <viewController title="Settings" id="a4k-al-UDe" customClass="UserSettingsViewController" customModule="Code_Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hCu-jy-x8p"/>
                         <viewControllerLayoutGuide type="bottom" id="PFR-Oe-fsg"/>
@@ -67,33 +67,32 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puf-ec-rnB">
                                 <rect key="frame" x="975.5" y="72" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EQ-lP-5Ym">
-                                <rect key="frame" x="925.5" y="77" width="28" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="puf-ec-rnB" firstAttribute="leading" secondItem="8EQ-lP-5Ym" secondAttribute="trailing" constant="22" id="7zy-7D-c1m"/>
-                            <constraint firstItem="8EQ-lP-5Ym" firstAttribute="centerY" secondItem="puf-ec-rnB" secondAttribute="centerY" id="JYM-5m-XzW"/>
-                            <constraint firstItem="puf-ec-rnB" firstAttribute="top" secondItem="hCu-jy-x8p" secondAttribute="bottom" constant="8" symbolic="YES" id="KdV-xc-BDE"/>
-                            <constraint firstItem="dSQ-dv-gDh" firstAttribute="bottom" secondItem="puf-ec-rnB" secondAttribute="bottom" id="hQZ-lA-aPL"/>
-                            <constraint firstItem="dSQ-dv-gDh" firstAttribute="leading" secondItem="gVL-8f-FZB" secondAttribute="leadingMargin" id="o0a-tQ-bSc"/>
-                            <constraint firstItem="puf-ec-rnB" firstAttribute="trailing" secondItem="gVL-8f-FZB" secondAttribute="trailingMargin" id="oEc-MX-ya6"/>
+                            <constraint firstItem="dSQ-dv-gDh" firstAttribute="bottom" secondItem="puf-ec-rnB" secondAttribute="bottom" id="9Pu-sE-wvz"/>
+                            <constraint firstItem="puf-ec-rnB" firstAttribute="top" secondItem="hCu-jy-x8p" secondAttribute="bottom" constant="8" symbolic="YES" id="SBu-uL-dct"/>
+                            <constraint firstItem="dSQ-dv-gDh" firstAttribute="leading" secondItem="gVL-8f-FZB" secondAttribute="leadingMargin" id="bz4-js-lHC"/>
+                            <constraint firstItem="puf-ec-rnB" firstAttribute="trailing" secondItem="gVL-8f-FZB" secondAttribute="trailingMargin" id="yRF-2l-QTn"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Settings" id="1Ex-Dl-U3R">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="e71-VC-mcw">
                             <connections>
-                                <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="appSettings" id="vmQ-Ri-pa3"/>
+                                <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="cancelButton" id="vmQ-Ri-pa3"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save Settings" id="uKt-Uh-1Ze"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save Settings" id="uKt-Uh-1Ze">
+                            <connections>
+                                <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="saveSettings" id="y8A-uw-ogU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="swConfirmNoteDeletion" destination="puf-ec-rnB" id="Ogu-ZQ-gyM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1w-cr-46N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -492,7 +491,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dQS-Pt-nPc"/>
-        <segue reference="cas-py-WcE"/>
+        <segue reference="oeQ-QD-S3F"/>
+        <segue reference="vmQ-Ri-pa3"/>
     </inferredMetricsTieBreakers>
 </document>

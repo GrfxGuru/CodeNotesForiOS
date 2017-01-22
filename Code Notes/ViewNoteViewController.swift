@@ -59,20 +59,30 @@ class ViewNoteViewController: UIViewController {
     }
     
     @IBAction func btnDeleteNote(_ sender: UIButton) {
+        let displayAlert = UserDefaults.standard.bool(forKey: "confirmNoteDeletion")
+        if (displayAlert) {
+            let alertController = UIAlertController(title: "Delete Note?", message: "Are you sure you want to delete this note?", preferredStyle: .alert)
+            let YesAction = UIAlertAction(title: "Yes", style: .default) {
+                (action:UIAlertAction!) in
+                DataStoreSingleton.dataContainer.dataArray.remove(at: self.displayedNoteDataIndex)
+                self.navigateAfterDelete()
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+                (action:UIAlertAction!) in
+            }
+            alertController.addAction(YesAction)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            DataStoreSingleton.dataContainer.dataArray.remove(at: self.displayedNoteDataIndex)
+            self.navigateAfterDelete()
+        }
+    }
+    
+    func navigateAfterDelete() {
         let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
         let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
-        let alertController = UIAlertController(title: "Delete Note?", message: "Are you sure you want to delete this note?", preferredStyle: .alert)
-        let YesAction = UIAlertAction(title: "Yes", style: .default) {
-            (action:UIAlertAction!) in
-            DataStoreSingleton.dataContainer.dataArray.remove(at: self.displayedNoteDataIndex)
-            sectionsVC.tableView.reloadData()
-            self.performSegue(withIdentifier: "unloadView", sender: nil)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
-            (action:UIAlertAction!) in
-        }
-        alertController.addAction(YesAction)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
+        sectionsVC.tableView.reloadData()
+        self.performSegue(withIdentifier: "unloadView", sender: nil)
     }
 }

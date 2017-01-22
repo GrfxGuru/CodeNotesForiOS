@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		514C91201E344F4C00130EAE /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */; };
 		D00FB67C1E26F06100DAA7C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00FB67B1E26F06100DAA7C7 /* Main.storyboard */; };
 		D0351FB51E24168A00C1DF53 /* ViewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */; };
 		D069F0691E1CAE91008C79E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F0681E1CAE91008C79E7 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		D00FB67B1E26F06100DAA7C7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewNoteViewController.swift; sourceTree = "<group>"; };
 		D069F0651E1CAE91008C79E7 /* Code Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 				D069F06C1E1CAE91008C79E7 /* DetailViewController.swift */,
 				D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */,
 				D0FF5E761E29841600F4678E /* EditNoteViewController.swift */,
+				514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				D069F06D1E1CAE91008C79E7 /* DetailViewController.swift in Sources */,
 				D0351FB51E24168A00C1DF53 /* ViewNoteViewController.swift in Sources */,
 				D069F06B1E1CAE91008C79E7 /* MasterViewController.swift in Sources */,
+				514C91201E344F4C00130EAE /* UserSettingsViewController.swift in Sources */,
 				D0FF5E771E29841600F4678E /* EditNoteViewController.swift in Sources */,
 				D069F0691E1CAE91008C79E7 /* AppDelegate.swift in Sources */,
 				D0B909B21E2E9A110058DECA /* DataStoreSingleton.swift in Sources */,
