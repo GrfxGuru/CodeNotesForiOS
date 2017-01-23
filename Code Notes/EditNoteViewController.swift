@@ -8,20 +8,24 @@
 
 import UIKit
 
-class EditNoteViewController: UIViewController {
+class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var note:Note = Note()
     var dataSource: [Note] = []
     var noteDataIndex = 0
+    let languagePicker = UIPickerView()
     @IBOutlet weak var fieldNoteName: UITextField!
     @IBOutlet weak var fieldNoteLanguage: UITextField!
     @IBOutlet weak var fieldNoteContent: UITextView!
+    let pickerDataSource = ["Swift", "JavaScript", "C++", "Objective-C"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.configureView()
         fieldNoteName.becomeFirstResponder()
+        languagePicker.delegate = self
+        fieldNoteLanguage.inputView = languagePicker
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,5 +78,25 @@ class EditNoteViewController: UIViewController {
         newNote.note = note
         newNote.date = date
         return newNote
+    }
+    
+    // MARK: UIPickerView Delegation
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        // TODO: Replace with data count
+        return pickerDataSource.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        // TODO: Replace with proper data
+        return pickerDataSource[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        fieldNoteLanguage.text = pickerDataSource[row]
     }
 }
