@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         configureUserSettings()
         if UIScreen.main.bounds.height > UIScreen.main.bounds.width {
             splitViewController.preferredDisplayMode = .primaryOverlay
-        } else {}
+        }
         return true
     }
 
@@ -42,6 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if UIScreen.main.bounds.height > UIScreen.main.bounds.width {
+            let splitViewController = self.window!.rootViewController as! UISplitViewController
+            splitViewController.preferredDisplayMode = .primaryOverlay
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
