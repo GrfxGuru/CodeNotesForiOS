@@ -17,7 +17,7 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var fieldNoteName: UITextField!
     @IBOutlet weak var fieldNoteLanguage: UITextField!
     @IBOutlet weak var fieldNoteContent: UITextView!
-    let pickerDataSource = ["Swift", "JavaScript", "C++", "Objective-C"]
+    let pickerDataSource = LanguageListSingleton.dataContainer.dataArray
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5125A76C1E37385300685030 /* LanguageListSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125A76B1E37385300685030 /* LanguageListSingleton.swift */; };
 		514C91201E344F4C00130EAE /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */; };
 		D00FB67C1E26F06100DAA7C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00FB67B1E26F06100DAA7C7 /* Main.storyboard */; };
 		D0351FB51E24168A00C1DF53 /* ViewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5125A76B1E37385300685030 /* LanguageListSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageListSingleton.swift; sourceTree = "<group>"; };
 		514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		D00FB67B1E26F06100DAA7C7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewNoteViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				D0B909B11E2E9A110058DECA /* DataStoreSingleton.swift */,
+				5125A76B1E37385300685030 /* LanguageListSingleton.swift */,
 			);
 			name = "Data Handling";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				D069F06B1E1CAE91008C79E7 /* MasterViewController.swift in Sources */,
 				514C91201E344F4C00130EAE /* UserSettingsViewController.swift in Sources */,
 				D0FF5E771E29841600F4678E /* EditNoteViewController.swift in Sources */,
+				5125A76C1E37385300685030 /* LanguageListSingleton.swift in Sources */,
 				D069F0691E1CAE91008C79E7 /* AppDelegate.swift in Sources */,
 				D0B909B21E2E9A110058DECA /* DataStoreSingleton.swift in Sources */,
 				D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */,
