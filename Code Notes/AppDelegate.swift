@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         configureUserSettings()
+        if UIScreen.main.bounds.height > UIScreen.main.bounds.width {
+            splitViewController.preferredDisplayMode = .primaryOverlay
+        } else {}
         return true
     }
 
