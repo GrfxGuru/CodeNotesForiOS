@@ -63,10 +63,11 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
                                              date: Date())
             DataStoreSingleton.dataContainer.dataArray[DataStoreSingleton.dataContainer.dataArray.count-1] = updatedNoteData
             sectionsVC.tableView.reloadData()
+            self.splitViewController?.preferredDisplayMode = .primaryOverlay
         } else {
             DataStoreSingleton.dataContainer.dataArray.remove(at: DataStoreSingleton.dataContainer.dataArray.count-1)
             sectionsVC.tableView.reloadData()
-
+            self.splitViewController?.preferredDisplayMode = .primaryOverlay
         }
     }
     

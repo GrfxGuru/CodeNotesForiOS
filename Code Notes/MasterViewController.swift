@@ -43,6 +43,7 @@ class MasterViewController: UITableViewController {
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 controller.detailItem = DataStoreSingleton.dataContainer.dataArray[indexPath.row]
                 controller.displayedNoteDataIndex = indexPath.row
+                self.splitViewController?.preferredDisplayMode = .primaryHidden
             }
         } else if segue.identifier == "addNote" {
             DataStoreSingleton.dataContainer.dataArray.append(createNote(name: "", language: "", note: "", date: Date()))
@@ -53,11 +54,13 @@ class MasterViewController: UITableViewController {
                 let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
                 controller.note = DataStoreSingleton.dataContainer.dataArray[(indexPath.row)]
                 controller.title = "Add Note"
+                self.splitViewController?.preferredDisplayMode = .primaryHidden
             }
         } else if segue.identifier == "appSettings" {
             if ((self.tableView.indexPathForSelectedRow) != nil) {
                 self.tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
             }
+            self.splitViewController?.preferredDisplayMode = .primaryHidden
         }
     }
 
