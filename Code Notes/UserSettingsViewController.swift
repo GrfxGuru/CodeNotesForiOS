@@ -36,6 +36,12 @@ class UserSettingsViewController: UIViewController {
         }
     }
   
+    @IBAction func btnResetDatabase(_ sender: UIButton) {
+        DataStoreSingleton.dataContainer.dataArray.removeAll()
+        let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
+        let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
+            sectionsVC.tableView.reloadData()
+    }
     /*
     // MARK: - Navigation
 
