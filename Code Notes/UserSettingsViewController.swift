@@ -37,6 +37,22 @@ class UserSettingsViewController: UIViewController {
         }
     }
 
+    @IBAction func btnResetDatabase(_ sender: UIButton) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NoteRecord")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do {
+            try context.execute(deleteRequest)
+        } catch let error as NSError {
+            print(error)
+        }
+        let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
+        let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
+        sectionsVC.getData()
+        sectionsVC.tableView.reloadData()
+    }
+    
     /*
     // MARK: - Navigation
 
