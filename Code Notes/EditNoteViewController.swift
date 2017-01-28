@@ -10,7 +10,7 @@ import UIKit
 
 class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    var note:Note = Note()
+    //var note:Note = Note()
     var dataSource: [Note] = []
     var noteDataIndex = 0
     let languagePicker = UIPickerView()
@@ -46,9 +46,9 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func configureView() {
         // Update the user interface for the detail item.
-        fieldNoteName.text      = note.name
-        fieldNoteLanguage.text  = note.language
-        fieldNoteContent.text   = note.note
+        //fieldNoteName.text      = note.name
+        //fieldNoteLanguage.text  = note.language
+        //fieldNoteContent.text   = note.note
     }
     
     // MARK: - Segues
@@ -56,16 +56,20 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
         let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         if (segue.identifier == "storeNote") {
-            let updatedNoteData = createNote(name: fieldNoteName.text!,
-                                             language: fieldNoteLanguage.text!,
-                                             note: fieldNoteContent.text!,
-                                             date: Date())
-            DataStoreSingleton.dataContainer.dataArray[DataStoreSingleton.dataContainer.dataArray.count-1] = updatedNoteData
+            let note = NoteRecord(context: context)
+            note.dateCreated = Date() as NSDate?
+            note.dateModified = Date() as NSDate?
+            note.noteLanguage = fieldNoteLanguage.text!
+            note.noteName = fieldNoteName.text!
+            note.noteContent = fieldNoteContent.text!
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
             sectionsVC.tableView.reloadData()
             self.splitViewController?.preferredDisplayMode = .primaryOverlay
         } else {
-            DataStoreSingleton.dataContainer.dataArray.remove(at: DataStoreSingleton.dataContainer.dataArray.count-1)
+            let recordCount = (UIApplication.shared.delegate as! AppDelegate).notes.count
+            (UIApplication.shared.delegate as! AppDelegate).notes.remove(at: recordCount-1)
             sectionsVC.tableView.reloadData()
             self.splitViewController?.preferredDisplayMode = .primaryOverlay
         }

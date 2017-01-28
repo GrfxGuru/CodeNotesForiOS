@@ -11,11 +11,11 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        DataStoreSingleton.dataContainer.dataArray = loadData()
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
@@ -26,6 +26,8 @@ class MasterViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
+        getData()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,15 +48,32 @@ class MasterViewController: UITableViewController {
                 self.splitViewController?.preferredDisplayMode = .primaryHidden
             }
         } else if segue.identifier == "addNote" {
-            DataStoreSingleton.dataContainer.dataArray.append(createNote(name: "", language: "", note: "", date: Date()))
+            //DataStoreSingleton.dataContainer.dataArray.append(createNote(name: "", language: "", note: "", date: Date()))
+            //self.tableView.reloadData()
+            //let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)
+            //self.tableView.selectRow(at: newRow as IndexPath, animated: true, scrollPosition: .bottom)
+            //if let indexPath = self.tableView.indexPathForSelectedRow {
+                //let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
+                //controller.note = DataStoreSingleton.dataContainer.dataArray[(indexPath.row)]
+                //controller.title = "Add Note"
+                //self.splitViewController?.preferredDisplayMode = .primaryHidden
+            //}
+            
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let newNote = NoteRecord(context: context)
+            newNote.dateCreated = Date() as NSDate
+            newNote.dateModified = Date() as NSDate
+            newNote.noteName = ""
+            newNote.noteLanguage = ""
+            newNote.noteContent = ""
+            (UIApplication.shared.delegate as! AppDelegate).notes.append(newNote)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
             self.tableView.reloadData()
             let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)
             self.tableView.selectRow(at: newRow as IndexPath, animated: true, scrollPosition: .bottom)
-            if let indexPath = self.tableView.indexPathForSelectedRow {
+            if let _ = self.tableView.indexPathForSelectedRow {
                 let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
-                controller.note = DataStoreSingleton.dataContainer.dataArray[(indexPath.row)]
                 controller.title = "Add Note"
-                self.splitViewController?.preferredDisplayMode = .primaryHidden
             }
         } else if segue.identifier == "appSettings" {
             if ((self.tableView.indexPathForSelectedRow) != nil) {
@@ -71,15 +90,15 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataStoreSingleton.dataContainer.dataArray.count
+        return (UIApplication.shared.delegate as! AppDelegate).notes.count //DataStoreSingleton.dataContainer.dataArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! NoteListTableViewCell
-        let note = DataStoreSingleton.dataContainer.dataArray[indexPath.row]
-        cell.noteName.text = note.name
-        cell.noteDate.text = dateFormatter.string(from: note.date)
-        cell.noteLanguage.text = note.language
+        let note = (UIApplication.shared.delegate as! AppDelegate).notes[indexPath.row]
+        cell.noteName.text = note.noteName
+        cell.noteDate.text = dateFormatter.string(from: note.dateCreated as! Date)
+        cell.noteLanguage.text = note.noteLanguage
         return cell
     }
 
@@ -90,29 +109,17 @@ class MasterViewController: UITableViewController {
 
     // MARK: - Data Handling
     
-    func loadData() -> [Note] {
-        var loadedNotes = [Note]()
-        loadedNotes.append(createNote(name: "Swift Variable Note", language: "Swift", note: "var something:String", date: Date()))
-        loadedNotes.append(createNote(name: "JavaScript Opinion Note", language: "JavaScript", note: "JavaScript is a pain", date: Date()))
-        return loadedNotes
-    }
-    
-    func createNote(name: String, language:String, note:String, date:Date) -> Note {
-        let newNote = Note()
-        newNote.name = name
-        newNote.language = language
-        newNote.note = note
-        newNote.date = date
-        return newNote
-    }
-    
     let dateFormatter: DateFormatter = {
         let _formatter = DateFormatter()
         _formatter.dateStyle = .short
         return _formatter
     }()
     
-    func something() {
-        print("Something")
+    func getData() {
+        do {
+            (UIApplication.shared.delegate as! AppDelegate).notes = try context.fetch(NoteRecord.fetchRequest())
+        } catch {
+            print("Data Fetch Failed")
+        }
     }
 }

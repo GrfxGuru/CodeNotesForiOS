@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5125A76C1E37385300685030 /* LanguageListSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125A76B1E37385300685030 /* LanguageListSingleton.swift */; };
 		514C91201E344F4C00130EAE /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */; };
+		51AB1B0A1E3C6F2A00774E7E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51AB1B081E3C6F2A00774E7E /* Model.xcdatamodeld */; };
 		D00FB67C1E26F06100DAA7C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00FB67B1E26F06100DAA7C7 /* Main.storyboard */; };
 		D0351FB51E24168A00C1DF53 /* ViewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */; };
 		D069F0691E1CAE91008C79E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F0681E1CAE91008C79E7 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		5125A76B1E37385300685030 /* LanguageListSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageListSingleton.swift; sourceTree = "<group>"; };
 		514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
+		51AB1B091E3C6F2A00774E7E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D00FB67B1E26F06100DAA7C7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewNoteViewController.swift; sourceTree = "<group>"; };
 		D069F0651E1CAE91008C79E7 /* Code Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 		D069F0671E1CAE91008C79E7 /* Code Notes */ = {
 			isa = PBXGroup;
 			children = (
+				51AB1B081E3C6F2A00774E7E /* Model.xcdatamodeld */,
 				D0FA24441E3810F200EB54BE /* CodeNotes Icons */,
 				D0B909B01E2E99DA0058DECA /* Data Handling */,
 				D00FB67B1E26F06100DAA7C7 /* Main.storyboard */,
@@ -395,6 +398,7 @@
 				D069F0691E1CAE91008C79E7 /* AppDelegate.swift in Sources */,
 				D0B909B21E2E9A110058DECA /* DataStoreSingleton.swift in Sources */,
 				D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */,
+				51AB1B0A1E3C6F2A00774E7E /* Model.xcdatamodeld in Sources */,
 				D069F0991E1CC416008C79E7 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,6 +663,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		51AB1B081E3C6F2A00774E7E /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				51AB1B091E3C6F2A00774E7E /* Model.xcdatamodel */,
+			);
+			currentVersion = 51AB1B091E3C6F2A00774E7E /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D069F05D1E1CAE91008C79E7 /* Project object */;
 }
