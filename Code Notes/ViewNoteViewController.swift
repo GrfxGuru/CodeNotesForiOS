@@ -13,8 +13,7 @@ class ViewNoteViewController: UIViewController {
     @IBOutlet weak var lblNoteName: UILabel!
     @IBOutlet weak var lblNoteLanguage: UILabel!
     @IBOutlet weak var noteCode: UITextView!
-    var detailItem: Note?
-    var displayedNoteDataIndex: Int = 0
+    var detailItem: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +49,11 @@ class ViewNoteViewController: UIViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
-        if (detailItem) != nil {
-            lblNoteName.text = detailItem?.name
-            lblNoteLanguage.text = detailItem?.language
-            noteCode.text = detailItem?.note
-            title = detailItem?.name
-        }
+        let note = (UIApplication.shared.delegate as! AppDelegate).notes[detailItem]
+        lblNoteName.text = note.noteName
+        lblNoteLanguage.text = note.noteLanguage
+        noteCode.text = note.noteContent
+        title = note.noteName
     }
     
     @IBAction func btnDeleteNote(_ sender: UIButton) {
@@ -64,7 +62,7 @@ class ViewNoteViewController: UIViewController {
             let alertController = UIAlertController(title: "Delete Note?", message: "Are you sure you want to delete this note?", preferredStyle: .alert)
             let YesAction = UIAlertAction(title: "Yes", style: .default) {
                 (action:UIAlertAction!) in
-                DataStoreSingleton.dataContainer.dataArray.remove(at: self.displayedNoteDataIndex)
+                //DataStoreSingleton.dataContainer.dataArray.remove(at: self.displayedNoteDataIndex)
                 self.navigateAfterDelete()
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
@@ -74,7 +72,7 @@ class ViewNoteViewController: UIViewController {
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
-            DataStoreSingleton.dataContainer.dataArray.remove(at: self.displayedNoteDataIndex)
+            //DataStoreSingleton.dataContainer.dataArray.remove(at: self.displayedNoteDataIndex)
             self.navigateAfterDelete()
         }
     }

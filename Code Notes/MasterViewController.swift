@@ -43,8 +43,7 @@ class MasterViewController: UITableViewController {
                 let controller = (segue.destination as! UINavigationController).topViewController as! ViewNoteViewController
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
-                controller.detailItem = DataStoreSingleton.dataContainer.dataArray[indexPath.row]
-                controller.displayedNoteDataIndex = indexPath.row
+                controller.detailItem = indexPath.row
                 self.splitViewController?.preferredDisplayMode = .primaryHidden
             }
         } else if segue.identifier == "addNote" {
