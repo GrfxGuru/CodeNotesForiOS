@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewNoteViewController: UIViewController {
     
@@ -62,7 +63,7 @@ class ViewNoteViewController: UIViewController {
             let alertController = UIAlertController(title: "Delete Note?", message: "Are you sure you want to delete this note?", preferredStyle: .alert)
             let YesAction = UIAlertAction(title: "Yes", style: .default) {
                 (action:UIAlertAction!) in
-                //DataStoreSingleton.dataContainer.dataArray.remove(at: self.displayedNoteDataIndex)
+                self.deleteRecord()
                 self.navigateAfterDelete()
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
@@ -72,14 +73,27 @@ class ViewNoteViewController: UIViewController {
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
-            //DataStoreSingleton.dataContainer.dataArray.remove(at: self.displayedNoteDataIndex)
+            self.deleteRecord()
             self.navigateAfterDelete()
+        }
+    }
+    
+    func deleteRecord() {
+        let note = (UIApplication.shared.delegate as! AppDelegate).notes[detailItem]
+        let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do {
+            try context.execute(deleteRequest)
+        } catch let error as NSError {
+            print(error)
         }
     }
     
     func navigateAfterDelete() {
         let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
         let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
+        sectionsVC.getData()
         sectionsVC.tableView.reloadData()
         self.performSegue(withIdentifier: "unloadView", sender: nil)
     }
