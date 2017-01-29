@@ -75,16 +75,6 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     
-    func createNote(name: String, language:String, note:String, date:Date) -> Note {
-        print();
-        let newNote = Note()
-        newNote.name = name
-        newNote.language = language
-        newNote.note = note
-        newNote.date = date
-        return newNote
-    }
-    
     // MARK: UIPickerView Delegation
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
