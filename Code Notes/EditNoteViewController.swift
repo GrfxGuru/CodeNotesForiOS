@@ -58,7 +58,9 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
         let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
         if (segue.identifier == "storeNote") {
-            let note = NoteRecord(context: context)
+            //let note = NoteRecord(context: context)
+            let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+            let note = appDelegate.notes[currentNoteIndex]
             note.dateCreated = Date() as NSDate?
             note.dateModified = Date() as NSDate?
             note.noteLanguage = fieldNoteLanguage.text!
