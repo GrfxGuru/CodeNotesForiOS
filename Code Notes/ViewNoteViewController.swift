@@ -42,9 +42,10 @@ class ViewNoteViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if ( segue.identifier == "editNote" ) {
-                //let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
-                //controller.note = DataStoreSingleton.dataContainer.dataArray[displayedNoteDataIndex]
-                //controller.title = "Add Note"
+            let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
+                controller.title = "Edit Note"
+                controller.currentNoteIndex = detailItem
+
             }
     }
     

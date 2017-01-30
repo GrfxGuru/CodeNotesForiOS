@@ -47,17 +47,6 @@ class MasterViewController: UITableViewController {
                 self.splitViewController?.preferredDisplayMode = .primaryHidden
             }
         } else if segue.identifier == "addNote" {
-            //DataStoreSingleton.dataContainer.dataArray.append(createNote(name: "", language: "", note: "", date: Date()))
-            //self.tableView.reloadData()
-            //let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)
-            //self.tableView.selectRow(at: newRow as IndexPath, animated: true, scrollPosition: .bottom)
-            //if let indexPath = self.tableView.indexPathForSelectedRow {
-                //let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
-                //controller.note = DataStoreSingleton.dataContainer.dataArray[(indexPath.row)]
-                //controller.title = "Add Note"
-                //self.splitViewController?.preferredDisplayMode = .primaryHidden
-            //}
-            
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let newNote = NoteRecord(context: context)
             newNote.dateCreated = Date() as NSDate
@@ -73,6 +62,7 @@ class MasterViewController: UITableViewController {
             if let _ = self.tableView.indexPathForSelectedRow {
                 let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
                 controller.title = "Add Note"
+                controller.currentNoteIndex = newRow.item
             }
         } else if segue.identifier == "appSettings" {
             if ((self.tableView.indexPathForSelectedRow) != nil) {

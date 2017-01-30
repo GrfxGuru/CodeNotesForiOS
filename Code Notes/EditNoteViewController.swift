@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     //var note:Note = Note()
-    var dataSource: [Note] = []
-    var noteDataIndex = 0
     let languagePicker = UIPickerView()
     @IBOutlet weak var fieldNoteName: UITextField!
     @IBOutlet weak var fieldNoteLanguage: UITextField!
     @IBOutlet weak var fieldNoteContent: UITextView!
     let pickerDataSource = LanguageListSingleton.dataContainer.dataArray
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var currentNoteIndex: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,10 +46,10 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
     */
     
     func configureView() {
-        // Update the user interface for the detail item.
-        //fieldNoteName.text      = note.name
-        //fieldNoteLanguage.text  = note.language
-        //fieldNoteContent.text   = note.note
+        let note = (UIApplication.shared.delegate as! AppDelegate).notes[currentNoteIndex]
+        fieldNoteName.text = note.noteName
+        fieldNoteLanguage.text = note.noteLanguage
+        fieldNoteContent.text = note.noteContent
     }
     
     // MARK: - Segues
@@ -56,7 +57,6 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
         let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         if (segue.identifier == "storeNote") {
             let note = NoteRecord(context: context)
             note.dateCreated = Date() as NSDate?
