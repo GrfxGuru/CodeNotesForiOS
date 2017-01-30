@@ -70,6 +70,7 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         } else {
             let recordCount = (UIApplication.shared.delegate as! AppDelegate).notes.count
             (UIApplication.shared.delegate as! AppDelegate).notes.remove(at: recordCount-1)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
             sectionsVC.tableView.reloadData()
             self.splitViewController?.preferredDisplayMode = .primaryOverlay
         }
