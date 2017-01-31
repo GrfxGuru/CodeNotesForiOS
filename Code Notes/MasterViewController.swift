@@ -107,6 +107,7 @@ class MasterViewController: UITableViewController {
     func getData() {
         do {
             (UIApplication.shared.delegate as! AppDelegate).notes = try context.fetch(NoteRecord.fetchRequest())
+            (UIApplication.shared.delegate as! AppDelegate).languages = try context.fetch(LanguageList.fetchRequest())
         } catch {
             print("Data Fetch Failed")
         }

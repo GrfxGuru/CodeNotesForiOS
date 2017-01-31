@@ -2,8 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="LanguageList" representedClassName="LanguageList" syncable="YES" codeGenerationType="class">
         <attribute name="languageIcon" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="languageID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="languageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="languageName" attributeType="String" indexed="YES" syncable="YES"/>
     </entity>
     <entity name="NoteRecord" representedClassName="NoteRecord" syncable="YES" codeGenerationType="class">
         <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
@@ -14,6 +13,6 @@
     </entity>
     <elements>
         <element name="NoteRecord" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="LanguageList" positionX="-63" positionY="18" width="128" height="90"/>
+        <element name="LanguageList" positionX="-63" positionY="18" width="128" height="75"/>
     </elements>
 </model>
