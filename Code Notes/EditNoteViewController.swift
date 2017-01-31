@@ -27,6 +27,12 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         fieldNoteName.becomeFirstResponder()
         languagePicker.delegate = self
         fieldNoteLanguage.inputView = languagePicker
+        
+        // Theme the app
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.cyan]
+
     }
 
     override func didReceiveMemoryWarning() {
