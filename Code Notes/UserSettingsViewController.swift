@@ -29,7 +29,6 @@ class UserSettingsViewController: UIViewController {
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.cyan]
-
     }
     
     // MARK: - Segues
