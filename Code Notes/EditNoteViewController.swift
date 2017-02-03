@@ -16,8 +16,9 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var fieldNoteName: UITextField!
     @IBOutlet weak var fieldNoteLanguage: UITextField!
     @IBOutlet weak var fieldNoteContent: UITextView!
-    let pickerDataSource = LanguageListSingleton.dataContainer.dataArray
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+    var pickerDataSource = (UIApplication.shared.delegate as! AppDelegate).languages
     var currentNoteIndex: Int = 0
 
     override func viewDidLoad() {
@@ -64,7 +65,6 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
         let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
         if (segue.identifier == "storeNote") {
-            let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
             let note = appDelegate.notes[currentNoteIndex]
             note.dateCreated = Date() as NSDate?
             note.dateModified = Date() as NSDate?
@@ -96,10 +96,10 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         // TODO: Replace with proper data
-        return pickerDataSource[row]
+        return pickerDataSource[row].languageName
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        fieldNoteLanguage.text = pickerDataSource[row]
+        fieldNoteLanguage.text = pickerDataSource[row].languageName
     }
 }
