@@ -19,9 +19,7 @@
 		D069F0751E1CAE91008C79E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D069F0731E1CAE91008C79E7 /* LaunchScreen.storyboard */; };
 		D069F0801E1CAE91008C79E7 /* Code_NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F07F1E1CAE91008C79E7 /* Code_NotesTests.swift */; };
 		D069F08B1E1CAE91008C79E7 /* Code_NotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F08A1E1CAE91008C79E7 /* Code_NotesUITests.swift */; };
-		D069F0991E1CC416008C79E7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F0981E1CC416008C79E7 /* Note.swift */; };
 		D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */; };
-		D0B909B21E2E9A110058DECA /* DataStoreSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B909B11E2E9A110058DECA /* DataStoreSingleton.swift */; };
 		D0FA24551E3810F200EB54BE /* CodeNotes Icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D0FA24451E3810F200EB54BE /* CodeNotes Icon.pdf */; };
 		D0FA24561E3810F200EB54BE /* CodeNotesIcon.sketch in Resources */ = {isa = PBXBuildFile; fileRef = D0FA24461E3810F200EB54BE /* CodeNotesIcon.sketch */; };
 		D0FA24571E3810F200EB54BE /* New icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FA24481E3810F200EB54BE /* New icon-60@2x.png */; };
@@ -76,9 +74,7 @@
 		D069F0861E1CAE91008C79E7 /* Code NotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Code NotesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D069F08A1E1CAE91008C79E7 /* Code_NotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code_NotesUITests.swift; sourceTree = "<group>"; };
 		D069F08C1E1CAE91008C79E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D069F0981E1CC416008C79E7 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = ValueObjects/Note.swift; sourceTree = "<group>"; };
 		D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteListTableViewCell.swift; path = ValueObjects/NoteListTableViewCell.swift; sourceTree = "<group>"; };
-		D0B909B11E2E9A110058DECA /* DataStoreSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreSingleton.swift; sourceTree = "<group>"; };
 		D0FA24451E3810F200EB54BE /* CodeNotes Icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "CodeNotes Icon.pdf"; sourceTree = "<group>"; };
 		D0FA24461E3810F200EB54BE /* CodeNotesIcon.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = CodeNotesIcon.sketch; sourceTree = "<group>"; };
 		D0FA24481E3810F200EB54BE /* New icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New icon-60@2x.png"; sourceTree = "<group>"; };
@@ -193,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */,
-				D069F0981E1CC416008C79E7 /* Note.swift */,
 			);
 			name = ValueObjects;
 			sourceTree = "<group>";
@@ -201,7 +196,6 @@
 		D0B909B01E2E99DA0058DECA /* Data Handling */ = {
 			isa = PBXGroup;
 			children = (
-				D0B909B11E2E9A110058DECA /* DataStoreSingleton.swift */,
 				5125A76B1E37385300685030 /* LanguageListSingleton.swift */,
 			);
 			name = "Data Handling";
@@ -396,10 +390,8 @@
 				D0FF5E771E29841600F4678E /* EditNoteViewController.swift in Sources */,
 				5125A76C1E37385300685030 /* LanguageListSingleton.swift in Sources */,
 				D069F0691E1CAE91008C79E7 /* AppDelegate.swift in Sources */,
-				D0B909B21E2E9A110058DECA /* DataStoreSingleton.swift in Sources */,
 				D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */,
 				51AB1B0A1E3C6F2A00774E7E /* Model.xcdatamodeld in Sources */,
-				D069F0991E1CC416008C79E7 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
