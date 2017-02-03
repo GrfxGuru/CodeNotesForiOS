@@ -20,7 +20,7 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        self.tableView.rowHeight = 100
+        self.tableView.rowHeight = 95
         
         // Theme the app
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
@@ -49,7 +49,7 @@ class MasterViewController: UITableViewController {
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 controller.detailItem = indexPath.row
-                self.splitViewController?.preferredDisplayMode = .primaryHidden
+                //self.splitViewController?.preferredDisplayMode = .primaryHidden
             }
         } else if segue.identifier == "addNote" {
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -73,7 +73,7 @@ class MasterViewController: UITableViewController {
             if ((self.tableView.indexPathForSelectedRow) != nil) {
                 self.tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
             }
-            self.splitViewController?.preferredDisplayMode = .primaryHidden
+            //self.splitViewController?.preferredDisplayMode = .primaryHidden
         }
     }
 

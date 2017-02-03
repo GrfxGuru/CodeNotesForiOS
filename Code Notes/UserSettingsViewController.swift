@@ -36,9 +36,9 @@ class UserSettingsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "saveSettings" {
             UserDefaults.standard.set(swConfirmNoteDeletion.isOn, forKey: "confirmNoteDeletion")
-            self.splitViewController?.preferredDisplayMode = .primaryOverlay
+            //self.splitViewController?.preferredDisplayMode = .primaryOverlay
         } else if (segue.identifier == "cancelButton") {
-            self.splitViewController?.preferredDisplayMode = .primaryOverlay
+            //self.splitViewController?.preferredDisplayMode = .primaryOverlay
         }
     }
 
