@@ -59,16 +59,13 @@ class UserSettingsViewController: UIViewController {
     }
     
     @IBAction func btnResetLanguageList(_ sender: UIButton) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LanguageList")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        do {
-            try context.execute(deleteRequest)
-        } catch let error as NSError {
-            print(error)
-        }
+        (UIApplication.shared.delegate as! AppDelegate).languageListManagement.createLanguages()
     }
+    
+    @IBAction func btnClearLanguageList(_ sender: UIButton) {
+        (UIApplication.shared.delegate as! AppDelegate).languageListManagement.clearLanguages()
+    }
+
     /*
     // MARK: - Navigation
 

@@ -84,7 +84,7 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (UIApplication.shared.delegate as! AppDelegate).notes.count //DataStoreSingleton.dataContainer.dataArray.count
+        return (UIApplication.shared.delegate as! AppDelegate).notes.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
