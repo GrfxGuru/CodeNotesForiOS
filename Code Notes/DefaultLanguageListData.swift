@@ -11,7 +11,10 @@ import CoreData
 
 class DefaultLanguageListData: NSObject {
     
-    let defaultLanguages = [String] ( arrayLiteral: "Swift", "C++", "HTML", "CSS" )
+    let defaultLanguages = [String] ( arrayLiteral: "Java", "C#", "C++", "JavaScript", "PHP",
+                                                    "Python", "Ruby", "C", "Objective-C", "Scala",
+                                                    "CSS", "Perl", "Swift", "HTML", "SASS",
+                                                    "LESS", "MarkDown", "Bash", "Go", "Lua" )
     
     func createLanguages() {
         self.clearLanguages()

@@ -33,7 +33,6 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.cyan]
-
     }
 
     override func didReceiveMemoryWarning() {
