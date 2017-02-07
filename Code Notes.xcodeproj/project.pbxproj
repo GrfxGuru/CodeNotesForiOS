@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5125A76C1E37385300685030 /* LanguageListSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125A76B1E37385300685030 /* LanguageListSingleton.swift */; };
 		514C91201E344F4C00130EAE /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */; };
+		516492F61E496AE000603880 /* LanguageListManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516492F51E496AE000603880 /* LanguageListManagementViewController.swift */; };
 		51AB1B0A1E3C6F2A00774E7E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51AB1B081E3C6F2A00774E7E /* Model.xcdatamodeld */; };
 		D00FB67C1E26F06100DAA7C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00FB67B1E26F06100DAA7C7 /* Main.storyboard */; };
 		D0239A551E45328E00A55A6F /* DefaultLanguageListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0239A541E45328E00A55A6F /* DefaultLanguageListData.swift */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		5125A76B1E37385300685030 /* LanguageListSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageListSingleton.swift; sourceTree = "<group>"; };
 		514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
+		516492F51E496AE000603880 /* LanguageListManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageListManagementViewController.swift; sourceTree = "<group>"; };
 		51AB1B091E3C6F2A00774E7E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D00FB67B1E26F06100DAA7C7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D0239A541E45328E00A55A6F /* DefaultLanguageListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultLanguageListData.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */,
 				D0FF5E761E29841600F4678E /* EditNoteViewController.swift */,
 				514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */,
+				516492F51E496AE000603880 /* LanguageListManagementViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				516492F61E496AE000603880 /* LanguageListManagementViewController.swift in Sources */,
 				D069F06D1E1CAE91008C79E7 /* DetailViewController.swift in Sources */,
 				D0351FB51E24168A00C1DF53 /* ViewNoteViewController.swift in Sources */,
 				D069F06B1E1CAE91008C79E7 /* MasterViewController.swift in Sources */,
