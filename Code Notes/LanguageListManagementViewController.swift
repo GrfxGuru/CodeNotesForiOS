@@ -28,9 +28,11 @@ class LanguageListManagementViewController: UIViewController {
     }
     
     @IBAction func btnResetLanguages(_ sender: UIButton) {
+        (UIApplication.shared.delegate as! AppDelegate).languageListManagement.createLanguages()
     }
     
     @IBAction func btnClearAllLanguages(_ sender: UIButton) {
+        (UIApplication.shared.delegate as! AppDelegate).languageListManagement.clearLanguages()
     }
     
     /*

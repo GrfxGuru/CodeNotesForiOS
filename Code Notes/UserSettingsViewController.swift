@@ -57,14 +57,6 @@ class UserSettingsViewController: UIViewController {
         sectionsVC.getData()
         sectionsVC.tableView.reloadData()
     }
-    
-    @IBAction func btnResetLanguageList(_ sender: UIButton) {
-        (UIApplication.shared.delegate as! AppDelegate).languageListManagement.createLanguages()
-    }
-    
-    @IBAction func btnClearLanguageList(_ sender: UIButton) {
-        (UIApplication.shared.delegate as! AppDelegate).languageListManagement.clearLanguages()
-    }
 
     /*
     // MARK: - Navigation
