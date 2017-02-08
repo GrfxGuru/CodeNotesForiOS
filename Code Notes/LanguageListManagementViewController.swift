@@ -8,12 +8,15 @@
 
 import UIKit
 
-class LanguageListManagementViewController: UIViewController {
+class LanguageListManagementViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var languageTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        languageTable.delegate = self
+        languageTable.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,5 +47,27 @@ class LanguageListManagementViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Table View
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (UIApplication.shared.delegate as! AppDelegate).languages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "languageCell", for: indexPath) as! LanguageListTableViewCell
+        let language = (UIApplication.shared.delegate as! AppDelegate).languages[indexPath.row]
+        cell.lblLanguageName.text = language.languageName
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
 
 }
