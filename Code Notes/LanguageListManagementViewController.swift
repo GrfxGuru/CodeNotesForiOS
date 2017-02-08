@@ -17,6 +17,9 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
         // Do any additional setup after loading the view.
         languageTable.delegate = self
         languageTable.dataSource = self
+        languageTable.layer.masksToBounds = true
+        languageTable.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
+        languageTable.layer.borderWidth = 1.0
     }
 
     override func didReceiveMemoryWarning() {
