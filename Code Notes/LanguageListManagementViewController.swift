@@ -28,9 +28,11 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
     }
     
     @IBAction func btnAddLanguage(_ sender: UIButton) {
+        // TODO: Add functionality for adding a language
     }
 
     @IBAction func btnRemoveLanguage(_ sender: UIButton) {
+        // TODO: Add functionality for removing a selected language
     }
     
     @IBAction func btnResetLanguages(_ sender: UIButton) {
