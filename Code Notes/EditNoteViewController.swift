@@ -37,6 +37,9 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         fieldNoteContent.layer.masksToBounds = true
         fieldNoteContent.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
         fieldNoteContent.layer.borderWidth = 1.0
+        fieldNoteName.layer.masksToBounds = true
+        fieldNoteName.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
+        fieldNoteName.layer.borderWidth = 1.0
     }
 
     override func didReceiveMemoryWarning() {
