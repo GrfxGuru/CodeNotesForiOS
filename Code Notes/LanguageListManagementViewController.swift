@@ -33,6 +33,16 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
 
     @IBAction func btnRemoveLanguage(_ sender: UIButton) {
         // TODO: Add functionality for removing a selected language
+        if ( languageTable.indexPathForSelectedRow == nil ) {
+            let alertController = UIAlertController(title: "", message: "Please Select a Language First", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel) {
+                (action:UIAlertAction!) in
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            // TODO: Delete selected language
+        }
     }
     
     @IBAction func btnResetLanguages(_ sender: UIButton) {
