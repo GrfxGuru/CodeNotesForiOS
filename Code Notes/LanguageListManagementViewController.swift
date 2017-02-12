@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class LanguageListManagementViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var languageTable: UITableView!
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,6 +22,8 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
         languageTable.layer.masksToBounds = true
         languageTable.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
         languageTable.layer.borderWidth = 1.0
+        getData()
+        languageTable.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,15 +46,28 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
             self.present(alertController, animated: true, completion: nil)
         } else {
             // TODO: Delete selected language
+            let selectedID = languageTable.indexPathForSelectedRow
+            if let cellNum = selectedID?[1] {
+                let language = (UIApplication.shared.delegate as! AppDelegate).languages[cellNum]
+                //let deleteRequest = NSBatchDeleteRequest(objectIDs: [language.objectID])
+                (UIApplication.shared.delegate as! AppDelegate).languageListManagement.removeLanguage(languageID: language.objectID)
+                
+                getData()
+                languageTable.reloadData()
+            }
         }
     }
     
     @IBAction func btnResetLanguages(_ sender: UIButton) {
         (UIApplication.shared.delegate as! AppDelegate).languageListManagement.createLanguages()
+        getData()
+        languageTable.reloadData()
     }
     
     @IBAction func btnClearAllLanguages(_ sender: UIButton) {
         (UIApplication.shared.delegate as! AppDelegate).languageListManagement.clearLanguages()
+        getData()
+        languageTable.reloadData()
     }
     
     /*
@@ -77,12 +94,21 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
         let cell = tableView.dequeueReusableCell(withIdentifier: "languageCell", for: indexPath) as! LanguageListTableViewCell
         let language = (UIApplication.shared.delegate as! AppDelegate).languages[indexPath.row]
         cell.lblLanguageName.text = language.languageName
+        cell.languageID = language.languageID
         return cell
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
+    }
+    
+    func getData() {
+        do {
+            (UIApplication.shared.delegate as! AppDelegate).languages = try context.fetch(LanguageList.fetchRequest())
+        } catch {
+            print("Data Fetch Failed")
+        }
     }
 
 }

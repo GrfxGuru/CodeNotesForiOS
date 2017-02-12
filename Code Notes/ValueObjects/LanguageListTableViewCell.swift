@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class LanguageListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblLanguageName: UILabel!
+    var languageID:Int32 = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()

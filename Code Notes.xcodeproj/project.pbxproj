@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5125A76C1E37385300685030 /* LanguageListSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5125A76B1E37385300685030 /* LanguageListSingleton.swift */; };
 		514C91201E344F4C00130EAE /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */; };
 		516492F61E496AE000603880 /* LanguageListManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516492F51E496AE000603880 /* LanguageListManagementViewController.swift */; };
 		517F94AF1E4ACEC400EA0A8A /* LanguageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F94AE1E4ACEC400EA0A8A /* LanguageListTableViewCell.swift */; };
@@ -59,7 +58,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5125A76B1E37385300685030 /* LanguageListSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageListSingleton.swift; sourceTree = "<group>"; };
 		514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		516492F51E496AE000603880 /* LanguageListManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageListManagementViewController.swift; sourceTree = "<group>"; };
 		517F94AE1E4ACEC400EA0A8A /* LanguageListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageListTableViewCell.swift; path = ValueObjects/LanguageListTableViewCell.swift; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 		D0B909B01E2E99DA0058DECA /* Data Handling */ = {
 			isa = PBXGroup;
 			children = (
-				5125A76B1E37385300685030 /* LanguageListSingleton.swift */,
 				D0239A541E45328E00A55A6F /* DefaultLanguageListData.swift */,
 			);
 			name = "Data Handling";
@@ -399,7 +396,6 @@
 				D0239A551E45328E00A55A6F /* DefaultLanguageListData.swift in Sources */,
 				514C91201E344F4C00130EAE /* UserSettingsViewController.swift in Sources */,
 				D0FF5E771E29841600F4678E /* EditNoteViewController.swift in Sources */,
-				5125A76C1E37385300685030 /* LanguageListSingleton.swift in Sources */,
 				D069F0691E1CAE91008C79E7 /* AppDelegate.swift in Sources */,
 				517F94AF1E4ACEC400EA0A8A /* LanguageListTableViewCell.swift in Sources */,
 				D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */,
