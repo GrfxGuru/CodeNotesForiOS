@@ -19,16 +19,16 @@ class UserSettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
         let displayDeleteAlert = UserDefaults.standard.bool(forKey: "confirmNoteDeletion")
         swConfirmNoteDeletion.isOn = displayDeleteAlert
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
         
         // Theme the app
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.cyan]
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.        
     }
     
     // MARK: - Segues
