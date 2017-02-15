@@ -38,6 +38,18 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
     
     @IBAction func btnAddLanguage(_ sender: UIButton) {
         // TODO: Add functionality for adding a language
+        
+        let alertController = UIAlertController(title: "New Language", message: "Enter Language Name", preferredStyle: .alert)
+        let addAction = UIAlertAction(title: "Add", style: .default) {
+            (action:UIAlertAction!) in
+            // TODO: Save new language
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+            (action:UIAlertAction!) in
+        }
+        alertController.addAction(addAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 
     @IBAction func btnRemoveLanguage(_ sender: UIButton) {
@@ -50,11 +62,9 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
-            // TODO: Delete selected language
             let selectedID = languageTable.indexPathForSelectedRow
             if let cellNum = selectedID?[1] {
                 let language = (UIApplication.shared.delegate as! AppDelegate).languages[cellNum]
-                //let deleteRequest = NSBatchDeleteRequest(objectIDs: [language.objectID])
                 (UIApplication.shared.delegate as! AppDelegate).languageListManagement.removeLanguage(languageID: language.objectID)
                 
                 getData()
