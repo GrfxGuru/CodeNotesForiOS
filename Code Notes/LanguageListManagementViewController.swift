@@ -13,6 +13,7 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
 
     @IBOutlet weak var languageTable: UITableView!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +51,9 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
          handler: {[weak self]
          (paramAction:UIAlertAction!) in
          if let textFields = alertController.textFields{
-         let theTextFields = textFields as [UITextField]
-         let enteredText = theTextFields[0].text
-         // TODO: Save the language
+            let theTextFields = textFields as [UITextField]
+            let enteredText = theTextFields[0].text
+            self?.saveNewLanguage(languageName: enteredText!)
          }  
          })
  
@@ -62,6 +63,18 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
         alertController.addAction(addAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func saveNewLanguage(languageName:String) {
+        if (languageName != "") {
+            let newLanguage = LanguageList(context: context)
+            newLanguage.languageName = languageName
+            newLanguage.languageID = 0 //TODO: Replace with next ID
+            (UIApplication.shared.delegate as! AppDelegate).languages.append(newLanguage)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            getData()
+            languageTable.reloadData()
+        }
     }
 
     @IBAction func btnRemoveLanguage(_ sender: UIButton) {
