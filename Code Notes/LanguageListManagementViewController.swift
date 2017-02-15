@@ -40,10 +40,22 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
         // TODO: Add functionality for adding a language
         
         let alertController = UIAlertController(title: "New Language", message: "Enter Language Name", preferredStyle: .alert)
-        let addAction = UIAlertAction(title: "Add", style: .default) {
-            (action:UIAlertAction!) in
-            // TODO: Save new language
-        }
+        alertController.addTextField(
+            configurationHandler: {(textField: UITextField!) in
+                textField.placeholder = "Language Name"
+        })
+        
+         let addAction = UIAlertAction(title: "Add",
+         style: .default,
+         handler: {[weak self]
+         (paramAction:UIAlertAction!) in
+         if let textFields = alertController.textFields{
+         let theTextFields = textFields as [UITextField]
+         let enteredText = theTextFields[0].text
+         // TODO: Save the language
+         }  
+         })
+ 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
             (action:UIAlertAction!) in
         }
