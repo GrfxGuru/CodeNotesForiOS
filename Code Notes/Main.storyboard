@@ -35,7 +35,7 @@
                         <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1045" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                     <toolbarItems/>
@@ -54,20 +54,20 @@
                         <viewControllerLayoutGuide type="bottom" id="PFR-Oe-fsg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gVL-8f-FZB">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1045" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display confirmation when removing a note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSQ-dv-gDh">
-                                <rect key="frame" x="20" y="68" width="330" height="21"/>
+                                <rect key="frame" x="20" y="112" width="330" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="puf-ec-rnB">
-                                <rect key="frame" x="1297" y="58" width="51" height="31"/>
+                                <rect key="frame" x="976" y="102" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Notes 1.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePc-uK-9cb">
-                                <rect key="frame" x="477" y="806" width="414" height="21"/>
+                                <rect key="frame" x="316" y="806" width="414" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="mtR-IV-Dma"/>
                                     <constraint firstAttribute="height" constant="21" id="zKD-Xs-re6"/>
@@ -77,7 +77,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Peter Witham" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7D-iZ-0oK">
-                                <rect key="frame" x="621" y="835" width="127" height="21"/>
+                                <rect key="frame" x="460" y="835" width="127" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="127" id="q9g-yU-1TP"/>
                                     <constraint firstAttribute="height" constant="21" id="yOx-cV-OJx"/>
@@ -87,7 +87,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://www.peterwitham.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCW-O2-78c">
-                                <rect key="frame" x="569" y="886" width="231" height="21"/>
+                                <rect key="frame" x="408" y="886" width="231" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="clH-vc-jGz"/>
                                 </constraints>
@@ -96,10 +96,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Application Icon" translatesAutoresizingMaskIntoConstraints="NO" id="0PG-CO-bzo">
-                                <rect key="frame" x="621" y="577" width="128" height="172"/>
+                                <rect key="frame" x="460" y="621" width="128" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYo-qd-Fb8">
-                                <rect key="frame" x="575" y="464" width="217" height="56"/>
+                                <rect key="frame" x="414" y="508" width="217" height="56"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="217" id="GHU-ei-LqX"/>
@@ -114,7 +114,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABV-xI-rDy">
-                                <rect key="frame" x="576" y="400" width="215" height="56"/>
+                                <rect key="frame" x="415" y="444" width="215" height="56"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="O8k-zG-ceL"/>
@@ -182,11 +182,11 @@
                         <viewControllerLayoutGuide type="bottom" id="tTb-lP-lYS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0k3-uZ-D5L">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1045" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zb5-fX-iSc">
-                                <rect key="frame" x="923" y="139" width="423" height="836"/>
+                                <rect key="frame" x="602" y="139" width="423" height="836"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="languageCell" id="6lP-oI-CN3" customClass="LanguageListTableViewCell" customModule="Code_Notes" customModuleProvider="target">
@@ -216,7 +216,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fx-Iv-axF">
-                                <rect key="frame" x="923" y="87" width="423" height="35"/>
+                                <rect key="frame" x="602" y="87" width="423" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Qai-Y9-r6t"/>
                                     <constraint firstAttribute="width" constant="423" id="cMl-kR-9f3"/>
@@ -346,12 +346,14 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lW0-em-yV1">
                                 <rect key="frame" x="126" y="80" width="899" height="30"/>
+                                <color key="backgroundColor" red="0.90245535710000002" green="0.93849330350000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zcv-DL-kTV">
                                 <rect key="frame" x="126" y="118" width="470" height="30"/>
+                                <color key="backgroundColor" red="0.90245535710000002" green="0.93849330350000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="470" id="o9k-Vf-6Fs"/>
                                 </constraints>
@@ -361,9 +363,10 @@
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViT-Ov-FJh">
                                 <rect key="frame" x="126" y="156" width="899" height="848"/>
+                                <color key="backgroundColor" red="0.90245535710000002" green="0.93849330350000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptC-UY-4Bb">
                                 <rect key="frame" x="31" y="123" width="87" height="21"/>
@@ -612,6 +615,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="VLY-uh-XhX" secondAttribute="trailing" id="Zvj-HQ-QZf"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.90245535714285718" green="0.93849330346762727" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="noteDate" destination="77C-7f-btK" id="bOI-jx-EHF"/>
                                     <outlet property="noteLanguage" destination="cwn-e8-ghN" id="PGQ-Md-fOT"/>
@@ -736,8 +740,8 @@
         <image name="Application Icon" width="167" height="167"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="710-iQ-EFa"/>
-        <segue reference="y8A-uw-ogU"/>
-        <segue reference="cas-py-WcE"/>
+        <segue reference="5k5-nT-6qQ"/>
+        <segue reference="oeQ-QD-S3F"/>
+        <segue reference="Udk-DC-hn1"/>
     </inferredMetricsTieBreakers>
 </document>
