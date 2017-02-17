@@ -29,7 +29,7 @@ class MasterViewController: UITableViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
+        //self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
         getData()
         self.tableView.reloadData()
@@ -73,7 +73,6 @@ class MasterViewController: UITableViewController {
             if ((self.tableView.indexPathForSelectedRow) != nil) {
                 self.tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
             }
-            //self.splitViewController?.preferredDisplayMode = .primaryHidden
         }
     }
 
