@@ -27,11 +27,7 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.configureView()
         fieldNoteName.becomeFirstResponder()
         languagePicker.delegate = self
-        fieldNoteLanguage.inputView = languagePicker
-        
-        // Theme the app
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blue]
-        
+        fieldNoteLanguage.inputView = languagePicker        
         fieldNoteContent.layer.masksToBounds = true
         fieldNoteContent.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
         fieldNoteContent.layer.borderWidth = 1.0
