@@ -18,11 +18,6 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        // Theme the app
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.cyan]
-        
         languageTable.delegate = self
         languageTable.dataSource = self
         languageTable.layer.masksToBounds = true

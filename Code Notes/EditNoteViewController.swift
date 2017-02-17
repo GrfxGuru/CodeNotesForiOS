@@ -30,9 +30,7 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         fieldNoteLanguage.inputView = languagePicker
         
         // Theme the app
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.cyan]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blue]
         
         fieldNoteContent.layer.masksToBounds = true
         fieldNoteContent.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
