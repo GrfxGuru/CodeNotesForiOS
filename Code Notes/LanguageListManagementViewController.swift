@@ -12,19 +12,21 @@ import CoreData
 class LanguageListManagementViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var languageTable: UITableView!
+    @IBOutlet weak var tblLanguages: UITableView!
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        languageTable.delegate = self
-        languageTable.dataSource = self
-        languageTable.layer.masksToBounds = true
-        languageTable.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
-        languageTable.layer.borderWidth = 1.0
+        tblLanguages.delegate = self
+        tblLanguages.dataSource = self
+        tblLanguages.layer.masksToBounds = true
+        tblLanguages.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
+        tblLanguages.layer.borderWidth = 1.0
         getData()
-        languageTable.reloadData()
+        tblLanguages.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,13 +70,13 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
             (UIApplication.shared.delegate as! AppDelegate).languages.append(newLanguage)
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             getData()
-            languageTable.reloadData()
+            tblLanguages.reloadData()
         }
     }
 
     @IBAction func btnRemoveLanguage(_ sender: UIButton) {
         // TODO: Add functionality for removing a selected language
-        if ( languageTable.indexPathForSelectedRow == nil ) {
+        if ( tblLanguages.indexPathForSelectedRow == nil ) {
             let alertController = UIAlertController(title: "", message: "Please Select a Language First", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .cancel) {
                 (action:UIAlertAction!) in
@@ -82,13 +84,13 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
-            let selectedID = languageTable.indexPathForSelectedRow
+            let selectedID = tblLanguages.indexPathForSelectedRow
             if let cellNum = selectedID?[1] {
                 let language = (UIApplication.shared.delegate as! AppDelegate).languages[cellNum]
                 (UIApplication.shared.delegate as! AppDelegate).languageListManagement.removeLanguage(languageID: language.objectID)
                 
                 getData()
-                languageTable.reloadData()
+                tblLanguages.reloadData()
             }
         }
     }
@@ -96,13 +98,13 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
     @IBAction func btnResetLanguages(_ sender: UIButton) {
         (UIApplication.shared.delegate as! AppDelegate).languageListManagement.createLanguages()
         getData()
-        languageTable.reloadData()
+        tblLanguages.reloadData()
     }
     
     @IBAction func btnClearAllLanguages(_ sender: UIButton) {
         (UIApplication.shared.delegate as! AppDelegate).languageListManagement.clearLanguages()
         getData()
-        languageTable.reloadData()
+        tblLanguages.reloadData()
     }
     
     /*
@@ -126,7 +128,7 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "languageCell", for: indexPath) as! LanguageListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "languageCellb", for: indexPath) as! LanguageListTableViewCell
         let language = (UIApplication.shared.delegate as! AppDelegate).languages[indexPath.row]
         cell.lblLanguageName.text = language.languageName
         cell.languageID = language.languageID
