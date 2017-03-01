@@ -95,6 +95,21 @@ class MasterViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let note = (UIApplication.shared.delegate as! AppDelegate).notes[indexPath.row]
+            let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            do {
+                try context.execute(deleteRequest)
+            } catch let error as NSError {
+                print(error)
+            }
+            getData()
+            self.tableView.reloadData()
+        }
+    }
 
     // MARK: - Data Handling
     
