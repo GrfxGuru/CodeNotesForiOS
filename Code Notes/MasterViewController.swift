@@ -98,16 +98,23 @@ class MasterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let note = (UIApplication.shared.delegate as! AppDelegate).notes[indexPath.row]
-            let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            do {
-                try context.execute(deleteRequest)
-            } catch let error as NSError {
-                print(error)
+            
+            let displayAlert = UserDefaults.standard.bool(forKey: "confirmNoteDeletion")
+            if (displayAlert) {
+                let alertController = UIAlertController(title: "Delete Note?", message: "Are you sure you want to delete this note?", preferredStyle: .alert)
+                let YesAction = UIAlertAction(title: "Yes", style: .default) {
+                    (action:UIAlertAction!) in
+                    self.deleteRecord(tableIndexToDelete: indexPath.row)
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
+                    (action:UIAlertAction!) in
+                }
+                alertController.addAction(YesAction)
+                alertController.addAction(cancelAction)
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                self.deleteRecord(tableIndexToDelete: indexPath.row)
             }
-            getData()
-            self.tableView.reloadData()
         }
     }
 
@@ -126,5 +133,18 @@ class MasterViewController: UITableViewController {
         } catch {
             print("Data Fetch Failed")
         }
+    }
+    
+    func deleteRecord(tableIndexToDelete:Int) {
+        let note = (UIApplication.shared.delegate as! AppDelegate).notes[tableIndexToDelete]
+        let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            try context.execute(deleteRequest)
+        } catch let error as NSError {
+            print(error)
+        }
+        getData()
+        self.tableView.reloadData()
     }
 }
