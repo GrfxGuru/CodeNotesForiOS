@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="ipad12_9" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,14 +18,53 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Application Icon" translatesAutoresizingMaskIntoConstraints="NO" id="S1Z-fy-Asa">
+                                <rect key="frame" x="563" y="383" width="240" height="262"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="VZA-VG-T8N"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KED-P2-wv1">
+                                <rect key="frame" x="606" y="293" width="154" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="QP6-bt-KYP"/>
+                                    <constraint firstAttribute="width" constant="154" id="gMA-j5-F6Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The note taking application for people that write code!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgj-db-rSR">
+                                <rect key="frame" x="476" y="710" width="414" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Xgw-9R-BwE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="S1Z-fy-Asa" firstAttribute="top" secondItem="KED-P2-wv1" secondAttribute="bottom" constant="69" id="JQl-S6-HjM"/>
+                            <constraint firstItem="S1Z-fy-Asa" firstAttribute="centerX" secondItem="Jgj-db-rSR" secondAttribute="centerX" id="Lil-Jy-JEh"/>
+                            <constraint firstItem="Jgj-db-rSR" firstAttribute="top" secondItem="S1Z-fy-Asa" secondAttribute="bottom" constant="65" id="Lun-KT-uWh"/>
+                            <constraint firstItem="KED-P2-wv1" firstAttribute="centerX" secondItem="S1Z-fy-Asa" secondAttribute="centerX" id="VNz-XT-GNQ"/>
+                            <constraint firstItem="KED-P2-wv1" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="273" id="VS9-yo-FlT"/>
+                            <constraint firstItem="KED-P2-wv1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="htK-dF-mzQ"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Jgj-db-rSR" secondAttribute="bottom" constant="293" id="qcG-Cs-KpH"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.708638360175691" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Application Icon" width="167" height="167"/>
+    </resources>
 </document>
