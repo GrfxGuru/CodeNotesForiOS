@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Evergreen
 
 class ViewNoteViewController: UIViewController {
     
@@ -42,6 +43,7 @@ class ViewNoteViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if ( segue.identifier == "editNote" ) {
+            log("Switching to edit mode", forLevel: .debug)
             let controller = (segue.destination as! UINavigationController).topViewController as! EditNoteViewController
                 controller.title = "Edit Note"
                 controller.currentNoteIndex = detailItem
@@ -59,6 +61,7 @@ class ViewNoteViewController: UIViewController {
     }
     
     @IBAction func btnDeleteNote(_ sender: UIButton) {
+        log("Deleting the note", forLevel: .debug)
         let displayAlert = UserDefaults.standard.bool(forKey: "confirmNoteDeletion")
         if (displayAlert) {
             let alertController = UIAlertController(title: "Delete Note?", message: "Are you sure you want to delete this note?", preferredStyle: .alert)
@@ -80,6 +83,7 @@ class ViewNoteViewController: UIViewController {
     }
     
     func deleteRecord() {
+        log("Deleting the record from CoreData", forLevel: .debug)
         let note = (UIApplication.shared.delegate as! AppDelegate).notes[detailItem]
         let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -92,6 +96,7 @@ class ViewNoteViewController: UIViewController {
     }
     
     func navigateAfterDelete() {
+        log("Navigating after deletion", forLevel: .debug)
         let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
         let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
         sectionsVC.getData()

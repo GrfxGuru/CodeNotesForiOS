@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Evergreen
 
 class MasterViewController: UITableViewController {
 
@@ -48,6 +49,7 @@ class MasterViewController: UITableViewController {
                 //self.splitViewController?.preferredDisplayMode = .primaryHidden
             }
         } else if segue.identifier == "addNote" {
+            log("Adding a new note", forLevel: .debug)
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let newNote = NoteRecord(context: context)
             newNote.dateCreated = Date() as NSDate
@@ -66,6 +68,7 @@ class MasterViewController: UITableViewController {
                 controller.currentNoteIndex = newRow.item
             }
         } else if segue.identifier == "appSettings" {
+            log("Navigating to app settings", forLevel: .debug)
             if ((self.tableView.indexPathForSelectedRow) != nil) {
                 self.tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
             }
@@ -136,6 +139,7 @@ class MasterViewController: UITableViewController {
     }
     
     func deleteRecord(tableIndexToDelete:Int) {
+        log("Deleting the record", forLevel: .debug)
         let note = (UIApplication.shared.delegate as! AppDelegate).notes[tableIndexToDelete]
         let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
