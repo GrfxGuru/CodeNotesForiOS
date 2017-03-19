@@ -1,0 +1,6 @@
+framework module Pods_Code_Notes {
+  umbrella header "Pods-Code Notes-umbrella.h"
+
+  export *
+  module * { export * }
+}

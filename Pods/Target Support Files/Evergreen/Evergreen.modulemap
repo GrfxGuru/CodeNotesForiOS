@@ -1,0 +1,6 @@
+framework module Evergreen {
+  umbrella header "Evergreen-umbrella.h"
+
+  export *
+  module * { export * }
+}
