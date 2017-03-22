@@ -60,6 +60,16 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         fieldNoteContent.text = note.noteContent
     }
     
+    @IBAction func btnClearContents(_ sender: UIButton) {
+        fieldNoteName.text = ""
+        fieldNoteContent.text = ""
+    }
+    
+    @IBAction func btnPasteClipboard(_ sender: UIButton) {
+        if let pasteString = UIPasteboard.general.string {
+            fieldNoteContent.insertText("\n" + pasteString)
+        }
+    }
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

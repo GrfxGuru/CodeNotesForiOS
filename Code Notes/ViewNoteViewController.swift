@@ -107,11 +107,5 @@ class ViewNoteViewController: UIViewController {
     @IBAction func copyToClipboard(_ sender: UIButton) {
         UIPasteboard.general.string = noteCode.text
     }
-    
-    @IBAction func pasteFromClipboard(_ sender: UIButton) {
-        if let pasteString = UIPasteboard.general.string {
-            noteCode.insertText("\n" + pasteString)
-        }
-    }
 
 }
