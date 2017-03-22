@@ -490,12 +490,18 @@
                                 <state key="normal" title="Copy">
                                     <color key="titleColor" red="0.79782366069999999" green="0.47860102570000002" blue="0.22636910730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="copyToClipboard:" destination="Ki3-JN-17H" eventType="touchUpInside" id="FUZ-0F-m38"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUf-iq-EpS">
                                 <rect key="frame" x="20" y="936" width="97" height="30"/>
                                 <state key="normal" title="Paste">
                                     <color key="titleColor" red="0.79782366069999999" green="0.47860102570000002" blue="0.22636910730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="pasteFromClipboard:" destination="Ki3-JN-17H" eventType="touchUpInside" id="cTY-Qj-wc7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.28627450980000002" green="0.3294117647" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
