@@ -61,12 +61,14 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     @IBAction func btnClearContents(_ sender: UIButton) {
+        log("Clearing the contents of the note", forLevel: .debug)
         fieldNoteName.text = ""
         fieldNoteContent.text = ""
     }
     
     @IBAction func btnPasteClipboard(_ sender: UIButton) {
         if let pasteString = UIPasteboard.general.string {
+            log("Appending the clipboard string to the note content", forLevel: .debug)
             fieldNoteContent.insertText("\n" + pasteString)
         }
     }

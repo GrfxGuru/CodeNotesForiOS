@@ -105,6 +105,7 @@ class ViewNoteViewController: UIViewController {
     }
     
     @IBAction func copyToClipboard(_ sender: UIButton) {
+        log("Copying the note content to the clipboard", forLevel: .debug)
         UIPasteboard.general.string = noteCode.text
     }
 
