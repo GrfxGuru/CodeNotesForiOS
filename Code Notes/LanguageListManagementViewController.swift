@@ -14,10 +14,10 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
 
     @IBOutlet weak var languageTable: UITableView!
     @IBOutlet weak var tblLanguages: UITableView!
-    
+
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
-   
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -34,16 +34,14 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func btnAddLanguage(_ sender: UIButton) {
-        // TODO: Add functionality for adding a language
-        
         let alertController = UIAlertController(title: "New Language", message: "Enter Language Name", preferredStyle: .alert)
         alertController.addTextField(
             configurationHandler: {(textField: UITextField!) in
                 textField.placeholder = "Language Name"
         })
-        
+
          let addAction = UIAlertAction(title: "Add",
          style: .default,
          handler: {[weak self]
@@ -52,9 +50,9 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
             let theTextFields = textFields as [UITextField]
             let enteredText = theTextFields[0].text
             self?.saveNewLanguage(languageName: enteredText!)
-         }  
+         }
          })
- 
+
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {
             (action:UIAlertAction!) in
         }
@@ -62,7 +60,7 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
+
     func saveNewLanguage(languageName:String) {
         if (languageName != "") {
             log("Saving the new language", forLevel: .debug)
@@ -77,7 +75,6 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
     }
 
     @IBAction func btnRemoveLanguage(_ sender: UIButton) {
-        // TODO: Add functionality for removing a selected language
         if ( tblLanguages.indexPathForSelectedRow == nil ) {
             let alertController = UIAlertController(title: "", message: "Please Select a Language First", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .cancel) {
@@ -91,27 +88,27 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
             if let cellNum = selectedID?[1] {
                 let language = (UIApplication.shared.delegate as! AppDelegate).languages[cellNum]
                 (UIApplication.shared.delegate as! AppDelegate).languageListManagement.removeLanguage(languageID: language.objectID)
-                
+
                 getData()
                 tblLanguages.reloadData()
             }
         }
     }
-    
+
     @IBAction func btnResetLanguages(_ sender: UIButton) {
         log("Resetting the language list", forLevel: .debug)
         (UIApplication.shared.delegate as! AppDelegate).languageListManagement.createLanguages()
         getData()
         tblLanguages.reloadData()
     }
-    
+
     @IBAction func btnClearAllLanguages(_ sender: UIButton) {
         log("Clearing the language list", forLevel: .debug)
         (UIApplication.shared.delegate as! AppDelegate).languageListManagement.clearLanguages()
         getData()
         tblLanguages.reloadData()
     }
-    
+
     /*
     // MARK: - Navigation
 
@@ -121,17 +118,17 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
         // Pass the selected object to the new view controller.
     }
     */
-    
+
     // MARK: - Table View
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (UIApplication.shared.delegate as! AppDelegate).languages.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "languageCellb", for: indexPath) as! LanguageListTableViewCell
         let language = (UIApplication.shared.delegate as! AppDelegate).languages[indexPath.row]
@@ -139,12 +136,12 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
         cell.languageID = language.languageID
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    
+
     func getData() {
         do {
             (UIApplication.shared.delegate as! AppDelegate).languages = try context.fetch(LanguageList.fetchRequest())

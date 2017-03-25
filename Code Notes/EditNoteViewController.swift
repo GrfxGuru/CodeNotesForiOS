@@ -11,7 +11,7 @@ import CoreData
 import Evergreen
 
 class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    
+
     //var note:Note = Note()
     let languagePicker = UIPickerView()
     @IBOutlet weak var fieldNoteName: UITextField!
@@ -28,7 +28,7 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.configureView()
         fieldNoteName.becomeFirstResponder()
         languagePicker.delegate = self
-        fieldNoteLanguage.inputView = languagePicker        
+        fieldNoteLanguage.inputView = languagePicker
         fieldNoteContent.layer.masksToBounds = true
         fieldNoteContent.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
         fieldNoteContent.layer.borderWidth = 1.0
@@ -41,7 +41,7 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation
@@ -52,20 +52,20 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         // Pass the selected object to the new view controller.
     }
     */
-    
+
     func configureView() {
         let note = (UIApplication.shared.delegate as! AppDelegate).notes[currentNoteIndex]
         fieldNoteName.text = note.noteName
         fieldNoteLanguage.text = note.noteLanguage
         fieldNoteContent.text = note.noteContent
     }
-    
+
     @IBAction func btnClearContents(_ sender: UIButton) {
         log("Clearing the contents of the note", forLevel: .debug)
         fieldNoteName.text = ""
         fieldNoteContent.text = ""
     }
-    
+
     @IBAction func btnPasteClipboard(_ sender: UIButton) {
         if let pasteString = UIPasteboard.general.string {
             log("Appending the clipboard string to the note content", forLevel: .debug)
@@ -73,7 +73,7 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     // MARK: - Segues
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
         let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
@@ -97,23 +97,21 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
             //self.splitViewController?.preferredDisplayMode = .primaryOverlay
         }
     }
-    
+
     // MARK: UIPickerView Delegation
-    
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        // TODO: Replace with data count
         return pickerDataSource.count
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        // TODO: Replace with proper data
         return pickerDataSource[row].languageName
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         fieldNoteLanguage.text = pickerDataSource[row].languageName
     }
