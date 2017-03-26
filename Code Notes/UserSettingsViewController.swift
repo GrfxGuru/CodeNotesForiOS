@@ -14,6 +14,7 @@ class UserSettingsViewController: UIViewController {
 
     @IBOutlet weak var swConfirmNoteDeletion: UISwitch!
     @IBOutlet weak var swPasteReplace: UISwitch!
+    @IBOutlet weak var myWebsite: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,22 @@ class UserSettingsViewController: UIViewController {
         swConfirmNoteDeletion.isOn = displayDeleteAlert
         let pasteReplace = UserDefaults.standard.bool(forKey: "pasteReplace")
         swPasteReplace.isOn = pasteReplace
+        let myWebURL = NSMutableAttributedString(string:"https://peterwitham.com")
+        if myWebURL.createLink(text: "https://peterwitham.com",
+                               URL: "https://peterwitham.com") {
+        myWebsite.attributedText = myWebURL
+        }
+        
+        let myWebsiteTap = UITapGestureRecognizer(target: self, action: #selector(self.tapMyWebsiteURL))
+        myWebsite.isUserInteractionEnabled = true
+        myWebsite.addGestureRecognizer(myWebsiteTap)
     }
-
+    
+    func tapMyWebsiteURL(sender:UITapGestureRecognizer) {
+        UIApplication.shared.open(NSURL(string:"https://peterwitham.com") as! URL,
+                                        options: [:], completionHandler: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -68,4 +83,17 @@ class UserSettingsViewController: UIViewController {
     }
     */
 
+}
+
+extension NSMutableAttributedString {
+    
+    public func createLink(text:String, URL:String) -> Bool {
+        
+        let foundText = self.mutableString.range(of: text)
+        if foundText.location != NSNotFound {
+            self.addAttribute(NSLinkAttributeName, value: URL, range: foundText)
+            return true
+        }
+        return false
+    }
 }

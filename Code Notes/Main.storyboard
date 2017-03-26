@@ -77,10 +77,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://www.peterwitham.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCW-O2-78c">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCW-O2-78c">
                                 <rect key="frame" x="406" y="696" width="231" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="https://www.peterwitham.com">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Application Icon" translatesAutoresizingMaskIntoConstraints="NO" id="0PG-CO-bzo">
@@ -198,6 +205,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="myWebsite" destination="jCW-O2-78c" id="DQ0-ki-F9s"/>
                         <outlet property="swConfirmNoteDeletion" destination="puf-ec-rnB" id="Ogu-ZQ-gyM"/>
                         <outlet property="swPasteReplace" destination="Kzo-pH-SCN" id="N52-R7-aWh"/>
                     </connections>
@@ -219,7 +227,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fx-Iv-axF">
-                                <rect key="frame" x="601.5" y="87" width="423" height="35"/>
+                                <rect key="frame" x="602" y="87" width="423" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="423" id="Sei-FL-SfI"/>
                                 </constraints>
@@ -228,7 +236,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Ww-Sq-OqQ">
-                                <rect key="frame" x="601.5" y="130" width="423" height="874"/>
+                                <rect key="frame" x="602" y="130" width="423" height="874"/>
                                 <color key="backgroundColor" red="0.28627450980000002" green="0.3294117647" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="languageCellb" id="ixv-W2-cRw" customClass="LanguageListTableViewCell" customModule="Code_Notes" customModuleProvider="target">
@@ -259,7 +267,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tur-ng-sI0">
-                                <rect key="frame" x="428.5" y="130" width="130" height="174"/>
+                                <rect key="frame" x="429" y="130" width="130" height="174"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btK-vV-Duj">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="36"/>
@@ -366,7 +374,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lW0-em-yV1">
-                                <rect key="frame" x="126" y="80" width="899" height="30"/>
+                                <rect key="frame" x="126" y="80" width="898.5" height="30"/>
                                 <color key="backgroundColor" red="0.89763233415446697" green="0.94267410711814836" blue="1" alpha="0.8475187059859155" colorSpace="calibratedRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -383,7 +391,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViT-Ov-FJh">
-                                <rect key="frame" x="126" y="156" width="899" height="848"/>
+                                <rect key="frame" x="126" y="156" width="898.5" height="848"/>
                                 <color key="backgroundColor" red="0.89763233415446697" green="0.94267410711814836" blue="1" alpha="0.8475187059859155" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -502,7 +510,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K67-lu-aUK">
-                                <rect key="frame" x="125" y="153" width="890" height="871"/>
+                                <rect key="frame" x="125" y="153" width="889.5" height="871"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
@@ -518,7 +526,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yw6-Sm-k3U">
-                                <rect key="frame" x="125" y="84" width="890" height="21"/>
+                                <rect key="frame" x="125" y="84" width="889.5" height="21"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -527,7 +535,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lex-WQ-OoK">
-                                <rect key="frame" x="125" y="120" width="890" height="21"/>
+                                <rect key="frame" x="125" y="120" width="889.5" height="21"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
