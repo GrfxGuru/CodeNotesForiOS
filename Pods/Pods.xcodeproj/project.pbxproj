@@ -23,6 +23,7 @@
 		C8D51A6C481E64B9843D0D54383C64E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		C970A44B24EAB752CD7DD0790FAF5633 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		E8993952AA3CD152749A38FDD09D08B0 /* Pods-Code NotesUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72795B27A6ACDBF6476E40F2A3E34F6E /* Pods-Code NotesUITests-dummy.m */; };
+		F75DCB5E2A480D8B8E0B741A /* Evergreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A02395F3E9C8D6B94D1FB02A67028C /* Evergreen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CA6FCFB2E9BC79A29A1CAA2076AE438 /* Foundation.framework in Frameworks */,
+				F75DCB5E2A480D8B8E0B741A /* Evergreen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
