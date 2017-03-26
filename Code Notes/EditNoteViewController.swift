@@ -69,7 +69,13 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBAction func btnPasteClipboard(_ sender: UIButton) {
         if let pasteString = UIPasteboard.general.string {
             log("Appending the clipboard string to the note content", forLevel: .debug)
-            fieldNoteContent.insertText("\n" + pasteString)
+            let pasteReplace = UserDefaults.standard.bool(forKey: "pasteReplace")
+            if pasteReplace {
+                fieldNoteContent.text = pasteString
+            } else {
+                fieldNoteContent.insertText("\n" + pasteString)
+            }
+
         }
     }
     // MARK: - Segues

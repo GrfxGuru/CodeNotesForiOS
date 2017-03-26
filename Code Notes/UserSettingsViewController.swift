@@ -13,26 +13,29 @@ import Evergreen
 class UserSettingsViewController: UIViewController {
 
     @IBOutlet weak var swConfirmNoteDeletion: UISwitch!
-    
+    @IBOutlet weak var swPasteReplace: UISwitch!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         let displayDeleteAlert = UserDefaults.standard.bool(forKey: "confirmNoteDeletion")
         swConfirmNoteDeletion.isOn = displayDeleteAlert
+        let pasteReplace = UserDefaults.standard.bool(forKey: "pasteReplace")
+        swPasteReplace.isOn = pasteReplace
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.        
+        // Dispose of any resources that can be recreated.
     }
-    
+
     // MARK: - Segues
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "saveSettings" {
             UserDefaults.standard.set(swConfirmNoteDeletion.isOn, forKey: "confirmNoteDeletion")
-            //self.splitViewController?.preferredDisplayMode = .primaryOverlay
+            UserDefaults.standard.set(swPasteReplace.isOn, forKey: "pasteReplace")
         } else if (segue.identifier == "cancelButton") {
             //self.splitViewController?.preferredDisplayMode = .primaryOverlay
         }
@@ -43,7 +46,7 @@ class UserSettingsViewController: UIViewController {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NoteRecord")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
+
         do {
             try context.execute(deleteRequest)
         } catch let error as NSError {

@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red:1, green:0.73, blue:0, alpha:1)]
         return true
     }
-    
+
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -66,16 +66,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         guard (secondaryAsNavController.topViewController as? DetailViewController) != nil else { return false }
         return false
     }
-    
+
     // Configure user settings for the application if they exist, if they do not (this could be first time running) then set the defaults
     func configureUserSettings() {
         if (UserDefaults.standard.bool(forKey: "confirmNoteDeletion")) {
             UserDefaults.standard.set(true, forKey: "confirmNoteDeletion")
         }
+        if (UserDefaults.standard.bool(forKey: "pasteReplace")) {
+            UserDefaults.standard.set(true, forKey: "pasteReplace")
+        }
     }
-    
+
     // MARK: - Core Data stack
-    
+
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -88,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                
+
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -102,9 +105,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         })
         return container
     }()
-    
+
     // MARK: - Core Data Saving support
-    
+
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

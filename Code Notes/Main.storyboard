@@ -199,6 +199,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="swConfirmNoteDeletion" destination="puf-ec-rnB" id="Ogu-ZQ-gyM"/>
+                        <outlet property="swPasteReplace" destination="Kzo-pH-SCN" id="N52-R7-aWh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1w-cr-46N" userLabel="First Responder" sceneMemberID="firstResponder"/>
