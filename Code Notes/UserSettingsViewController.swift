@@ -15,7 +15,8 @@ class UserSettingsViewController: UIViewController {
     @IBOutlet weak var swConfirmNoteDeletion: UISwitch!
     @IBOutlet weak var swPasteReplace: UISwitch!
     @IBOutlet weak var myWebsite: UILabel!
-
+    @IBOutlet weak var lblEvergreenURL: UILabel!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,19 +26,32 @@ class UserSettingsViewController: UIViewController {
         let pasteReplace = UserDefaults.standard.bool(forKey: "pasteReplace")
         swPasteReplace.isOn = pasteReplace
         let myWebURL = NSMutableAttributedString(string:"https://peterwitham.com")
+        let evergreenURL = NSMutableAttributedString(string: "https://github.com/knly/Evergreen")
         if myWebURL.createLink(text: "https://peterwitham.com",
                                URL: "https://peterwitham.com") {
         myWebsite.attributedText = myWebURL
+        }
+        if evergreenURL.createLink(text: "https://github.com/knly/Evergreen",
+                               URL: "https://github.com/knly/Evergreen") {
+            lblEvergreenURL.attributedText = evergreenURL
         }
         
         let myWebsiteTap = UITapGestureRecognizer(target: self, action: #selector(self.tapMyWebsiteURL))
         myWebsite.isUserInteractionEnabled = true
         myWebsite.addGestureRecognizer(myWebsiteTap)
+        let evgWebsiteTap = UITapGestureRecognizer(target: self, action: #selector(self.tapevgWebsiteURL))
+        lblEvergreenURL.isUserInteractionEnabled = true
+        lblEvergreenURL.addGestureRecognizer(evgWebsiteTap)
     }
     
     func tapMyWebsiteURL(sender:UITapGestureRecognizer) {
-        UIApplication.shared.open(NSURL(string:"https://peterwitham.com") as! URL,
+        UIApplication.shared.open(NSURL(string:"https://peterwitham.com")! as URL,
                                         options: [:], completionHandler: nil)
+    }
+
+    func tapevgWebsiteURL(sender:UITapGestureRecognizer) {
+        UIApplication.shared.open(NSURL(string:"https://github.com/knly/Evergreen")! as URL,
+                                  options: [:], completionHandler: nil)
     }
     
     override func didReceiveMemoryWarning() {
