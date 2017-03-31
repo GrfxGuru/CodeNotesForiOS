@@ -66,7 +66,6 @@ class UserSettingsViewController: UIViewController {
             UserDefaults.standard.set(swConfirmNoteDeletion.isOn, forKey: "confirmNoteDeletion")
             UserDefaults.standard.set(swPasteReplace.isOn, forKey: "pasteReplace")
         } else if (segue.identifier == "cancelButton") {
-            //self.splitViewController?.preferredDisplayMode = .primaryOverlay
         }
     }
 

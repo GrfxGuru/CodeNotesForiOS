@@ -26,7 +26,6 @@ class MasterViewController: UITableViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        //self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
         getData()
         self.tableView.reloadData()
@@ -46,7 +45,6 @@ class MasterViewController: UITableViewController {
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 controller.detailItem = indexPath.row
-                //self.splitViewController?.preferredDisplayMode = .primaryHidden
             }
         } else if segue.identifier == "addNote" {
             log("Adding a new note", forLevel: .debug)
@@ -89,7 +87,7 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! NoteListTableViewCell
         let note = (UIApplication.shared.delegate as! AppDelegate).notes[indexPath.row]
         cell.noteName.text = note.noteName
-        cell.noteDate.text = dateFormatter.string(from: note.dateCreated as! Date)
+        cell.noteDate.text = dateFormatter.string(from: note.dateCreated! as Date)
         cell.noteLanguage.text = note.noteLanguage
         return cell
     }

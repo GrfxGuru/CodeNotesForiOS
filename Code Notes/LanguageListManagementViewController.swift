@@ -12,7 +12,6 @@ import Evergreen
 
 class LanguageListManagementViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var languageTable: UITableView!
     @IBOutlet weak var tblLanguages: UITableView!
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
