@@ -35,6 +35,10 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         fieldNoteName.layer.masksToBounds = true
         fieldNoteName.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
         fieldNoteName.layer.borderWidth = 1.0
+        if pickerDataSource.count == 0 {
+            fieldNoteLanguage.isEnabled = false
+            fieldNoteLanguage.placeholder = "Please add a language to enable"
+        }
     }
 
     override func didReceiveMemoryWarning() {
