@@ -88,7 +88,7 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
         let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
         if (segue.identifier == "storeNote") {
-            log("Storing the new note", forLevel: .debug)
+            log("Storing the note", forLevel: .debug)
             let note = appDelegate.notes[currentNoteIndex]
             note.dateCreated = Date() as NSDate?
             note.dateModified = Date() as NSDate?
@@ -98,6 +98,17 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             sectionsVC.tableView.reloadData()
         } else if (segue.identifier == "openLanguageManagement") {
+            log("Storing the note", forLevel: .debug)
+            let note = appDelegate.notes[currentNoteIndex]
+            note.dateCreated = Date() as NSDate?
+            note.dateModified = Date() as NSDate?
+            if fieldNoteLanguage.text != nil {
+                note.noteLanguage = fieldNoteLanguage.text!
+            }
+            note.noteName = fieldNoteName.text!
+            note.noteContent = fieldNoteContent.text!
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            sectionsVC.tableView.reloadData()
             log("Going to language management screen", forLevel: .debug)
         } else {
             log("Removing the new note", forLevel: .debug)
