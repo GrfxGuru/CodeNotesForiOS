@@ -97,6 +97,7 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
             note.noteContent = fieldNoteContent.text!
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             sectionsVC.tableView.reloadData()
+        } else if (segue.identifier == "openLanguageManagement") {
         } else {
             log("Removing the new note", forLevel: .debug)
             let recordCount = (UIApplication.shared.delegate as! AppDelegate).notes.count
