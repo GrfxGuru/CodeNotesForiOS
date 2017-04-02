@@ -578,5 +578,4 @@ public struct Event<M> {
     public let function: String
     public let file: String
     public let line: Int
-    
 }

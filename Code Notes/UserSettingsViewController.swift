@@ -16,7 +16,7 @@ class UserSettingsViewController: UIViewController {
     @IBOutlet weak var swPasteReplace: UISwitch!
     @IBOutlet weak var myWebsite: UILabel!
     @IBOutlet weak var lblEvergreenURL: UILabel!
-        
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +35,7 @@ class UserSettingsViewController: UIViewController {
                                URL: "https://github.com/knly/Evergreen") {
             lblEvergreenURL.attributedText = evergreenURL
         }
-        
+
         let myWebsiteTap = UITapGestureRecognizer(target: self, action: #selector(self.tapMyWebsiteURL))
         myWebsite.isUserInteractionEnabled = true
         myWebsite.addGestureRecognizer(myWebsiteTap)
@@ -43,17 +43,17 @@ class UserSettingsViewController: UIViewController {
         lblEvergreenURL.isUserInteractionEnabled = true
         lblEvergreenURL.addGestureRecognizer(evgWebsiteTap)
     }
-    
-    func tapMyWebsiteURL(sender:UITapGestureRecognizer) {
+
+    func tapMyWebsiteURL(sender: UITapGestureRecognizer) {
         UIApplication.shared.open(NSURL(string:"https://peterwitham.com")! as URL,
                                         options: [:], completionHandler: nil)
     }
 
-    func tapevgWebsiteURL(sender:UITapGestureRecognizer) {
+    func tapevgWebsiteURL(sender: UITapGestureRecognizer) {
         UIApplication.shared.open(NSURL(string:"https://github.com/knly/Evergreen")! as URL,
                                   options: [:], completionHandler: nil)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -65,7 +65,7 @@ class UserSettingsViewController: UIViewController {
         if segue.identifier == "saveSettings" {
             UserDefaults.standard.set(swConfirmNoteDeletion.isOn, forKey: "confirmNoteDeletion")
             UserDefaults.standard.set(swPasteReplace.isOn, forKey: "pasteReplace")
-        } else if (segue.identifier == "cancelButton") {
+        } else if segue.identifier == "cancelButton" {
         }
     }
 
@@ -73,15 +73,15 @@ class UserSettingsViewController: UIViewController {
         log("Removing all notes from the database", forLevel: .debug)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NoteRecord")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
 
         do {
             try context.execute(deleteRequest)
         } catch let error as NSError {
             print(error)
         }
-        let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
-        let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
+        let navVC: UINavigationController = (self.splitViewController!.viewControllers[0] as? UINavigationController)!
+        let sectionsVC: MasterViewController = (navVC.topViewController as? MasterViewController)!
         sectionsVC.getData()
         sectionsVC.tableView.reloadData()
     }
@@ -99,9 +99,8 @@ class UserSettingsViewController: UIViewController {
 }
 
 extension NSMutableAttributedString {
-    
-    public func createLink(text:String, URL:String) -> Bool {
-        
+
+    public func createLink(text: String, URL: String) -> Bool {
         let foundText = self.mutableString.range(of: text)
         if foundText.location != NSNotFound {
             self.addAttribute(NSLinkAttributeName, value: URL, range: foundText)

@@ -9,11 +9,11 @@
 import UIKit
 
 class NoteListTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var noteName: UILabel!
     @IBOutlet weak var noteDate: UILabel!
     @IBOutlet weak var noteLanguage: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

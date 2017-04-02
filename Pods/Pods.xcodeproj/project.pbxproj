@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		0403600200667BA8A65173E8B442C155 /* Pods-Code NotesUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Code NotesUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		053580C0A1E503A8469413B1809111CC /* Pods_Code_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Code_Notes.framework; path = "Pods-Code Notes.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		053580C0A1E503A8469413B1809111CC /* Pods_Code_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Code_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08587989269FEEFC20A3B84989477E33 /* Pods-Code NotesTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Code NotesTests-dummy.m"; sourceTree = "<group>"; };
 		1E111DC36321B98A97DC40F75DBFA7A8 /* Evergreen.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Evergreen.xcconfig; sourceTree = "<group>"; };
 		231A3E59BE0008E3A586598BD3ECB450 /* Pods-Code NotesTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Code NotesTests-umbrella.h"; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 		38E1FBBA4920FFF34C1E574D87785925 /* Pods-Code Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Code Notes.release.xcconfig"; sourceTree = "<group>"; };
 		3A37CD6E3B0600D2B4235C3B7BEE8138 /* Pods-Code NotesUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Code NotesUITests-frameworks.sh"; sourceTree = "<group>"; };
 		3B4980D92A60BEB23B1F6D52076CD026 /* Pods-Code NotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Code NotesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		43A02395F3E9C8D6B94D1FB02A67028C /* Evergreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Evergreen.framework; path = Evergreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43A02395F3E9C8D6B94D1FB02A67028C /* Evergreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Evergreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E650507389D00740AC38E8C064D619 /* Pods-Code NotesTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Code NotesTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		555B2F615DD4BA9C137FB85E7D34E5D8 /* Formatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Formatter.swift; path = Sources/Evergreen/Formatter.swift; sourceTree = "<group>"; };
 		5B87BE01482504A601D83283B0A1CCAB /* Evergreen-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Evergreen-prefix.pch"; sourceTree = "<group>"; };
@@ -55,19 +55,19 @@
 		674A8E9C8E69F05713932E2240B378C6 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Sources/Evergreen/Logger.swift; sourceTree = "<group>"; };
 		72795B27A6ACDBF6476E40F2A3E34F6E /* Pods-Code NotesUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Code NotesUITests-dummy.m"; sourceTree = "<group>"; };
 		745F7EA36645BECEF12C70DE33B403F1 /* Pods-Code NotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Code NotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7871DD4A85BFA07075C3AE73B09F51DF /* Pods-Code NotesTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Code NotesTests.modulemap"; sourceTree = "<group>"; };
+		7871DD4A85BFA07075C3AE73B09F51DF /* Pods-Code NotesTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Code NotesTests.modulemap"; sourceTree = "<group>"; };
 		81549A37477D44359A5A580E4B98E904 /* Evergreen-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Evergreen-dummy.m"; sourceTree = "<group>"; };
 		82BC90AEF6E1BFE81A32C57C7EA20880 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83DC0A1AF4375B0B018ABFADD48050A5 /* Pods-Code NotesUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Code NotesUITests-resources.sh"; sourceTree = "<group>"; };
 		85F9BFB6D44B8AA1E0C3CA72A6799E6A /* Evergreen.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Evergreen.h; path = Sources/Evergreen/Evergreen.h; sourceTree = "<group>"; };
 		8BFAC36550C04AB91F61E7C742FC2FC6 /* Pods-Code Notes-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Code Notes-acknowledgements.markdown"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94B9E7ACD46079BD5C31389F286F74BB /* Pods-Code Notes-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Code Notes-resources.sh"; sourceTree = "<group>"; };
 		9C551B3F29A3F2F1AFB7B35A348ED851 /* Pods-Code NotesUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Code NotesUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A03A6EA4A84A6BC21678D3C453D76480 /* Pods-Code NotesTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Code NotesTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A3835E40F956B50140DBDBD55536EF1A /* Evergreen-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Evergreen-umbrella.h"; sourceTree = "<group>"; };
-		A49FB8840A359095D4A2334E03F8C15D /* Pods_Code_NotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Code_NotesTests.framework; path = "Pods-Code NotesTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A604B33F97A29E6CBF8EE69747334B58 /* Pods_Code_NotesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Code_NotesUITests.framework; path = "Pods-Code NotesUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A49FB8840A359095D4A2334E03F8C15D /* Pods_Code_NotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Code_NotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A604B33F97A29E6CBF8EE69747334B58 /* Pods_Code_NotesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Code_NotesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A819DFF0735827FA894C1F1FBE3ECD22 /* Pods-Code Notes-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Code Notes-frameworks.sh"; sourceTree = "<group>"; };
 		ADD2D699276F83AD4C602380E4087634 /* Pods-Code NotesTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Code NotesTests-frameworks.sh"; sourceTree = "<group>"; };
 		ADEEE620E348AB73224EACFB0B6609A9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,10 +78,10 @@
 		D1266EF5C6AA63C0D495374643F3A63F /* Pods-Code NotesUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Code NotesUITests-umbrella.h"; sourceTree = "<group>"; };
 		D567CDD45CBF1FBBC5F65B77C7E0C3AA /* Handler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Handler.swift; path = Sources/Evergreen/Handler.swift; sourceTree = "<group>"; };
 		D645297DCF5BFF6B50B916E6138A6565 /* Pods-Code Notes-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Code Notes-umbrella.h"; sourceTree = "<group>"; };
-		DDBAB0E06FD6DC6948AC52813BE596D8 /* Pods-Code Notes.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Code Notes.modulemap"; sourceTree = "<group>"; };
+		DDBAB0E06FD6DC6948AC52813BE596D8 /* Pods-Code Notes.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Code Notes.modulemap"; sourceTree = "<group>"; };
 		E828B651DEFE0D11D0F3DE260C4F7E81 /* Pods-Code NotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Code NotesUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E9F5932D3B79EE7596F1D88CBEB62A3E /* Pods-Code NotesUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Code NotesUITests.modulemap"; sourceTree = "<group>"; };
-		F29FA88BB13B3F91EF5181D1B5E59EEF /* Evergreen.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Evergreen.modulemap; sourceTree = "<group>"; };
+		E9F5932D3B79EE7596F1D88CBEB62A3E /* Pods-Code NotesUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Code NotesUITests.modulemap"; sourceTree = "<group>"; };
+		F29FA88BB13B3F91EF5181D1B5E59EEF /* Evergreen.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Evergreen.modulemap; sourceTree = "<group>"; };
 		F9E9CD373012ED7486BFB166D075FFE7 /* Pods-Code NotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Code NotesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,7 +197,6 @@
 				674A8E9C8E69F05713932E2240B378C6 /* Logger.swift */,
 				CA751249ADCB66D4E943E0840CCB990B /* Support Files */,
 			);
-			name = Evergreen;
 			path = Evergreen;
 			sourceTree = "<group>";
 		};

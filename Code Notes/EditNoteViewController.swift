@@ -17,9 +17,9 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var fieldNoteName: UITextField!
     @IBOutlet weak var fieldNoteLanguage: UITextField!
     @IBOutlet weak var fieldNoteContent: UITextView!
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
-    var pickerDataSource = (UIApplication.shared.delegate as! AppDelegate).languages
+    let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
+    weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
+    var pickerDataSource = (UIApplication.shared.delegate as? AppDelegate)!.languages
     var currentNoteIndex: Int = 0
 
     override func viewDidLoad() {
@@ -46,19 +46,15 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         // Dispose of any resources that can be recreated.
     }
 
-
-    /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+    // }
 
     func configureView() {
-        let note = (UIApplication.shared.delegate as! AppDelegate).notes[currentNoteIndex]
+        let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[currentNoteIndex]
         fieldNoteName.text = note.noteName
         fieldNoteLanguage.text = note.noteLanguage
         fieldNoteContent.text = note.noteContent
@@ -85,36 +81,36 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navVC: UINavigationController = self.splitViewController!.viewControllers[0] as! UINavigationController
-        let sectionsVC: MasterViewController = navVC.topViewController as! MasterViewController
-        if (segue.identifier == "storeNote") {
+        let navVC: UINavigationController = (self.splitViewController!.viewControllers[0] as? UINavigationController)!
+        let sectionsVC: MasterViewController = (navVC.topViewController as? MasterViewController)!
+        if segue.identifier == "storeNote" {
             log("Storing the note", forLevel: .debug)
-            let note = appDelegate.notes[currentNoteIndex]
-            note.dateCreated = Date() as NSDate?
-            note.dateModified = Date() as NSDate?
-            note.noteLanguage = fieldNoteLanguage.text!
-            note.noteName = fieldNoteName.text!
-            note.noteContent = fieldNoteContent.text!
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            let note = appDelegate?.notes[currentNoteIndex]
+            note?.dateCreated = Date() as NSDate?
+            note?.dateModified = Date() as NSDate?
+            note?.noteLanguage = fieldNoteLanguage.text!
+            note?.noteName = fieldNoteName.text!
+            note?.noteContent = fieldNoteContent.text!
+            (UIApplication.shared.delegate as? AppDelegate)!.saveContext()
             sectionsVC.tableView.reloadData()
-        } else if (segue.identifier == "openLanguageManagement") {
+        } else if segue.identifier == "openLanguageManagement" {
             log("Storing the note", forLevel: .debug)
-            let note = appDelegate.notes[currentNoteIndex]
-            note.dateCreated = Date() as NSDate?
-            note.dateModified = Date() as NSDate?
+            let note = appDelegate?.notes[currentNoteIndex]
+            note?.dateCreated = Date() as NSDate?
+            note?.dateModified = Date() as NSDate?
             if fieldNoteLanguage.text != nil {
-                note.noteLanguage = fieldNoteLanguage.text!
+                note?.noteLanguage = fieldNoteLanguage.text!
             }
-            note.noteName = fieldNoteName.text!
-            note.noteContent = fieldNoteContent.text!
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            note?.noteName = fieldNoteName.text!
+            note?.noteContent = fieldNoteContent.text!
+            (UIApplication.shared.delegate as? AppDelegate)!.saveContext()
             sectionsVC.tableView.reloadData()
             log("Going to language management screen", forLevel: .debug)
         } else {
             log("Removing the new note", forLevel: .debug)
-            let recordCount = (UIApplication.shared.delegate as! AppDelegate).notes.count
-            (UIApplication.shared.delegate as! AppDelegate).notes.remove(at: recordCount-1)
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            let recordCount = (UIApplication.shared.delegate as? AppDelegate)!.notes.count
+            (UIApplication.shared.delegate as? AppDelegate)!.notes.remove(at: recordCount-1)
+            (UIApplication.shared.delegate as? AppDelegate)!.saveContext()
             sectionsVC.tableView.reloadData()
         }
     }
