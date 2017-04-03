@@ -80,6 +80,9 @@ class ViewNoteViewController: UIViewController {
             self.navigateAfterDelete()
         }
     }
+    @IBAction func btnEditNote(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "editNote", sender: self)
+    }
 
     func deleteRecord() {
         log("Deleting the record from CoreData", forLevel: .debug)

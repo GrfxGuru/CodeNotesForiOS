@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         UINavigationBar.appearance().tintColor = UIColor(red:1, green:0.73, blue:0, alpha:1)
         UINavigationBar.appearance().titleTextAttributes =
                 [NSForegroundColorAttributeName: UIColor(red: 1, green: 0.73, blue: 0, alpha: 1)]
+        splitViewController.preferredDisplayMode = .allVisible
         return true
     }
 
