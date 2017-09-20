@@ -132,9 +132,12 @@ class MasterViewController: UITableViewController {
     }()
 
     func getData() {
+        let fetchRequestLanguages: NSFetchRequest<LanguageList> = LanguageList.fetchRequest()
+        let sortDescriptorLanguages = NSSortDescriptor(key: #keyPath(LanguageList.languageName), ascending: true)
+        fetchRequestLanguages.sortDescriptors = [sortDescriptorLanguages]
         do {
+            (UIApplication.shared.delegate as? AppDelegate)!.languages = try context.fetch(fetchRequestLanguages)
             (UIApplication.shared.delegate as? AppDelegate)!.notes = try context.fetch(NoteRecord.fetchRequest())
-            (UIApplication.shared.delegate as? AppDelegate)!.languages = try context.fetch(LanguageList.fetchRequest())
         } catch {
             print("Data Fetch Failed")
         }
