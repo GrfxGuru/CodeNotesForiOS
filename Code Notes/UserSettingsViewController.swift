@@ -44,12 +44,12 @@ class UserSettingsViewController: UIViewController {
         lblEvergreenURL.addGestureRecognizer(evgWebsiteTap)
     }
 
-    func tapMyWebsiteURL(sender: UITapGestureRecognizer) {
+    @objc func tapMyWebsiteURL(sender: UITapGestureRecognizer) {
         UIApplication.shared.open(NSURL(string:"https://peterwitham.com")! as URL,
                                         options: [:], completionHandler: nil)
     }
 
-    func tapevgWebsiteURL(sender: UITapGestureRecognizer) {
+    @objc func tapevgWebsiteURL(sender: UITapGestureRecognizer) {
         UIApplication.shared.open(NSURL(string:"https://github.com/knly/Evergreen")! as URL,
                                   options: [:], completionHandler: nil)
     }
@@ -103,7 +103,7 @@ extension NSMutableAttributedString {
     public func createLink(text: String, URL: String) -> Bool {
         let foundText = self.mutableString.range(of: text)
         if foundText.location != NSNotFound {
-            self.addAttribute(NSLinkAttributeName, value: URL, range: foundText)
+            self.addAttribute(NSAttributedStringKey.link, value: URL, range: foundText)
             return true
         }
         return false

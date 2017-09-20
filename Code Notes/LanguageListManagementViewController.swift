@@ -64,7 +64,6 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
             log("Saving the new language", forLevel: .debug)
             let newLanguage = LanguageList(context: context)
             newLanguage.languageName = languageName
-            // TODO: Replace with next ID
             newLanguage.languageID = 0
             (UIApplication.shared.delegate as? AppDelegate)!.languages.append(newLanguage)
             (UIApplication.shared.delegate as? AppDelegate)!.saveContext()
