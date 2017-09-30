@@ -86,8 +86,8 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if segue.identifier == "storeNote" {
             log("Storing the note", forLevel: .debug)
             let note = appDelegate?.notes[currentNoteIndex]
-            note?.dateCreated = Date() as NSDate?
-            note?.dateModified = Date() as NSDate?
+            note?.dateCreated = Date()
+            note?.dateModified = Date()
             note?.noteLanguage = fieldNoteLanguage.text!
             note?.noteName = fieldNoteName.text!
             note?.noteContent = fieldNoteContent.text!
@@ -96,8 +96,8 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         } else if segue.identifier == "openLanguageManagement" {
             log("Storing the note", forLevel: .debug)
             let note = appDelegate?.notes[currentNoteIndex]
-            note?.dateCreated = Date() as NSDate?
-            note?.dateModified = Date() as NSDate?
+            note?.dateCreated = Date()
+            note?.dateModified = Date()
             if fieldNoteLanguage.text != nil {
                 note?.noteLanguage = fieldNoteLanguage.text!
             }

@@ -52,8 +52,8 @@ class MasterViewController: UITableViewController {
             log("Adding a new note", forLevel: .debug)
             let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
             let newNote = NoteRecord(context: context)
-            newNote.dateCreated = Date() as NSDate
-            newNote.dateModified = Date() as NSDate
+            newNote.dateCreated = Date() as Date
+            newNote.dateModified = Date() as Date
             newNote.noteName = ""
             newNote.noteLanguage = ""
             newNote.noteContent = ""
