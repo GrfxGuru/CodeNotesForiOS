@@ -26,6 +26,7 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.configureView()
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
         fieldNoteName.becomeFirstResponder()
         languagePicker.delegate = self
         fieldNoteLanguage.inputView = languagePicker

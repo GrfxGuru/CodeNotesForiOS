@@ -25,6 +25,7 @@ class UserSettingsViewController: UIViewController {
         swConfirmNoteDeletion.isOn = displayDeleteAlert
         let pasteReplace = UserDefaults.standard.bool(forKey: "pasteReplace")
         swPasteReplace.isOn = pasteReplace
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
     }
 
     override func didReceiveMemoryWarning() {

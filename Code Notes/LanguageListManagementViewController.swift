@@ -27,6 +27,7 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
         tblLanguages.layer.borderWidth = 1.0
         getData()
         tblLanguages.reloadData()
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
     }
 
     override func didReceiveMemoryWarning() {

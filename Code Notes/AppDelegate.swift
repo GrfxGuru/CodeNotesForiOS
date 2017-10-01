@@ -28,7 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                                         = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         configureUserSettings()
-        splitViewController.preferredDisplayMode = .automatic
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            splitViewController.preferredDisplayMode = .primaryOverlay
+        }
+
+
         UINavigationBar.appearance().barTintColor = UIColor(red: 0.29, green: 0.33, blue: 0.38, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor(red:1, green:0.73, blue:0, alpha:1)
         UINavigationBar.appearance().titleTextAttributes =
