@@ -31,10 +31,10 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
         languagePicker.delegate = self
         fieldNoteLanguage.inputView = languagePicker
         fieldNoteContent.layer.masksToBounds = true
-        fieldNoteContent.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
+        fieldNoteContent.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue: 128/255, alpha: 1.0 ).cgColor
         fieldNoteContent.layer.borderWidth = 1.0
         fieldNoteName.layer.masksToBounds = true
-        fieldNoteName.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
+        fieldNoteName.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue: 128/255, alpha: 1.0 ).cgColor
         fieldNoteName.layer.borderWidth = 1.0
         if pickerDataSource.count == 0 {
             fieldNoteLanguage.isEnabled = false

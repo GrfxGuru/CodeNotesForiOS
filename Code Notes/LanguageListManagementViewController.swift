@@ -23,7 +23,7 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
         tblLanguages.delegate = self
         tblLanguages.dataSource = self
         tblLanguages.layer.masksToBounds = true
-        tblLanguages.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue:128/255, alpha: 1.0 ).cgColor
+        tblLanguages.layer.borderColor = UIColor( red: 128/255, green: 128/255, blue: 128/255, alpha: 1.0 ).cgColor
         tblLanguages.layer.borderWidth = 1.0
         getData()
         tblLanguages.reloadData()
