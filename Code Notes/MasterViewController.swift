@@ -41,38 +41,50 @@ class MasterViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showNote" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let controller = ((segue.destination as? UINavigationController)!.topViewController
-                                    as? ViewNoteViewController)!
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
-                controller.detailItem = indexPath.row
-            }
+            segueShowNote(segue)
         } else if segue.identifier == "addNote" {
-            log("Adding a new note", forLevel: .debug)
-            let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
-            let newNote = NoteRecord(context: context)
-            newNote.dateCreated = Date() as Date
-            newNote.dateModified = Date() as Date
-            newNote.noteName = ""
-            newNote.noteLanguage = ""
-            newNote.noteContent = ""
-            (UIApplication.shared.delegate as? AppDelegate)!.notes.append(newNote)
-            (UIApplication.shared.delegate as? AppDelegate)!.saveContext()
-            self.tableView.reloadData()
-            let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)
-            self.tableView.selectRow(at: newRow as IndexPath, animated: true, scrollPosition: .bottom)
-            if self.tableView.indexPathForSelectedRow != nil {
-                let controller = ((segue.destination as? UINavigationController)!.topViewController
-                                    as? EditNoteViewController)!
-                controller.title = "Add Note"
-                controller.currentNoteIndex = newRow.item
-            }
+            segueAddNote(segue)
         } else if segue.identifier == "appSettings" {
-            log("Navigating to app settings", forLevel: .debug)
-            if (self.tableView.indexPathForSelectedRow) != nil {
-                self.tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
-            }
+            segueAppSettings()
+        }
+    }
+
+    fileprivate func segueShowNote(_ segue: UIStoryboardSegue) {
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            let controller = ((segue.destination as? UINavigationController)!.topViewController
+                as? ViewNoteViewController)!
+            controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+            controller.navigationItem.leftItemsSupplementBackButton = true
+            controller.detailItem = indexPath.row
+        }
+    }
+
+    fileprivate func segueAddNote(_ segue: UIStoryboardSegue) {
+        log("Adding a new note", forLevel: .debug)
+        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
+        let newNote = NoteRecord(context: context)
+        newNote.dateCreated = Date() as Date
+        newNote.dateModified = Date() as Date
+        newNote.noteName = ""
+        newNote.noteLanguage = ""
+        newNote.noteContent = ""
+        (UIApplication.shared.delegate as? AppDelegate)!.notes.append(newNote)
+        (UIApplication.shared.delegate as? AppDelegate)!.saveContext()
+        self.tableView.reloadData()
+        let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)
+        self.tableView.selectRow(at: newRow as IndexPath, animated: true, scrollPosition: .bottom)
+        if self.tableView.indexPathForSelectedRow != nil {
+            let controller = ((segue.destination as? UINavigationController)!.topViewController
+                as? EditNoteViewController)!
+            controller.title = "Add Note"
+            controller.currentNoteIndex = newRow.item
+        }
+    }
+
+    fileprivate func segueAppSettings() {
+        log("Navigating to app settings", forLevel: .debug)
+        if (self.tableView.indexPathForSelectedRow) != nil {
+            self.tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
         }
     }
 
