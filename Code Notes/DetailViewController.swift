@@ -14,7 +14,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-
     }
 
     override func didReceiveMemoryWarning() {

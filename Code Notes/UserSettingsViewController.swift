@@ -26,6 +26,12 @@ class UserSettingsViewController: UIViewController {
         let pasteReplace = UserDefaults.standard.bool(forKey: "pasteReplace")
         swPasteReplace.isOn = pasteReplace
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+
+        let orientation = UIApplication.shared.statusBarOrientation
+
+        if UIInterfaceOrientationIsPortrait(orientation) {
+            self.splitViewController?.preferredDisplayMode = .primaryHidden
+        }
     }
 
     override func didReceiveMemoryWarning() {

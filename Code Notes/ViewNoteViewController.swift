@@ -59,6 +59,12 @@ class ViewNoteViewController: UIViewController {
         lblNoteLanguage.text = note.noteLanguage
         noteCode.text = note.noteContent
         title = note.noteName
+
+        let orientation = UIApplication.shared.statusBarOrientation
+
+        if UIInterfaceOrientationIsPortrait(orientation) {
+            self.splitViewController?.preferredDisplayMode = .primaryHidden
+        }
     }
 
     @IBAction func btnDeleteNote(_ sender: UIButton) {

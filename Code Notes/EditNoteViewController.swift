@@ -40,6 +40,12 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
             fieldNoteLanguage.isEnabled = false
             fieldNoteLanguage.placeholder = "Please add a language to enable"
         }
+
+        let orientation = UIApplication.shared.statusBarOrientation
+
+        if UIInterfaceOrientationIsPortrait(orientation) {
+            self.splitViewController?.preferredDisplayMode = .primaryHidden
+        }
     }
 
     override func didReceiveMemoryWarning() {
