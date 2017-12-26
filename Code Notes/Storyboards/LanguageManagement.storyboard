@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aY4-tp-BBC">
+    <device id="ipad12_9" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Language List Management-->
+        <scene sceneID="33e-8q-Ftl">
+            <objects>
+                <viewController id="aY4-tp-BBC" customClass="LanguageListManagementViewController" customModule="Code_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cqd-6E-bqP"/>
+                        <viewControllerLayoutGuide type="bottom" id="tTb-lP-lYS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0k3-uZ-D5L">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fx-Iv-axF">
+                                <rect key="frame" x="923" y="43" width="423" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="423" id="Sei-FL-SfI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.90245535710000002" green="0.93849330350000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Ww-Sq-OqQ">
+                                <rect key="frame" x="923" y="86" width="423" height="918"/>
+                                <color key="backgroundColor" red="0.28627450980000002" green="0.3294117647" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="languageCellb" id="ixv-W2-cRw" customClass="LanguageListTableViewCell" customModule="Code_Notes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="423" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ixv-W2-cRw" id="14D-GC-hPd">
+                                            <rect key="frame" x="0.0" y="0.0" width="423" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vew-0a-vNl">
+                                                    <rect key="frame" x="15" y="15" width="393" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="Vew-0a-vNl" secondAttribute="leading" id="UYs-lv-3Lo"/>
+                                                <constraint firstAttribute="topMargin" secondItem="Vew-0a-vNl" secondAttribute="top" id="fyY-nM-62K"/>
+                                                <constraint firstItem="Vew-0a-vNl" firstAttribute="trailing" secondItem="14D-GC-hPd" secondAttribute="trailingMargin" id="zKA-nx-4pr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="lblLanguageName" destination="Vew-0a-vNl" id="PZv-Dt-A7m"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tur-ng-sI0">
+                                <rect key="frame" x="750" y="86" width="130" height="174"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btK-vV-Duj">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="36"/>
+                                        <color key="backgroundColor" red="0.079130569306930673" green="0.30860922029702986" blue="0.39960937499999999" alpha="0.49848701584507044" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" red="0.79782366071428568" green="0.47860102568947166" blue="0.22636910725848361" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnAddLanguage:" destination="aY4-tp-BBC" eventType="touchUpInside" id="ylb-ih-Rvg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zez-D3-YKH">
+                                        <rect key="frame" x="0.0" y="46" width="130" height="36"/>
+                                        <color key="backgroundColor" red="0.079130569306930673" green="0.30860922029702986" blue="0.39960937499999999" alpha="0.49848701584507044" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Remove">
+                                            <color key="titleColor" red="0.79782366071428568" green="0.47860102568947166" blue="0.22636910725848361" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnRemoveLanguage:" destination="aY4-tp-BBC" eventType="touchUpInside" id="LyM-8x-muT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyz-qN-Woa">
+                                        <rect key="frame" x="0.0" y="92" width="130" height="36"/>
+                                        <color key="backgroundColor" red="0.079130569306930673" green="0.30860922029702986" blue="0.39960937499999999" alpha="0.49848701584507044" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Reset List">
+                                            <color key="titleColor" red="0.79782366071428568" green="0.47860102568947166" blue="0.22636910725848361" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnResetLanguages:" destination="aY4-tp-BBC" eventType="touchUpInside" id="zo5-TA-Ymg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaK-Hq-yVT">
+                                        <rect key="frame" x="0.0" y="138" width="130" height="36"/>
+                                        <color key="backgroundColor" red="0.079130569306930673" green="0.30860922029702986" blue="0.39960937499999999" alpha="0.49848701584507044" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Clear List">
+                                            <color key="titleColor" red="0.79782366071428568" green="0.47860102568947166" blue="0.22636910725848361" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnClearAllLanguages:" destination="aY4-tp-BBC" eventType="touchUpInside" id="Wcv-7H-885"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="24n-u2-eRr"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28627450980000002" green="0.3294117647" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1fx-Iv-axF" firstAttribute="leading" secondItem="3Ww-Sq-OqQ" secondAttribute="leading" id="0N6-RE-HI9"/>
+                            <constraint firstItem="tur-ng-sI0" firstAttribute="top" secondItem="3Ww-Sq-OqQ" secondAttribute="top" id="1zt-CA-Pta"/>
+                            <constraint firstItem="3Ww-Sq-OqQ" firstAttribute="top" secondItem="1fx-Iv-axF" secondAttribute="bottom" constant="8" symbolic="YES" id="DPv-j7-q5a"/>
+                            <constraint firstItem="tur-ng-sI0" firstAttribute="top" secondItem="Cqd-6E-bqP" secondAttribute="bottom" constant="66" id="ek9-fD-ROS"/>
+                            <constraint firstItem="1fx-Iv-axF" firstAttribute="trailing" secondItem="0k3-uZ-D5L" secondAttribute="trailingMargin" id="jPT-1U-FSc"/>
+                            <constraint firstAttribute="bottom" secondItem="3Ww-Sq-OqQ" secondAttribute="bottom" constant="20" symbolic="YES" id="jeV-Rf-hae"/>
+                            <constraint firstItem="3Ww-Sq-OqQ" firstAttribute="leading" secondItem="tur-ng-sI0" secondAttribute="trailing" constant="43" id="jvq-3Y-hpJ"/>
+                            <constraint firstItem="1fx-Iv-axF" firstAttribute="trailing" secondItem="3Ww-Sq-OqQ" secondAttribute="trailing" id="kdJ-bG-bzg"/>
+                            <constraint firstItem="1fx-Iv-axF" firstAttribute="top" secondItem="Cqd-6E-bqP" secondAttribute="bottom" constant="23" id="vdL-pn-LQg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Language List Management" id="8Ma-yT-A5K">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="dWq-RS-QLF">
+                            <connections>
+                                <segue destination="azk-YV-eY9" kind="show" id="710-iQ-EFa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tblLanguages" destination="3Ww-Sq-OqQ" id="wWO-Ut-Dd1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Msr-1L-u8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1251" y="928"/>
+        </scene>
+        <!--UINavigationController-cQ3-Rz-VL7-->
+        <scene sceneID="4mu-o1-Oh5">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="UINavigationController-cQ3-Rz-VL7" storyboardName="Main" referencedIdentifier="UINavigationController-cQ3-Rz-VL7" id="azk-YV-eY9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tPH-ZO-NZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-155" y="928"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ki3-JN-17H">
+    <device id="ipad12_9" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Note-->
+        <scene sceneID="j9M-2l-SIk">
+            <objects>
+                <viewController title="View Note" id="Ki3-JN-17H" customClass="ViewNoteViewController" customModule="Code_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ecW-oX-PGt"/>
+                        <viewControllerLayoutGuide type="bottom" id="yLK-CG-Ouy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RF4-gY-WXX">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XL-wR-gN6">
+                                <rect key="frame" x="20" y="40" width="97" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="3F6-OF-e3z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iD9-Vu-Fp3">
+                                <rect key="frame" x="20" y="116" width="97" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K67-lu-aUK">
+                                <rect key="frame" x="125" y="109" width="1211.5" height="853"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipv-Ta-eV1">
+                                <rect key="frame" x="20" y="76" width="97" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yw6-Sm-k3U">
+                                <rect key="frame" x="125" y="40" width="1211" height="21"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lex-WQ-OoK">
+                                <rect key="frame" x="125" y="76" width="1211" height="21"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heK-wj-t6j">
+                                <rect key="frame" x="0.0" y="980" width="1366" height="44"/>
+                                <items>
+                                    <barButtonItem title="Copy" id="Ica-Yn-cJz">
+                                        <connections>
+                                            <action selector="copyToClipboard:" destination="C2q-4V-aw8" id="EKB-V2-LZu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="30" style="plain" systemItem="fixedSpace" id="nLy-rn-93h"/>
+                                    <barButtonItem title="Edit" id="6ja-v2-1yU">
+                                        <connections>
+                                            <action selector="btnEditNote:" destination="Ki3-JN-17H" id="o17-tI-oPw"/>
+                                            <segue destination="MtZ-9E-fCg" kind="showDetail" identifier="editNote" id="8Yb-eb-lIX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="30" style="plain" systemItem="fixedSpace" id="u4Q-mS-SuK"/>
+                                    <barButtonItem title="Delete" id="3C8-UW-shY">
+                                        <connections>
+                                            <action selector="btnDeleteNote:" destination="C2q-4V-aw8" id="Sf3-El-nwh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28627450980000002" green="0.3294117647" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ipv-Ta-eV1" firstAttribute="top" secondItem="7XL-wR-gN6" secondAttribute="bottom" constant="15" id="3iw-4P-OJq"/>
+                            <constraint firstItem="7XL-wR-gN6" firstAttribute="leading" secondItem="ipv-Ta-eV1" secondAttribute="leading" id="4Hs-ih-KHl"/>
+                            <constraint firstAttribute="trailing" secondItem="heK-wj-t6j" secondAttribute="trailing" id="67K-z4-Ajy"/>
+                            <constraint firstItem="heK-wj-t6j" firstAttribute="top" secondItem="K67-lu-aUK" secondAttribute="bottom" constant="18" id="AgG-EO-Woj"/>
+                            <constraint firstItem="yw6-Sm-k3U" firstAttribute="leading" secondItem="7XL-wR-gN6" secondAttribute="trailing" constant="8" symbolic="YES" id="CqT-2K-jHe"/>
+                            <constraint firstItem="iD9-Vu-Fp3" firstAttribute="top" secondItem="ipv-Ta-eV1" secondAttribute="bottom" constant="19" id="LEd-cS-rME"/>
+                            <constraint firstItem="Lex-WQ-OoK" firstAttribute="leading" secondItem="K67-lu-aUK" secondAttribute="leading" id="N3q-aJ-wf3"/>
+                            <constraint firstItem="Lex-WQ-OoK" firstAttribute="trailing" secondItem="K67-lu-aUK" secondAttribute="trailing" id="NxY-hs-SF1"/>
+                            <constraint firstItem="heK-wj-t6j" firstAttribute="leading" secondItem="RF4-gY-WXX" secondAttribute="leading" id="O3u-f5-khV"/>
+                            <constraint firstItem="yw6-Sm-k3U" firstAttribute="trailing" secondItem="Lex-WQ-OoK" secondAttribute="trailing" id="SQR-HP-Drt"/>
+                            <constraint firstItem="7XL-wR-gN6" firstAttribute="top" secondItem="ecW-oX-PGt" secondAttribute="bottom" constant="20" id="Sah-dy-jaz"/>
+                            <constraint firstItem="7XL-wR-gN6" firstAttribute="leading" secondItem="RF4-gY-WXX" secondAttribute="leadingMargin" id="Uok-Lr-4a0"/>
+                            <constraint firstItem="K67-lu-aUK" firstAttribute="top" secondItem="Lex-WQ-OoK" secondAttribute="bottom" constant="12" id="aOD-rz-oID"/>
+                            <constraint firstItem="yw6-Sm-k3U" firstAttribute="leading" secondItem="Lex-WQ-OoK" secondAttribute="leading" id="cqa-dQ-SQd"/>
+                            <constraint firstItem="Lex-WQ-OoK" firstAttribute="leading" secondItem="ipv-Ta-eV1" secondAttribute="trailing" constant="8" symbolic="YES" id="cyl-tX-Bmc"/>
+                            <constraint firstItem="ipv-Ta-eV1" firstAttribute="baseline" secondItem="Lex-WQ-OoK" secondAttribute="baseline" id="hYH-2b-rOc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yw6-Sm-k3U" secondAttribute="trailing" constant="10" id="jYT-eG-4Ag"/>
+                            <constraint firstItem="7XL-wR-gN6" firstAttribute="baseline" secondItem="yw6-Sm-k3U" secondAttribute="baseline" id="mZQ-Vl-8iV"/>
+                            <constraint firstItem="ipv-Ta-eV1" firstAttribute="leading" secondItem="iD9-Vu-Fp3" secondAttribute="leading" id="p4D-yz-Dey"/>
+                            <constraint firstItem="heK-wj-t6j" firstAttribute="bottom" secondItem="yLK-CG-Ouy" secondAttribute="top" id="sGF-Pp-OTc"/>
+                            <constraint firstItem="K67-lu-aUK" firstAttribute="leading" secondItem="iD9-Vu-Fp3" secondAttribute="trailing" constant="8" symbolic="YES" id="t3e-4y-FvP"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="yVg-SP-lYv"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="lblNoteLanguage" destination="Lex-WQ-OoK" id="pEv-l5-lCc"/>
+                        <outlet property="lblNoteName" destination="yw6-Sm-k3U" id="FEf-tI-s3L"/>
+                        <outlet property="noteCode" destination="K67-lu-aUK" id="djj-qR-bkj"/>
+                        <segue destination="CVb-5S-O5L" kind="showDetail" identifier="unloadView" id="dQS-Pt-nPc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C2q-4V-aw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3541" y="-359"/>
+        </scene>
+        <!--startingDetailView-->
+        <scene sceneID="fKY-dj-Uec">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="startingDetailView" storyboardName="Main" referencedIdentifier="startingDetailView" id="CVb-5S-O5L" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGP-fh-HLI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1250" y="1143"/>
+        </scene>
+        <!--UINavigationController-ryv-QQ-65y-->
+        <scene sceneID="yNn-co-0zU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UINavigationController-ryv-QQ-65y" id="MtZ-9E-fCg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A0N-id-DUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1966" y="1143"/>
+        </scene>
+    </scenes>
+</document>
