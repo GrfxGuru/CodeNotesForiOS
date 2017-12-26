@@ -96,6 +96,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         if UserDefaults.standard.bool(forKey: "pasteReplace") {
             UserDefaults.standard.set(true, forKey: "pasteReplace")
         }
+
+        // Check for first run scenario and install default language list
+        if UserDefaults.standard.value(forKey: "firstRun") == nil {
+            UserDefaults.standard.set(false, forKey: "firstRun")
+            (UIApplication.shared.delegate as? AppDelegate)!.languageListManagement.createLanguages()
+        }
     }
 
     // MARK: - Core Data stack
