@@ -21,9 +21,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Code Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KED-P2-wv1">
-                                <rect key="frame" x="613" y="347" width="160" height="21"/>
+                                <rect key="frame" x="613" y="347" width="147" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="jw7-dJ-sby"/>
                                     <constraint firstAttribute="height" constant="21" id="kXd-pz-1Pi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
