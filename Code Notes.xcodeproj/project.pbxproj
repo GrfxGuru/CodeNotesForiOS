@@ -24,8 +24,6 @@
 		D069F0801E1CAE91008C79E7 /* CodeNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F07F1E1CAE91008C79E7 /* CodeNotesTests.swift */; };
 		D069F08B1E1CAE91008C79E7 /* Code_NotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F08A1E1CAE91008C79E7 /* Code_NotesUITests.swift */; };
 		D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */; };
-		D0FA24551E3810F200EB54BE /* CodeNotes Icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D0FA24451E3810F200EB54BE /* CodeNotes Icon.pdf */; };
-		D0FA24561E3810F200EB54BE /* CodeNotesIcon.sketch in Resources */ = {isa = PBXBuildFile; fileRef = D0FA24461E3810F200EB54BE /* CodeNotesIcon.sketch */; };
 		D0FA24571E3810F200EB54BE /* New icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FA24481E3810F200EB54BE /* New icon-60@2x.png */; };
 		D0FA24581E3810F200EB54BE /* New icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FA24491E3810F200EB54BE /* New icon-60@3x.png */; };
 		D0FA24591E3810F200EB54BE /* New icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FA244A1E3810F200EB54BE /* New icon-76.png */; };
@@ -414,8 +412,6 @@
 				D0FA245D1E3810F200EB54BE /* New icon-AppStore@2x.png in Resources */,
 				D0FA245F1E3810F200EB54BE /* New icon-Small-40@2x.png in Resources */,
 				D0FA24571E3810F200EB54BE /* New icon-60@2x.png in Resources */,
-				D0FA24551E3810F200EB54BE /* CodeNotes Icon.pdf in Resources */,
-				D0FA24561E3810F200EB54BE /* CodeNotesIcon.sketch in Resources */,
 				D0FA24611E3810F200EB54BE /* New icon-Small.png in Resources */,
 				D0FA24591E3810F200EB54BE /* New icon-76.png in Resources */,
 			);
