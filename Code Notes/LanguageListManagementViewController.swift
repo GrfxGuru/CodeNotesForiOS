@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Evergreen
 
-class LanguageListManagementViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class LanguageListManagementViewController: UIViewController {
 
     @IBOutlet weak var tblLanguages: UITableView!
 
@@ -118,30 +118,6 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
     }
     */
 
-    // MARK: - Table View
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (UIApplication.shared.delegate as? AppDelegate)!.languages.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = (tableView.dequeueReusableCell(withIdentifier: "languageCellb", for: indexPath)
-                    as? LanguageListTableViewCell)!
-        let language = (UIApplication.shared.delegate as? AppDelegate)!.languages[indexPath.row]
-        cell.lblLanguageName.text = language.languageName
-        cell.languageID = language.languageID
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-
     func getData() {
         let fetchRequest: NSFetchRequest<LanguageList> = LanguageList.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: #keyPath(LanguageList.languageName), ascending: true)
@@ -152,5 +128,30 @@ class LanguageListManagementViewController: UIViewController, UITableViewDelegat
             print("Data Fetch Failed")
         }
     }
+}
 
+extension LanguageListManagementViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (UIApplication.shared.delegate as? AppDelegate)!.languages.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = (tableView.dequeueReusableCell(withIdentifier: "languageCellb", for: indexPath)
+            as? LanguageListTableViewCell)!
+        let language = (UIApplication.shared.delegate as? AppDelegate)!.languages[indexPath.row]
+        cell.lblLanguageName.text = language.languageName
+        cell.languageID = language.languageID
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+}
+
+extension LanguageListManagementViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 }

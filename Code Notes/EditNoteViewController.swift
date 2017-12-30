@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Evergreen
 
-class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class EditNoteViewController: UIViewController {
 
     //var note:Note = Note()
     let languagePicker = UIPickerView()
@@ -121,9 +121,9 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
             sectionsVC.tableView.reloadData()
         }
     }
+}
 
-    // MARK: UIPickerView Delegation
-
+extension EditNoteViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -139,4 +139,8 @@ class EditNoteViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         fieldNoteLanguage.text = pickerDataSource[row].languageName
     }
+}
+
+extension EditNoteViewController: UIPickerViewDelegate {
+
 }
