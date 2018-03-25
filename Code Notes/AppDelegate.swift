@@ -98,6 +98,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             UserDefaults.standard.set(false, forKey: "firstRun")
             (UIApplication.shared.delegate as? AppDelegate)!.languageListManagement.createLanguages()
         }
+
+        // Check for dark theme
+        if UserDefaults.standard.value(forKey: "darkTheme") == nil {
+            UserDefaults.standard.set(false, forKey: "darkTheme")
+        }
     }
 
     // MARK: - Core Data stack

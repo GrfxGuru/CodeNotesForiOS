@@ -16,6 +16,7 @@ class UserSettingsViewController: UIViewController {
     @IBOutlet weak var swPasteReplace: UISwitch!
     @IBOutlet weak var myWebsite: UILabel!
     @IBOutlet weak var lblEvergreenURL: UILabel!
+    @IBOutlet weak var swDarkTheme: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,8 @@ class UserSettingsViewController: UIViewController {
         swConfirmNoteDeletion.isOn = displayDeleteAlert
         let pasteReplace = UserDefaults.standard.bool(forKey: "pasteReplace")
         swPasteReplace.isOn = pasteReplace
+        let darkTheme = UserDefaults.standard.bool(forKey: "darkTheme")
+        swDarkTheme.isOn = darkTheme
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
 
         let orientation = UIApplication.shared.statusBarOrientation
@@ -45,6 +48,7 @@ class UserSettingsViewController: UIViewController {
         if segue.identifier == "saveSettings" {
             UserDefaults.standard.set(swConfirmNoteDeletion.isOn, forKey: "confirmNoteDeletion")
             UserDefaults.standard.set(swPasteReplace.isOn, forKey: "pasteReplace")
+            UserDefaults.standard.set(swDarkTheme.isOn, forKey: "darkTheme")
         } else if segue.identifier == "cancelButton" {
         }
     }
