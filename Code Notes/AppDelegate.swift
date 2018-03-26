@@ -102,7 +102,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Check for dark theme
         if UserDefaults.standard.value(forKey: "darkTheme") == nil {
             UserDefaults.standard.set(false, forKey: "darkTheme")
+            Theme.defaultTheme()
         }
+
+        // TODO: Check theme for dark theme and switch rather than use the default
     }
 
     // MARK: - Core Data stack

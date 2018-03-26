@@ -18,6 +18,7 @@
 		5174E4AB1FF230B900EAEBB2 /* DefaultDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5174E4AA1FF230B900EAEBB2 /* DefaultDetailView.storyboard */; };
 		517F94AF1E4ACEC400EA0A8A /* LanguageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517F94AE1E4ACEC400EA0A8A /* LanguageListTableViewCell.swift */; };
 		51AB1B0A1E3C6F2A00774E7E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51AB1B081E3C6F2A00774E7E /* Model.xcdatamodeld */; };
+		51C0378C2068475D002663C7 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C0378B2068475D002663C7 /* Themes.swift */; };
 		88D1B00D08E1AB959B1CFF77 /* Pods_Code_NotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BD0B6E77EB506AB998AD1B /* Pods_Code_NotesUITests.framework */; };
 		D00FB67C1E26F06100DAA7C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00FB67B1E26F06100DAA7C7 /* Main.storyboard */; };
 		D0239A551E45328E00A55A6F /* DefaultLanguageListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0239A541E45328E00A55A6F /* DefaultLanguageListData.swift */; };
@@ -80,6 +81,7 @@
 		5174E4AA1FF230B900EAEBB2 /* DefaultDetailView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DefaultDetailView.storyboard; sourceTree = "<group>"; };
 		517F94AE1E4ACEC400EA0A8A /* LanguageListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageListTableViewCell.swift; path = ValueObjects/LanguageListTableViewCell.swift; sourceTree = "<group>"; };
 		51AB1B091E3C6F2A00774E7E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		51C0378B2068475D002663C7 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		7CBAEBFDCFEFAB79395D5CD2 /* Pods-Code NotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code NotesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Code NotesUITests/Pods-Code NotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5DEB2DE03710337B09F7E46 /* Pods-Code Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code Notes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Code Notes/Pods-Code Notes.debug.xcconfig"; sourceTree = "<group>"; };
 		C851A75942EB4944AF3BD8B5 /* Pods-Code Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code Notes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Code Notes/Pods-Code Notes.release.xcconfig"; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				D069F0681E1CAE91008C79E7 /* AppDelegate.swift */,
 				D069F0711E1CAE91008C79E7 /* Assets.xcassets */,
 				D069F0761E1CAE91008C79E7 /* Info.plist */,
+				51C0378B2068475D002663C7 /* Themes.swift */,
 			);
 			path = "Code Notes";
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				516492F61E496AE000603880 /* LanguageListManagementViewController.swift in Sources */,
+				51C0378C2068475D002663C7 /* Themes.swift in Sources */,
 				D069F06D1E1CAE91008C79E7 /* DetailViewController.swift in Sources */,
 				D0351FB51E24168A00C1DF53 /* ViewNoteViewController.swift in Sources */,
 				D069F06B1E1CAE91008C79E7 /* MasterViewController.swift in Sources */,
