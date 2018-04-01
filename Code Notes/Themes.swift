@@ -10,9 +10,9 @@ import UIKit
 
 struct Theme {
 
-    static var backgroundColor:UIColor?
-    static var buttonTextColor:UIColor?
-    static var buttonBackgroundColor:UIColor?
+    static var backgroundColor: UIColor?
+    static var buttonTextColor: UIColor?
+    static var buttonBackgroundColor: UIColor?
 
     static public func defaultTheme() {
         self.backgroundColor = UIColor.white

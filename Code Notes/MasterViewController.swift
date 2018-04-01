@@ -122,11 +122,11 @@ class MasterViewController: UITableViewController {
                 let alertController = UIAlertController(title: "Delete Note?",
                                                         message: "Are you sure you want to delete this note?",
                                                         preferredStyle: .alert)
-                let YesAction = UIAlertAction(title: "Yes", style: .default) { (_: UIAlertAction!) in
+                let yesAction = UIAlertAction(title: "Yes", style: .default) { (_: UIAlertAction!) in
                     self.deleteRecord(tableIndexToDelete: indexPath.row)
                 }
                 let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_: UIAlertAction!) in }
-                alertController.addAction(YesAction)
+                alertController.addAction(yesAction)
                 alertController.addAction(cancelAction)
                 self.present(alertController, animated: true, completion: nil)
             } else {
@@ -138,9 +138,9 @@ class MasterViewController: UITableViewController {
     // MARK: - Data Handling
 
     let dateFormatter: DateFormatter = {
-        let _formatter = DateFormatter()
-        _formatter.dateStyle = .short
-        return _formatter
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter
     }()
 
     func getData() {

@@ -74,12 +74,12 @@ class ViewNoteViewController: UIViewController {
             let alertController = UIAlertController(title: "Delete Note?",
                                                     message: "Are you sure you want to delete this note?",
                                                     preferredStyle: .alert)
-            let YesAction = UIAlertAction(title: "Yes", style: .default) { (_: UIAlertAction!) in
+            let yesAction = UIAlertAction(title: "Yes", style: .default) { (_: UIAlertAction!) in
                 self.deleteRecord()
                 self.navigateAfterDelete()
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_: UIAlertAction!) in }
-            alertController.addAction(YesAction)
+            alertController.addAction(yesAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
