@@ -46,6 +46,7 @@ class EditNoteViewController: UIViewController {
         if UIInterfaceOrientationIsPortrait(orientation) {
             self.splitViewController?.preferredDisplayMode = .primaryHidden
         }
+
     }
 
     override func didReceiveMemoryWarning() {

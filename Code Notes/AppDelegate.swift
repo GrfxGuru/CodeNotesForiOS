@@ -80,6 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                              onto primaryViewController: UIViewController) -> Bool {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
         guard (secondaryAsNavController.topViewController as? DetailViewController) != nil else { return false }
+
         return false
     }
 
@@ -98,14 +99,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             UserDefaults.standard.set(false, forKey: "firstRun")
             (UIApplication.shared.delegate as? AppDelegate)!.languageListManagement.createLanguages()
         }
-
         // Check for dark theme
         if UserDefaults.standard.value(forKey: "darkTheme") == nil {
             UserDefaults.standard.set(false, forKey: "darkTheme")
             Theme.defaultTheme()
+        } else {
+            let currentTheme: Bool = UserDefaults.standard.bool(forKey: "darkTheme")
+            currentTheme ? Theme.darkTheme() : Theme.defaultTheme()
         }
-
-        // TODO: Check theme for dark theme and switch rather than use the default
     }
 
     // MARK: - Core Data stack

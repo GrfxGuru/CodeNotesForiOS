@@ -70,6 +70,14 @@ class UserSettingsViewController: UIViewController {
         sectionsVC.tableView.reloadData()
     }
 
+    @IBAction func swDarkTheme(_ sender: UISwitch) {
+        if swDarkTheme.isOn {
+            Theme.darkTheme()
+        } else {
+            Theme.defaultTheme()
+        }
+        splitViewController?.loadView()
+    }
     /*
     // MARK: - Navigation
 
