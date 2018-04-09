@@ -17,7 +17,7 @@ class LanguageListManagementViewController: UIViewController {
     @IBOutlet weak var btnRemove: UIButton!
     @IBOutlet weak var btnReset: UIButton!
     @IBOutlet weak var btnClear: UIButton!
-    @IBOutlet weak var btnClose: UIButton!    
+    @IBOutlet weak var btnClose: UIButton!
     let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
     weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
 

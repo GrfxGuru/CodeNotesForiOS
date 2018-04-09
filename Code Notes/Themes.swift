@@ -21,6 +21,7 @@ struct Theme {
     static var buttonBackgroundColor: UIColor?
     static var navBackgroundColor: UIColor?
 
+    // MARK: Themes
     static public func defaultTheme() {
         self.currentTheme = ThemeTypes.defaultTheme
         self.backgroundColor = UIColor.white
@@ -30,7 +31,6 @@ struct Theme {
         self.navBackgroundColor = UIColor.white
         updateDisplay()
     }
-
     static public func darkTheme() {
         self.currentTheme = ThemeTypes.darkTheme
         self.backgroundColor = UIColor.darkGray
@@ -40,31 +40,38 @@ struct Theme {
         self.navBackgroundColor = UIColor.darkGray
         updateDisplay()
     }
-
-    static public func updateDisplay() {
-        // Theme buttons
+    // MARK: Theme Controls
+    fileprivate static func themeButtons() {
         let proxyButton = UIButton.appearance()
         proxyButton.contentEdgeInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
         proxyButton.setTitleColor(Theme.buttonTextColor, for: .normal)
         proxyButton.backgroundColor = Theme.buttonBackgroundColor
         proxyButton.tintColor = Theme.buttonTextColor
+    }
+    fileprivate static func themeKeyboard() {
         // Theme the keyboard
         if currentTheme == ThemeTypes.defaultTheme {
             UITextField.appearance().keyboardAppearance = .default
         } else {
             UITextField.appearance().keyboardAppearance = .dark
         }
-        // Theme Navigation
+    }
+    fileprivate static func themeNavBar() {
         let proxyNavBar = UINavigationBar.appearance()
         proxyNavBar.barTintColor = Theme.navBackgroundColor
-        // ToolBar
         let proxyToolBar = UIToolbar.appearance()
         proxyToolBar.barTintColor = Theme.navBackgroundColor
-        // Theme Table
+    }
+    fileprivate static func themeTable() {
         let proxyTable = UITableView.appearance()
         proxyTable.backgroundColor = Theme.backgroundColor
-        // Theme TableCell
         let proxyTableCell = UITableViewCell.appearance()
         proxyTableCell.backgroundColor = Theme.backgroundColor
+    }
+    static public func updateDisplay() {
+        themeButtons()
+        themeKeyboard()
+        themeNavBar()
+        themeTable()
     }
 }
