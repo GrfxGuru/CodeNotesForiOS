@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aY4-tp-BBC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aY4-tp-BBC">
     <device id="ipad12_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -149,6 +149,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnAdd" destination="btK-vV-Duj" id="T84-Iw-T1g"/>
+                        <outlet property="btnClear" destination="aaK-Hq-yVT" id="ODW-Ms-ees"/>
+                        <outlet property="btnClose" destination="a7U-VS-ny3" id="zHo-fM-gY0"/>
+                        <outlet property="btnRemove" destination="Zez-D3-YKH" id="DvY-mm-Xt1"/>
+                        <outlet property="btnReset" destination="Pyz-qN-Woa" id="GGH-xi-oww"/>
                         <outlet property="tblLanguages" destination="3Ww-Sq-OqQ" id="wWO-Ut-Dd1"/>
                     </connections>
                 </viewController>

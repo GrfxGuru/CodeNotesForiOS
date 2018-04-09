@@ -173,6 +173,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnManageLanguages" destination="qYo-qd-Fb8" id="LyD-q9-YRO"/>
+                        <outlet property="btnRemoveAllNotes" destination="ABV-xI-rDy" id="yha-0t-1pg"/>
                         <outlet property="lblEvergreenURL" destination="rmh-IT-mBe" id="zw5-fa-JZi"/>
                         <outlet property="myWebsite" destination="jCW-O2-78c" id="DQ0-ki-F9s"/>
                         <outlet property="swConfirmNoteDeletion" destination="puf-ec-rnB" id="Ogu-ZQ-gyM"/>

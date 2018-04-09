@@ -17,7 +17,8 @@ class UserSettingsViewController: UIViewController {
     @IBOutlet weak var myWebsite: UILabel!
     @IBOutlet weak var lblEvergreenURL: UILabel!
     @IBOutlet weak var swDarkTheme: UISwitch!
-
+    @IBOutlet weak var btnRemoveAllNotes: UIButton!
+    @IBOutlet weak var btnManageLanguages: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +36,10 @@ class UserSettingsViewController: UIViewController {
         if UIInterfaceOrientationIsPortrait(orientation) {
             self.splitViewController?.preferredDisplayMode = .primaryHidden
         }
+        btnRemoveAllNotes.setTitleColor(UIColor.white, for: .normal)
+        btnManageLanguages.setTitleColor(UIColor.white, for: .normal)
+        btnManageLanguages.backgroundColor = UIColor.lightGray
+        btnRemoveAllNotes.backgroundColor = UIColor.lightGray
     }
 
     override func didReceiveMemoryWarning() {

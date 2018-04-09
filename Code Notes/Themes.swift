@@ -19,6 +19,7 @@ struct Theme {
     static var buttonTextColor: UIColor?
     static var buttonTextColorDisabled: UIColor?
     static var buttonBackgroundColor: UIColor?
+    static var navBackgroundColor: UIColor?
 
     static public func defaultTheme() {
         self.currentTheme = ThemeTypes.defaultTheme
@@ -26,6 +27,7 @@ struct Theme {
         self.buttonTextColor = UIColor.blue
         self.buttonTextColorDisabled = UIColor.lightGray
         self.buttonBackgroundColor = UIColor.clear
+        self.navBackgroundColor = UIColor.white
         updateDisplay()
     }
 
@@ -34,7 +36,8 @@ struct Theme {
         self.backgroundColor = UIColor.darkGray
         self.buttonTextColor = UIColor.white
         self.buttonTextColorDisabled = UIColor.lightGray
-        self.buttonBackgroundColor = UIColor.darkGray
+        self.buttonBackgroundColor = UIColor.clear
+        self.navBackgroundColor = UIColor.darkGray
         updateDisplay()
     }
 
@@ -45,10 +48,17 @@ struct Theme {
         proxyButton.setTitleColor(Theme.buttonTextColor, for: .normal)
         proxyButton.backgroundColor = Theme.buttonBackgroundColor
         proxyButton.tintColor = Theme.buttonTextColor
+        // Theme the keyboard
         if currentTheme == ThemeTypes.defaultTheme {
             UITextField.appearance().keyboardAppearance = .default
         } else {
             UITextField.appearance().keyboardAppearance = .dark
         }
+        // Theme Navigation
+        let proxyNavBar = UINavigationBar.appearance()
+        proxyNavBar.barTintColor = Theme.navBackgroundColor
+        // ToolBar
+        let proxyToolBar = UIToolbar.appearance()
+        proxyToolBar.barTintColor = Theme.navBackgroundColor
     }
 }

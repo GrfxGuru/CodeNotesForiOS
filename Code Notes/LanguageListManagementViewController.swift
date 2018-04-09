@@ -13,7 +13,12 @@ import Evergreen
 class LanguageListManagementViewController: UIViewController {
 
     @IBOutlet weak var tblLanguages: UITableView!
-
+    @IBOutlet weak var btnAdd: UIButton!
+    @IBOutlet weak var btnRemove: UIButton!
+    @IBOutlet weak var btnReset: UIButton!
+    @IBOutlet weak var btnClear: UIButton!
+    @IBOutlet weak var btnClose: UIButton!
+    
     let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
     weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
 
@@ -28,6 +33,17 @@ class LanguageListManagementViewController: UIViewController {
         getData()
         tblLanguages.reloadData()
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+        
+        btnAdd.setTitleColor(UIColor.white, for: .normal)
+        btnRemove.setTitleColor(UIColor.white, for: .normal)
+        btnReset.setTitleColor(UIColor.white, for: .normal)
+        btnClear.setTitleColor(UIColor.white, for: .normal)
+        btnClose.setTitleColor(UIColor.white, for: .normal)
+        btnAdd.backgroundColor = UIColor.lightGray
+        btnRemove.backgroundColor = UIColor.lightGray
+        btnReset.backgroundColor = UIColor.lightGray
+        btnClear.backgroundColor = UIColor.lightGray
+        btnClose.backgroundColor = UIColor.lightGray
     }
 
     override func didReceiveMemoryWarning() {
