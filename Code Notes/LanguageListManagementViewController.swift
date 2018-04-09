@@ -17,8 +17,7 @@ class LanguageListManagementViewController: UIViewController {
     @IBOutlet weak var btnRemove: UIButton!
     @IBOutlet weak var btnReset: UIButton!
     @IBOutlet weak var btnClear: UIButton!
-    @IBOutlet weak var btnClose: UIButton!
-    
+    @IBOutlet weak var btnClose: UIButton!    
     let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
     weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
 
@@ -33,7 +32,6 @@ class LanguageListManagementViewController: UIViewController {
         getData()
         tblLanguages.reloadData()
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-        
         btnAdd.setTitleColor(UIColor.white, for: .normal)
         btnRemove.setTitleColor(UIColor.white, for: .normal)
         btnReset.setTitleColor(UIColor.white, for: .normal)

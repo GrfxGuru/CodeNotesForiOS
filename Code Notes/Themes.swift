@@ -60,5 +60,11 @@ struct Theme {
         // ToolBar
         let proxyToolBar = UIToolbar.appearance()
         proxyToolBar.barTintColor = Theme.navBackgroundColor
+        // Theme Table
+        let proxyTable = UITableView.appearance()
+        proxyTable.backgroundColor = Theme.backgroundColor
+        // Theme TableCell
+        let proxyTableCell = UITableViewCell.appearance()
+        proxyTableCell.backgroundColor = Theme.backgroundColor
     }
 }
