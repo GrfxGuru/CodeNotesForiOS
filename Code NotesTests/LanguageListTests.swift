@@ -10,7 +10,7 @@ import XCTest
 import CoreData
 @testable import Code_Notes
 
-class CodeNotesTests: XCTestCase {
+class LanguageListTests: XCTestCase {
     let languageList = DefaultLanguageListData()
 
     override func setUp() {
