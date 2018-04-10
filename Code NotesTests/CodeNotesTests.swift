@@ -7,9 +7,11 @@
 //
 
 import XCTest
-@testable import CodeNotes
+import CoreData
+@testable import Code_Notes
 
 class CodeNotesTests: XCTestCase {
+    let languageList = DefaultLanguageListData()
 
     override func setUp() {
         super.setUp()
@@ -20,10 +22,22 @@ class CodeNotesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCreateLanguages() {
+        languageList.createLanguages()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LanguageList")
+        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
+        do {
+            try XCTAssert(context.count(for: fetchRequest) > 0, "Default languages created")
+        }
+    }
+    func testClearLanguages() {
+        languageList.createLanguages()
+        languageList.clearLanguages()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LanguageList")
+        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
+        do {
+            try XCTAssert(context.count(for: fetchRequest) == 0, "The list is empty")
+        }
     }
 
     func testPerformanceExample() {
