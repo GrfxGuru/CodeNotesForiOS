@@ -6,7 +6,7 @@ target 'Code Notes' do
   use_frameworks!
 
   # Pods for Code Notes
-  pod 'Evergreen'
+  pod 'Evergreen', :inhibit_warnings => true
 
   target 'Code NotesTests' do
     inherit! :search_paths
