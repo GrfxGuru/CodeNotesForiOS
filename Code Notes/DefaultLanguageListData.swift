@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class DefaultLanguageListData: NSObject {
+final class DefaultLanguageListData: NSObject {
     let defaultLanguages = DefaultLanguages.init().getAll
     func createLanguages() {
         self.clearLanguages()
@@ -27,16 +27,14 @@ class DefaultLanguageListData: NSObject {
     func clearLanguages() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LanguageList")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
-        do {
-            try context.execute(deleteRequest)
-        } catch let error as NSError {
-            print(error)
-        }
-        (UIApplication.shared.delegate as? AppDelegate)!.saveContext()
+        doDeleteRequest(deleteRequest)
     }
     func removeLanguage(languageID: NSManagedObjectID) {
         let deleteRequest = NSBatchDeleteRequest(objectIDs: [languageID])
+        doDeleteRequest(deleteRequest)
+    }
+    // MARK: Helper Functions
+    fileprivate func doDeleteRequest(_ deleteRequest: NSBatchDeleteRequest) {
         let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
         do {
             try context.execute(deleteRequest)
