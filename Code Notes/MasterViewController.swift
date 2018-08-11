@@ -13,7 +13,6 @@ import Evergreen
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController?
-    let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +60,7 @@ class MasterViewController: UITableViewController {
 
     fileprivate func segueAddNote(_ segue: UIStoryboardSegue) {
         log("Adding a new note", forLevel: .debug)
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
-        let newNote = NoteRecord(context: context)
+        let newNote = NoteRecord(context: AppData.context)
         newNote.dateCreated = Date() as Date
         newNote.dateModified = Date() as Date
         newNote.noteName = ""
@@ -148,8 +146,8 @@ class MasterViewController: UITableViewController {
         let sortDescriptorLanguages = NSSortDescriptor(key: #keyPath(LanguageList.languageName), ascending: true)
         fetchRequestLanguages.sortDescriptors = [sortDescriptorLanguages]
         do {
-            (UIApplication.shared.delegate as? AppDelegate)!.languages = try context.fetch(fetchRequestLanguages)
-            (UIApplication.shared.delegate as? AppDelegate)!.notes = try context.fetch(NoteRecord.fetchRequest())
+            (UIApplication.shared.delegate as? AppDelegate)!.languages = try AppData.context.fetch(fetchRequestLanguages)
+            (UIApplication.shared.delegate as? AppDelegate)!.notes = try AppData.context.fetch(NoteRecord.fetchRequest())
         } catch {
             print("Data Fetch Failed")
         }
@@ -159,9 +157,8 @@ class MasterViewController: UITableViewController {
         log("Deleting the record", forLevel: .debug)
         let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[tableIndexToDelete]
         let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
         do {
-            try context.execute(deleteRequest)
+            try AppData.context.execute(deleteRequest)
         } catch let error as NSError {
             print(error)
         }

@@ -32,6 +32,7 @@
 		D069F08B1E1CAE91008C79E7 /* Code_NotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F08A1E1CAE91008C79E7 /* Code_NotesUITests.swift */; };
 		D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */; };
 		D08025BF211EB7210056A6E7 /* DefaultLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08025BE211EB7210056A6E7 /* DefaultLanguages.swift */; };
+		D0EBD338211EC1AA00FB8FFC /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EBD337211EC1AA00FB8FFC /* Configuration.swift */; };
 		D0FA24571E3810F200EB54BE /* New icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FA24481E3810F200EB54BE /* New icon-60@2x.png */; };
 		D0FA24581E3810F200EB54BE /* New icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FA24491E3810F200EB54BE /* New icon-60@3x.png */; };
 		D0FA24591E3810F200EB54BE /* New icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FA244A1E3810F200EB54BE /* New icon-76.png */; };
@@ -104,6 +105,7 @@
 		D069F08C1E1CAE91008C79E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteListTableViewCell.swift; path = ValueObjects/NoteListTableViewCell.swift; sourceTree = "<group>"; };
 		D08025BE211EB7210056A6E7 /* DefaultLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLanguages.swift; sourceTree = "<group>"; };
+		D0EBD337211EC1AA00FB8FFC /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		D0FA24451E3810F200EB54BE /* CodeNotes Icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "CodeNotes Icon.pdf"; sourceTree = "<group>"; };
 		D0FA24461E3810F200EB54BE /* CodeNotesIcon.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = CodeNotesIcon.sketch; sourceTree = "<group>"; };
 		D0FA24481E3810F200EB54BE /* New icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New icon-60@2x.png"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		D069F0671E1CAE91008C79E7 /* Code Notes */ = {
 			isa = PBXGroup;
 			children = (
+				D0EBD336211EC19900FB8FFC /* Configuration */,
 				D08025BD211EB2A80056A6E7 /* Resources */,
 				D08025BC211EB2950056A6E7 /* Assets */,
 				D08025BB211EB2770056A6E7 /* Models */,
@@ -334,6 +337,14 @@
 				D0239A541E45328E00A55A6F /* DefaultLanguageListData.swift */,
 			);
 			name = "Data Handling";
+			sourceTree = "<group>";
+		};
+		D0EBD336211EC19900FB8FFC /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D0EBD337211EC1AA00FB8FFC /* Configuration.swift */,
+			);
+			name = Configuration;
 			sourceTree = "<group>";
 		};
 		D0FA24441E3810F200EB54BE /* CodeNotes Icons */ = {
@@ -650,6 +661,7 @@
 			files = (
 				516492F61E496AE000603880 /* LanguageListManagementViewController.swift in Sources */,
 				51C0378C2068475D002663C7 /* Themes.swift in Sources */,
+				D0EBD338211EC1AA00FB8FFC /* Configuration.swift in Sources */,
 				D069F06D1E1CAE91008C79E7 /* DetailViewController.swift in Sources */,
 				D0351FB51E24168A00C1DF53 /* ViewNoteViewController.swift in Sources */,
 				D069F06B1E1CAE91008C79E7 /* MasterViewController.swift in Sources */,

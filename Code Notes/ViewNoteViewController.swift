@@ -95,10 +95,9 @@ class ViewNoteViewController: UIViewController {
         log("Deleting the record from CoreData", forLevel: .debug)
         let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[detailItem]
         let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
 
         do {
-            try context.execute(deleteRequest)
+            try AppData.context.execute(deleteRequest)
         } catch let error as NSError {
             print(error)
         }

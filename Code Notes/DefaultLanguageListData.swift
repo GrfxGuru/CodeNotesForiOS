@@ -13,10 +13,9 @@ final class DefaultLanguageListData: NSObject {
     let defaultLanguages = DefaultLanguages.init().getAll
     func createLanguages() {
         self.clearLanguages()
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
         var languageID: Int32 = 1
         for language in defaultLanguages {
-            let newLanguage = LanguageList(context: context)
+            let newLanguage = LanguageList(context: AppData.context)
             newLanguage.languageName = language
             newLanguage.languageID = languageID
             (UIApplication.shared.delegate as? AppDelegate)!.languages.append(newLanguage)
@@ -35,9 +34,8 @@ final class DefaultLanguageListData: NSObject {
     }
     // MARK: Helper Functions
     fileprivate func doDeleteRequest(_ deleteRequest: NSBatchDeleteRequest) {
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
         do {
-            try context.execute(deleteRequest)
+            try AppData.context.execute(deleteRequest)
         } catch let error as NSError {
             print(error)
         }

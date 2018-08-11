@@ -62,10 +62,9 @@ class UserSettingsViewController: UIViewController {
         log("Removing all notes from the database", forLevel: .debug)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NoteRecord")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
 
         do {
-            try context.execute(deleteRequest)
+            try AppData.context.execute(deleteRequest)
         } catch let error as NSError {
             print(error)
         }

@@ -18,7 +18,6 @@ class LanguageListManagementViewController: UIViewController {
     @IBOutlet weak var btnReset: UIButton!
     @IBOutlet weak var btnClear: UIButton!
     @IBOutlet weak var btnClose: UIButton!
-    let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
     weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
 
     override func viewDidLoad() {
@@ -77,7 +76,7 @@ class LanguageListManagementViewController: UIViewController {
     func saveNewLanguage(languageName: String) {
         if languageName != "" {
             log("Saving the new language", forLevel: .debug)
-            let newLanguage = LanguageList(context: context)
+            let newLanguage = LanguageList(context: AppData.context)
             newLanguage.languageName = languageName
             newLanguage.languageID = 0
             (UIApplication.shared.delegate as? AppDelegate)!.languages.append(newLanguage)
@@ -137,7 +136,7 @@ class LanguageListManagementViewController: UIViewController {
         let sortDescriptor = NSSortDescriptor(key: #keyPath(LanguageList.languageName), ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         do {
-            (UIApplication.shared.delegate as? AppDelegate)!.languages = try context.fetch(fetchRequest)
+            (UIApplication.shared.delegate as? AppDelegate)!.languages = try AppData.context.fetch(fetchRequest)
         } catch {
             print("Data Fetch Failed")
         }
