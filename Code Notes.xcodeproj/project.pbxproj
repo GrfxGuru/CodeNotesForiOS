@@ -154,14 +154,10 @@
 		5174E49F1FF22AC000EAEBB2 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				D08025C3211EC02A0056A6E7 /* Detail Storyboards */,
+				D08025C2211EC01E0056A6E7 /* Master Storyboards */,
 				D069F0731E1CAE91008C79E7 /* LaunchScreen.storyboard */,
 				D00FB67B1E26F06100DAA7C7 /* Main.storyboard */,
-				5174E4AA1FF230B900EAEBB2 /* DefaultDetailView.storyboard */,
-				5174E4A81FF2308C00EAEBB2 /* ApplicationSettings.storyboard */,
-				5174E4A61FF22F3F00EAEBB2 /* EditNote.storyboard */,
-				5174E4A41FF22EDD00EAEBB2 /* LanguageManagement.storyboard */,
-				5174E4A21FF22DD500EAEBB2 /* NoteList.storyboard */,
-				5174E4A01FF22D2600EAEBB2 /* ViewNote.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -223,7 +219,7 @@
 				5174E49F1FF22AC000EAEBB2 /* Storyboards */,
 				D0FA24441E3810F200EB54BE /* CodeNotes Icons */,
 				D0B909B01E2E99DA0058DECA /* Data Handling */,
-				D069F09B1E1CC43F008C79E7 /* ValueObjects */,
+				D069F09B1E1CC43F008C79E7 /* Tables */,
 				D069F09A1E1CC426008C79E7 /* Controllers */,
 				D069F0681E1CAE91008C79E7 /* AppDelegate.swift */,
 			);
@@ -251,23 +247,19 @@
 		D069F09A1E1CC426008C79E7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D069F06A1E1CAE91008C79E7 /* MasterViewController.swift */,
-				D069F06C1E1CAE91008C79E7 /* DetailViewController.swift */,
-				D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */,
-				D0FF5E761E29841600F4678E /* EditNoteViewController.swift */,
-				514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */,
-				516492F51E496AE000603880 /* LanguageListManagementViewController.swift */,
+				D08025C1211EC0090056A6E7 /* Master View Controllers */,
+				D08025C0211EBFEC0056A6E7 /* Detail View Controllers */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		D069F09B1E1CC43F008C79E7 /* ValueObjects */ = {
+		D069F09B1E1CC43F008C79E7 /* Tables */ = {
 			isa = PBXGroup;
 			children = (
 				D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */,
 				517F94AE1E4ACEC400EA0A8A /* LanguageListTableViewCell.swift */,
 			);
-			name = ValueObjects;
+			name = Tables;
 			sourceTree = "<group>";
 		};
 		D08025BB211EB2770056A6E7 /* Models */ = {
@@ -294,6 +286,46 @@
 				51C0378B2068475D002663C7 /* Themes.swift */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		D08025C0211EBFEC0056A6E7 /* Detail View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D069F06C1E1CAE91008C79E7 /* DetailViewController.swift */,
+				D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */,
+				D0FF5E761E29841600F4678E /* EditNoteViewController.swift */,
+				514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */,
+				516492F51E496AE000603880 /* LanguageListManagementViewController.swift */,
+			);
+			name = "Detail View Controllers";
+			sourceTree = "<group>";
+		};
+		D08025C1211EC0090056A6E7 /* Master View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D069F06A1E1CAE91008C79E7 /* MasterViewController.swift */,
+			);
+			name = "Master View Controllers";
+			sourceTree = "<group>";
+		};
+		D08025C2211EC01E0056A6E7 /* Master Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5174E4A21FF22DD500EAEBB2 /* NoteList.storyboard */,
+			);
+			path = "Master Storyboards";
+			sourceTree = "<group>";
+		};
+		D08025C3211EC02A0056A6E7 /* Detail Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5174E4A01FF22D2600EAEBB2 /* ViewNote.storyboard */,
+				5174E4AA1FF230B900EAEBB2 /* DefaultDetailView.storyboard */,
+				5174E4A81FF2308C00EAEBB2 /* ApplicationSettings.storyboard */,
+				5174E4A61FF22F3F00EAEBB2 /* EditNote.storyboard */,
+				5174E4A41FF22EDD00EAEBB2 /* LanguageManagement.storyboard */,
+			);
+			path = "Detail Storyboards";
 			sourceTree = "<group>";
 		};
 		D0B909B01E2E99DA0058DECA /* Data Handling */ = {
