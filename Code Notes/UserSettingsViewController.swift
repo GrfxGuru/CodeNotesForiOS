@@ -64,7 +64,7 @@ class UserSettingsViewController: UIViewController {
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
         do {
-            try AppData.context.execute(deleteRequest)
+            try AppConfiguration.context.execute(deleteRequest)
         } catch let error as NSError {
             print(error)
         }

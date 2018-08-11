@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum AppData {
+enum AppConfiguration {
     static let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
 }
 

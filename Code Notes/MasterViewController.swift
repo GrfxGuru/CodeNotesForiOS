@@ -60,7 +60,7 @@ class MasterViewController: UITableViewController {
 
     fileprivate func segueAddNote(_ segue: UIStoryboardSegue) {
         log("Adding a new note", forLevel: .debug)
-        let newNote = NoteRecord(context: AppData.context)
+        let newNote = NoteRecord(context: AppConfiguration.context)
         newNote.dateCreated = Date() as Date
         newNote.dateModified = Date() as Date
         newNote.noteName = ""
@@ -146,8 +146,10 @@ class MasterViewController: UITableViewController {
         let sortDescriptorLanguages = NSSortDescriptor(key: #keyPath(LanguageList.languageName), ascending: true)
         fetchRequestLanguages.sortDescriptors = [sortDescriptorLanguages]
         do {
-            (UIApplication.shared.delegate as? AppDelegate)!.languages = try AppData.context.fetch(fetchRequestLanguages)
-            (UIApplication.shared.delegate as? AppDelegate)!.notes = try AppData.context.fetch(NoteRecord.fetchRequest())
+            (UIApplication.shared.delegate as? AppDelegate)!.languages =
+                                                            try AppConfiguration.context.fetch(fetchRequestLanguages)
+            (UIApplication.shared.delegate as? AppDelegate)!.notes =
+                                                            try AppConfiguration.context.fetch(NoteRecord.fetchRequest())
         } catch {
             print("Data Fetch Failed")
         }
@@ -158,7 +160,7 @@ class MasterViewController: UITableViewController {
         let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[tableIndexToDelete]
         let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
         do {
-            try AppData.context.execute(deleteRequest)
+            try AppConfiguration.context.execute(deleteRequest)
         } catch let error as NSError {
             print(error)
         }

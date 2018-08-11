@@ -19,6 +19,7 @@ class LanguageListManagementViewController: UIViewController {
     @IBOutlet weak var btnClear: UIButton!
     @IBOutlet weak var btnClose: UIButton!
     weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
+    let languageListModel = (UIApplication.shared.delegate as? AppDelegate)!.languageListManagement
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +77,7 @@ class LanguageListManagementViewController: UIViewController {
     func saveNewLanguage(languageName: String) {
         if languageName != "" {
             log("Saving the new language", forLevel: .debug)
-            let newLanguage = LanguageList(context: AppData.context)
+            let newLanguage = LanguageList(context: AppConfiguration.context)
             newLanguage.languageName = languageName
             newLanguage.languageID = 0
             (UIApplication.shared.delegate as? AppDelegate)!.languages.append(newLanguage)
@@ -98,7 +99,7 @@ class LanguageListManagementViewController: UIViewController {
             let selectedID = tblLanguages.indexPathForSelectedRow
             if let cellNum = selectedID?[1] {
                 let language = (UIApplication.shared.delegate as? AppDelegate)!.languages[cellNum]
-                (UIApplication.shared.delegate as? AppDelegate)!.languageListManagement.removeLanguage(
+                languageListModel.removeLanguage(
                     languageID: language.objectID)
 
                 getData()
@@ -109,14 +110,14 @@ class LanguageListManagementViewController: UIViewController {
 
     @IBAction func btnResetLanguages(_ sender: UIButton) {
         log("Resetting the language list", forLevel: .debug)
-        (UIApplication.shared.delegate as? AppDelegate)!.languageListManagement.createLanguages()
+        languageListModel.createLanguages()
         getData()
         tblLanguages.reloadData()
     }
 
     @IBAction func btnClearAllLanguages(_ sender: UIButton) {
         log("Clearing the language list", forLevel: .debug)
-        (UIApplication.shared.delegate as? AppDelegate)!.languageListManagement.clearLanguages()
+        languageListModel.clearLanguages()
         getData()
         tblLanguages.reloadData()
     }
@@ -136,7 +137,7 @@ class LanguageListManagementViewController: UIViewController {
         let sortDescriptor = NSSortDescriptor(key: #keyPath(LanguageList.languageName), ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         do {
-            (UIApplication.shared.delegate as? AppDelegate)!.languages = try AppData.context.fetch(fetchRequest)
+            (UIApplication.shared.delegate as? AppDelegate)!.languages = try AppConfiguration.context.fetch(fetchRequest)
         } catch {
             print("Data Fetch Failed")
         }

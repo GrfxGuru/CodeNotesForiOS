@@ -97,7 +97,7 @@ class ViewNoteViewController: UIViewController {
         let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
 
         do {
-            try AppData.context.execute(deleteRequest)
+            try AppConfiguration.context.execute(deleteRequest)
         } catch let error as NSError {
             print(error)
         }
