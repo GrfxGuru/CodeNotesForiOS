@@ -10,14 +10,7 @@ import UIKit
 import CoreData
 
 class DefaultLanguageListData: NSObject {
-    // swiftlint:disable comma
-    let defaultLanguages = [
-                            "Java",     "C#",       "C++",      "JavaScript",   "PHP",
-                            "Python",   "Ruby",     "C",        "Objective-C",  "Scala",
-                            "CSS",      "Perl",     "Swift",    "HTML",         "SASS",
-                            "LESS",     "MarkDown", "Bash",     "Go",           "Lua"
-                            ]
-
+    let defaultLanguages = DefaultLanguages.init().getAll
     func createLanguages() {
         self.clearLanguages()
         let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
