@@ -137,7 +137,8 @@ class LanguageListManagementViewController: UIViewController {
         let sortDescriptor = NSSortDescriptor(key: #keyPath(LanguageList.languageName), ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         do {
-            (UIApplication.shared.delegate as? AppDelegate)!.languages = try AppConfiguration.context.fetch(fetchRequest)
+            (UIApplication.shared.delegate as? AppDelegate)!.languages =
+                                                            try AppConfiguration.context.fetch(fetchRequest)
         } catch {
             print("Data Fetch Failed")
         }

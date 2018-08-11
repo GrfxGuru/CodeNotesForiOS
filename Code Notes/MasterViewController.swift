@@ -147,9 +147,9 @@ class MasterViewController: UITableViewController {
         fetchRequestLanguages.sortDescriptors = [sortDescriptorLanguages]
         do {
             (UIApplication.shared.delegate as? AppDelegate)!.languages =
-                                                            try AppConfiguration.context.fetch(fetchRequestLanguages)
+                                                        try AppConfiguration.context.fetch(fetchRequestLanguages)
             (UIApplication.shared.delegate as? AppDelegate)!.notes =
-                                                            try AppConfiguration.context.fetch(NoteRecord.fetchRequest())
+                                                        try AppConfiguration.context.fetch(NoteRecord.fetchRequest())
         } catch {
             print("Data Fetch Failed")
         }
