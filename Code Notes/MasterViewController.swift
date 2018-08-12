@@ -57,15 +57,11 @@ class MasterViewController: UITableViewController {
             controller.detailItem = indexPath.row
         }
     }
-
+    
     fileprivate func segueAddNote(_ segue: UIStoryboardSegue) {
         log("Adding a new note", forLevel: .debug)
         let newNote = NoteRecord(context: AppConfiguration.context)
-        newNote.dateCreated = Date() as Date
-        newNote.dateModified = Date() as Date
-        newNote.noteName = ""
-        newNote.noteLanguage = ""
-        newNote.noteContent = ""
+        newEmptyNote(newNote)
         (UIApplication.shared.delegate as? AppDelegate)!.notes.append(newNote)
         (UIApplication.shared.delegate as? AppDelegate)!.saveContext()
         self.tableView.reloadData()
@@ -166,5 +162,15 @@ class MasterViewController: UITableViewController {
         }
         getData()
         self.tableView.reloadData()
+    }
+
+    // MARK: - Helper Methods
+
+    fileprivate func newEmptyNote(_ newNote: NoteRecord) {
+        newNote.dateCreated = Date() as Date
+        newNote.dateModified = Date() as Date
+        newNote.noteName = ""
+        newNote.noteLanguage = ""
+        newNote.noteContent = ""
     }
 }

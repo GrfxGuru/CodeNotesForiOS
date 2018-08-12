@@ -18,7 +18,7 @@ class EditNoteViewController: UIViewController {
     @IBOutlet weak var fieldNoteLanguage: UITextField!
     @IBOutlet weak var fieldNoteContent: UITextView!
     weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
-    var pickerDataSource = (UIApplication.shared.delegate as? AppDelegate)!.languages
+    let pickerDataSource = (UIApplication.shared.delegate as? AppDelegate)!.languages
     var currentNoteIndex: Int = 0
 
     override func viewDidLoad() {
