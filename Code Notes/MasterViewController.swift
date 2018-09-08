@@ -22,7 +22,7 @@ class MasterViewController: UITableViewController {
             self.detailViewController = (controllers[controllers.count-1] as? UINavigationController)!
                                             .topViewController as? DetailViewController
         }
-        self.tableView.rowHeight = 95
+        self.tableView.rowHeight = UserInterface.Defaults.detailTableCellHeight
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -57,7 +57,7 @@ class MasterViewController: UITableViewController {
             controller.detailItem = indexPath.row
         }
     }
-    
+
     fileprivate func segueAddNote(_ segue: UIStoryboardSegue) {
         log("Adding a new note", forLevel: .debug)
         let newNote = NoteRecord(context: AppConfiguration.context)

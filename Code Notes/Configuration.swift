@@ -37,3 +37,9 @@ func configureUserSettings() {
         currentTheme ? Theme.darkTheme() : Theme.defaultTheme()
     }
 }
+
+struct UserInterface {
+    enum Defaults {
+        static let detailTableCellHeight: CGFloat = 95
+    }
+}
