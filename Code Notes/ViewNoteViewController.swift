@@ -22,6 +22,7 @@ class ViewNoteViewController: UIViewController {
         self.configureView()
         // Do any additional setup after loading the view.
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+        self.view.backgroundColor = Theme.backgroundColor
     }
 
     override func didReceiveMemoryWarning() {

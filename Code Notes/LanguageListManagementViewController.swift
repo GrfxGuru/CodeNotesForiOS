@@ -32,6 +32,7 @@ class LanguageListManagementViewController: UIViewController {
         getData()
         tblLanguages.reloadData()
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+        self.view.backgroundColor = Theme.backgroundColor
         btnAdd.setTitleColor(UIColor.white, for: .normal)
         btnRemove.setTitleColor(UIColor.white, for: .normal)
         btnReset.setTitleColor(UIColor.white, for: .normal)

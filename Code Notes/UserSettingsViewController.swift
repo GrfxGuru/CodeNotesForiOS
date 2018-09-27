@@ -30,6 +30,7 @@ class UserSettingsViewController: UIViewController {
         let darkTheme = UserDefaults.standard.bool(forKey: "darkTheme")
         swDarkTheme.isOn = darkTheme
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+        self.view.backgroundColor = Theme.backgroundColor
 
         let orientation = UIApplication.shared.statusBarOrientation
 
