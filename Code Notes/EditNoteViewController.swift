@@ -26,7 +26,7 @@ class EditNoteViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.configureView()
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-        self.view.backgroundColor = Theme.backgroundColor
+        fieldNoteContent.textColor = Theme.textFieldTextColor
         fieldNoteName.becomeFirstResponder()
         languagePicker.delegate = self
         fieldNoteLanguage.inputView = languagePicker
