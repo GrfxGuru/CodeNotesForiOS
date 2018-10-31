@@ -31,6 +31,8 @@
 		D069F0801E1CAE91008C79E7 /* LanguageListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F07F1E1CAE91008C79E7 /* LanguageListTests.swift */; };
 		D069F08B1E1CAE91008C79E7 /* Code_NotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069F08A1E1CAE91008C79E7 /* Code_NotesUITests.swift */; };
 		D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */; };
+		D08025BF211EB7210056A6E7 /* DefaultLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08025BE211EB7210056A6E7 /* DefaultLanguages.swift */; };
+		D0EBD338211EC1AA00FB8FFC /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EBD337211EC1AA00FB8FFC /* Configuration.swift */; };
 		D0FA24571E3810F200EB54BE /* New icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FA24481E3810F200EB54BE /* New icon-60@2x.png */; };
 		D0FA24581E3810F200EB54BE /* New icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FA24491E3810F200EB54BE /* New icon-60@3x.png */; };
 		D0FA24591E3810F200EB54BE /* New icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FA244A1E3810F200EB54BE /* New icon-76.png */; };
@@ -102,6 +104,8 @@
 		D069F08A1E1CAE91008C79E7 /* Code_NotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code_NotesUITests.swift; sourceTree = "<group>"; };
 		D069F08C1E1CAE91008C79E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteListTableViewCell.swift; path = ValueObjects/NoteListTableViewCell.swift; sourceTree = "<group>"; };
+		D08025BE211EB7210056A6E7 /* DefaultLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLanguages.swift; sourceTree = "<group>"; };
+		D0EBD337211EC1AA00FB8FFC /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		D0FA24451E3810F200EB54BE /* CodeNotes Icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "CodeNotes Icon.pdf"; sourceTree = "<group>"; };
 		D0FA24461E3810F200EB54BE /* CodeNotesIcon.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = CodeNotesIcon.sketch; sourceTree = "<group>"; };
 		D0FA24481E3810F200EB54BE /* New icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New icon-60@2x.png"; sourceTree = "<group>"; };
@@ -152,14 +156,10 @@
 		5174E49F1FF22AC000EAEBB2 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				D08025C3211EC02A0056A6E7 /* Detail Storyboards */,
+				D08025C2211EC01E0056A6E7 /* Master Storyboards */,
 				D069F0731E1CAE91008C79E7 /* LaunchScreen.storyboard */,
 				D00FB67B1E26F06100DAA7C7 /* Main.storyboard */,
-				5174E4AA1FF230B900EAEBB2 /* DefaultDetailView.storyboard */,
-				5174E4A81FF2308C00EAEBB2 /* ApplicationSettings.storyboard */,
-				5174E4A61FF22F3F00EAEBB2 /* EditNote.storyboard */,
-				5174E4A41FF22EDD00EAEBB2 /* LanguageManagement.storyboard */,
-				5174E4A21FF22DD500EAEBB2 /* NoteList.storyboard */,
-				5174E4A01FF22D2600EAEBB2 /* ViewNote.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -215,16 +215,16 @@
 		D069F0671E1CAE91008C79E7 /* Code Notes */ = {
 			isa = PBXGroup;
 			children = (
+				D0EBD336211EC19900FB8FFC /* Configuration */,
+				D08025BD211EB2A80056A6E7 /* Resources */,
+				D08025BC211EB2950056A6E7 /* Assets */,
+				D08025BB211EB2770056A6E7 /* Models */,
 				5174E49F1FF22AC000EAEBB2 /* Storyboards */,
-				51AB1B081E3C6F2A00774E7E /* Model.xcdatamodeld */,
 				D0FA24441E3810F200EB54BE /* CodeNotes Icons */,
 				D0B909B01E2E99DA0058DECA /* Data Handling */,
-				D069F09B1E1CC43F008C79E7 /* ValueObjects */,
+				D069F09B1E1CC43F008C79E7 /* Tables */,
 				D069F09A1E1CC426008C79E7 /* Controllers */,
 				D069F0681E1CAE91008C79E7 /* AppDelegate.swift */,
-				D069F0711E1CAE91008C79E7 /* Assets.xcassets */,
-				D069F0761E1CAE91008C79E7 /* Info.plist */,
-				51C0378B2068475D002663C7 /* Themes.swift */,
 			);
 			path = "Code Notes";
 			sourceTree = "<group>";
@@ -250,23 +250,85 @@
 		D069F09A1E1CC426008C79E7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D069F06A1E1CAE91008C79E7 /* MasterViewController.swift */,
+				D08025C1211EC0090056A6E7 /* Master View Controllers */,
+				D08025C0211EBFEC0056A6E7 /* Detail View Controllers */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D069F09B1E1CC43F008C79E7 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */,
+				517F94AE1E4ACEC400EA0A8A /* LanguageListTableViewCell.swift */,
+			);
+			name = Tables;
+			sourceTree = "<group>";
+		};
+		D08025BB211EB2770056A6E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				51AB1B081E3C6F2A00774E7E /* Model.xcdatamodeld */,
+				D08025BE211EB7210056A6E7 /* DefaultLanguages.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D08025BC211EB2950056A6E7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D069F0711E1CAE91008C79E7 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		D08025BD211EB2A80056A6E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D069F0761E1CAE91008C79E7 /* Info.plist */,
+				51C0378B2068475D002663C7 /* Themes.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D08025C0211EBFEC0056A6E7 /* Detail View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				D069F06C1E1CAE91008C79E7 /* DetailViewController.swift */,
 				D0351FB41E24168A00C1DF53 /* ViewNoteViewController.swift */,
 				D0FF5E761E29841600F4678E /* EditNoteViewController.swift */,
 				514C911F1E344F4C00130EAE /* UserSettingsViewController.swift */,
 				516492F51E496AE000603880 /* LanguageListManagementViewController.swift */,
 			);
-			name = Controllers;
+			name = "Detail View Controllers";
 			sourceTree = "<group>";
 		};
-		D069F09B1E1CC43F008C79E7 /* ValueObjects */ = {
+		D08025C1211EC0090056A6E7 /* Master View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D06F16B71E1E04A5007EDD5D /* NoteListTableViewCell.swift */,
-				517F94AE1E4ACEC400EA0A8A /* LanguageListTableViewCell.swift */,
+				D069F06A1E1CAE91008C79E7 /* MasterViewController.swift */,
 			);
-			name = ValueObjects;
+			name = "Master View Controllers";
+			sourceTree = "<group>";
+		};
+		D08025C2211EC01E0056A6E7 /* Master Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5174E4A21FF22DD500EAEBB2 /* NoteList.storyboard */,
+			);
+			path = "Master Storyboards";
+			sourceTree = "<group>";
+		};
+		D08025C3211EC02A0056A6E7 /* Detail Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5174E4A01FF22D2600EAEBB2 /* ViewNote.storyboard */,
+				5174E4AA1FF230B900EAEBB2 /* DefaultDetailView.storyboard */,
+				5174E4A81FF2308C00EAEBB2 /* ApplicationSettings.storyboard */,
+				5174E4A61FF22F3F00EAEBB2 /* EditNote.storyboard */,
+				5174E4A41FF22EDD00EAEBB2 /* LanguageManagement.storyboard */,
+			);
+			path = "Detail Storyboards";
 			sourceTree = "<group>";
 		};
 		D0B909B01E2E99DA0058DECA /* Data Handling */ = {
@@ -275,6 +337,14 @@
 				D0239A541E45328E00A55A6F /* DefaultLanguageListData.swift */,
 			);
 			name = "Data Handling";
+			sourceTree = "<group>";
+		};
+		D0EBD336211EC19900FB8FFC /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D0EBD337211EC1AA00FB8FFC /* Configuration.swift */,
+			);
+			name = Configuration;
 			sourceTree = "<group>";
 		};
 		D0FA24441E3810F200EB54BE /* CodeNotes Icons */ = {
@@ -591,6 +661,7 @@
 			files = (
 				516492F61E496AE000603880 /* LanguageListManagementViewController.swift in Sources */,
 				51C0378C2068475D002663C7 /* Themes.swift in Sources */,
+				D0EBD338211EC1AA00FB8FFC /* Configuration.swift in Sources */,
 				D069F06D1E1CAE91008C79E7 /* DetailViewController.swift in Sources */,
 				D0351FB51E24168A00C1DF53 /* ViewNoteViewController.swift in Sources */,
 				D069F06B1E1CAE91008C79E7 /* MasterViewController.swift in Sources */,
@@ -599,6 +670,7 @@
 				D0FF5E771E29841600F4678E /* EditNoteViewController.swift in Sources */,
 				D069F0691E1CAE91008C79E7 /* AppDelegate.swift in Sources */,
 				517F94AF1E4ACEC400EA0A8A /* LanguageListTableViewCell.swift in Sources */,
+				D08025BF211EB7210056A6E7 /* DefaultLanguages.swift in Sources */,
 				D06F16B81E1E04A5007EDD5D /* NoteListTableViewCell.swift in Sources */,
 				51AB1B0A1E3C6F2A00774E7E /* Model.xcdatamodeld in Sources */,
 			);
@@ -789,7 +861,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 93BM64U6PG;
 				INFOPLIST_FILE = "Code Notes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.peterwitham.Code-Notes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -806,7 +878,7 @@
 				DEVELOPMENT_TEAM = 93BM64U6PG;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Code Notes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.peterwitham.Code-Notes";
 				PRODUCT_NAME = "$(TARGET_NAME)";

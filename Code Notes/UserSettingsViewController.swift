@@ -30,6 +30,7 @@ class UserSettingsViewController: UIViewController {
         let darkTheme = UserDefaults.standard.bool(forKey: "darkTheme")
         swDarkTheme.isOn = darkTheme
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+        self.view.backgroundColor = Theme.backgroundColor
 
         let orientation = UIApplication.shared.statusBarOrientation
 
@@ -62,10 +63,9 @@ class UserSettingsViewController: UIViewController {
         log("Removing all notes from the database", forLevel: .debug)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NoteRecord")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
 
         do {
-            try context.execute(deleteRequest)
+            try AppConfiguration.context.execute(deleteRequest)
         } catch let error as NSError {
             print(error)
         }

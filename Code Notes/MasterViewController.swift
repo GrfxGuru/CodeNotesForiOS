@@ -13,7 +13,6 @@ import Evergreen
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController?
-    let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +22,7 @@ class MasterViewController: UITableViewController {
             self.detailViewController = (controllers[controllers.count-1] as? UINavigationController)!
                                             .topViewController as? DetailViewController
         }
-        self.tableView.rowHeight = 95
+        self.tableView.rowHeight = UserInterface.Defaults.detailTableCellHeight
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -61,13 +60,8 @@ class MasterViewController: UITableViewController {
 
     fileprivate func segueAddNote(_ segue: UIStoryboardSegue) {
         log("Adding a new note", forLevel: .debug)
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
-        let newNote = NoteRecord(context: context)
-        newNote.dateCreated = Date() as Date
-        newNote.dateModified = Date() as Date
-        newNote.noteName = ""
-        newNote.noteLanguage = ""
-        newNote.noteContent = ""
+        let newNote = NoteRecord(context: AppConfiguration.context)
+        newEmptyNote(newNote)
         (UIApplication.shared.delegate as? AppDelegate)!.notes.append(newNote)
         (UIApplication.shared.delegate as? AppDelegate)!.saveContext()
         self.tableView.reloadData()
@@ -148,8 +142,10 @@ class MasterViewController: UITableViewController {
         let sortDescriptorLanguages = NSSortDescriptor(key: #keyPath(LanguageList.languageName), ascending: true)
         fetchRequestLanguages.sortDescriptors = [sortDescriptorLanguages]
         do {
-            (UIApplication.shared.delegate as? AppDelegate)!.languages = try context.fetch(fetchRequestLanguages)
-            (UIApplication.shared.delegate as? AppDelegate)!.notes = try context.fetch(NoteRecord.fetchRequest())
+            (UIApplication.shared.delegate as? AppDelegate)!.languages =
+                                                        try AppConfiguration.context.fetch(fetchRequestLanguages)
+            (UIApplication.shared.delegate as? AppDelegate)!.notes =
+                                                        try AppConfiguration.context.fetch(NoteRecord.fetchRequest())
         } catch {
             print("Data Fetch Failed")
         }
@@ -159,13 +155,22 @@ class MasterViewController: UITableViewController {
         log("Deleting the record", forLevel: .debug)
         let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[tableIndexToDelete]
         let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
         do {
-            try context.execute(deleteRequest)
+            try AppConfiguration.context.execute(deleteRequest)
         } catch let error as NSError {
             print(error)
         }
         getData()
         self.tableView.reloadData()
+    }
+
+    // MARK: - Helper Methods
+
+    fileprivate func newEmptyNote(_ newNote: NoteRecord) {
+        newNote.dateCreated = Date() as Date
+        newNote.dateModified = Date() as Date
+        newNote.noteName = ""
+        newNote.noteLanguage = ""
+        newNote.noteContent = ""
     }
 }

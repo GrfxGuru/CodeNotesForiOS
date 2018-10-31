@@ -17,9 +17,8 @@ class EditNoteViewController: UIViewController {
     @IBOutlet weak var fieldNoteName: UITextField!
     @IBOutlet weak var fieldNoteLanguage: UITextField!
     @IBOutlet weak var fieldNoteContent: UITextView!
-    let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
     weak var appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
-    var pickerDataSource = (UIApplication.shared.delegate as? AppDelegate)!.languages
+    let pickerDataSource = (UIApplication.shared.delegate as? AppDelegate)!.languages
     var currentNoteIndex: Int = 0
 
     override func viewDidLoad() {
@@ -27,6 +26,7 @@ class EditNoteViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.configureView()
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+        fieldNoteContent.textColor = Theme.textFieldTextColor
         fieldNoteName.becomeFirstResponder()
         languagePicker.delegate = self
         fieldNoteLanguage.inputView = languagePicker

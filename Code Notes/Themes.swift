@@ -20,6 +20,9 @@ struct Theme {
     static var buttonTextColorDisabled: UIColor?
     static var buttonBackgroundColor: UIColor?
     static var navBackgroundColor: UIColor?
+    static var labelTextColor: UIColor?
+    static var textFieldTextColor: UIColor?
+    static var textFieldBackgroundColor: UIColor?
 
     // MARK: Themes
     static public func defaultTheme() {
@@ -29,6 +32,9 @@ struct Theme {
         self.buttonTextColorDisabled = UIColor.lightGray
         self.buttonBackgroundColor = UIColor.clear
         self.navBackgroundColor = UIColor.white
+        self.labelTextColor = UIColor.black
+        self.textFieldTextColor = UIColor.black
+        self.textFieldBackgroundColor = UIColor.white
         updateDisplay()
     }
     static public func darkTheme() {
@@ -38,6 +44,9 @@ struct Theme {
         self.buttonTextColorDisabled = UIColor.lightGray
         self.buttonBackgroundColor = UIColor.clear
         self.navBackgroundColor = UIColor.darkGray
+        self.labelTextColor = UIColor.white
+        self.textFieldTextColor = UIColor.white
+        self.textFieldBackgroundColor = UIColor.darkGray
         updateDisplay()
     }
     // MARK: Theme Controls
@@ -68,10 +77,34 @@ struct Theme {
         let proxyTableCell = UITableViewCell.appearance()
         proxyTableCell.backgroundColor = Theme.backgroundColor
     }
+    fileprivate static func themeLabel() {
+        let proxyLabel = UILabel.appearance()
+        proxyLabel.textColor = Theme.labelTextColor
+    }
+    fileprivate static func themeViewBacking() {
+        let proxyViewBacking = UIView.appearance()
+        proxyViewBacking.backgroundColor = Theme.navBackgroundColor
+    }
+    fileprivate static func themeScrollViewBacking() {
+        let proxyScrollViewBacking = UIScrollView.appearance()
+        proxyScrollViewBacking.backgroundColor = Theme.textFieldBackgroundColor
+    }
+    fileprivate static func themeTextFieldBacking() {
+        let proxyTextFieldBacking = UITextField.appearance()
+        proxyTextFieldBacking.backgroundColor = Theme.textFieldBackgroundColor
+    }
+    fileprivate static func themeTextFieldText() {
+        let proxyTextFieldText = UITextField.appearance()
+        proxyTextFieldText.textColor = Theme.textFieldTextColor
+    }
     static public func updateDisplay() {
         themeButtons()
         themeKeyboard()
         themeNavBar()
         themeTable()
+        themeLabel()
+        themeScrollViewBacking()
+        themeTextFieldBacking()
+        themeTextFieldText()
     }
 }
