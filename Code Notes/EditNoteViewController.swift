@@ -43,7 +43,7 @@ class EditNoteViewController: UIViewController {
 
         let orientation = UIApplication.shared.statusBarOrientation
 
-        if UIInterfaceOrientationIsPortrait(orientation) {
+        if orientation.isPortrait {
             self.splitViewController?.preferredDisplayMode = .primaryHidden
         }
 
