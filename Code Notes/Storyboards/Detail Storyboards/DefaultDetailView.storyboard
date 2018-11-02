@@ -33,10 +33,15 @@
                                     <constraint firstAttribute="width" constant="80" id="4AV-jh-gM3"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Brackets" translatesAutoresizingMaskIntoConstraints="NO" id="sgv-sK-PLN">
+                                <rect key="frame" x="1091" y="861" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CIF-af-ioa" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="100" id="Ffv-Qs-EV6"/>
+                            <constraint firstAttribute="trailing" secondItem="sgv-sK-PLN" secondAttribute="trailing" constant="35" id="Xba-r3-FIA"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="sgv-sK-PLN" secondAttribute="bottom" constant="35" id="hNK-qh-vQg"/>
                             <constraint firstItem="lAi-Jg-OB7" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="lV2-c5-9FK"/>
                             <constraint firstItem="lAi-Jg-OB7" firstAttribute="leading" secondItem="CIF-af-ioa" secondAttribute="trailing" constant="8" id="mYe-7w-1fz"/>
                             <constraint firstItem="CIF-af-ioa" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="owy-6w-5D7"/>
@@ -51,6 +56,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Brackets" width="120.5" height="96"/>
         <image name="Left Arrow" width="141.5" height="90.5"/>
     </resources>
 </document>
