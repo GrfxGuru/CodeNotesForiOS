@@ -14,7 +14,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-        self.view.backgroundColor = Theme.backgroundColor
+        self.view.backgroundColor = Theme.viewBackgroundColor
     }
 
     override func didReceiveMemoryWarning() {

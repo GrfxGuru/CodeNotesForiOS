@@ -23,6 +23,7 @@ struct Theme {
     static var labelTextColor: UIColor?
     static var textFieldTextColor: UIColor?
     static var textFieldBackgroundColor: UIColor?
+    static var viewBackgroundColor: UIColor?
 
     // MARK: Themes
     static public func defaultTheme() {
@@ -34,7 +35,10 @@ struct Theme {
         self.navBackgroundColor = UIColor.white
         self.labelTextColor = UIColor.black
         self.textFieldTextColor = UIColor.black
-        self.textFieldBackgroundColor = UIColor.white
+        let textFieldColor = UIColor(white: 0.9, alpha: 1)
+        self.textFieldBackgroundColor = textFieldColor
+        let viewColor = UIColor(white: 0.85, alpha: 1)
+        self.viewBackgroundColor = viewColor
         updateDisplay()
     }
     static public func darkTheme() {
@@ -92,11 +96,13 @@ struct Theme {
     fileprivate static func themeTextFieldBacking() {
         let proxyTextFieldBacking = UITextField.appearance()
         proxyTextFieldBacking.backgroundColor = Theme.textFieldBackgroundColor
+        proxyTextFieldBacking.borderStyle = .none
     }
     fileprivate static func themeTextFieldText() {
         let proxyTextFieldText = UITextField.appearance()
         proxyTextFieldText.textColor = Theme.textFieldTextColor
     }
+
     static public func updateDisplay() {
         themeButtons()
         themeKeyboard()

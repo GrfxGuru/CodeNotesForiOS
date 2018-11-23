@@ -24,6 +24,7 @@ class ViewNoteViewController: UIViewController {
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
         self.view.backgroundColor = Theme.backgroundColor
         noteCode.textColor = Theme.textFieldTextColor
+        self.view.backgroundColor = Theme.viewBackgroundColor
     }
 
     override func didReceiveMemoryWarning() {
