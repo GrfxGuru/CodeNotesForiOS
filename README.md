@@ -14,7 +14,13 @@ Code Notes for iOS is an iPad application designed for use by software developer
 
 Code Notes For iPad is a 100 Days of Code Project. You can find details of my participation in this [here][2].
 
+If you find this code helpful, please consider
+
+[![][image-2]](https://www.buymeacoffee.com/pwcom)
+
 [1]:	https://peterwitham.com
 [2]:	https://github.com/GrfxGuru/100-days-of-code
+[3]:  https://www.buymeacoffee.com/pwcom
 
 [image-1]:	screenshot.PNG "Code Notes for iOS Screenshot"
+[image-2]: https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png
