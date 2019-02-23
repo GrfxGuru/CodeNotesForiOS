@@ -23,6 +23,9 @@ class MasterViewController: UITableViewController {
                                             .topViewController as? DetailViewController
         }
         self.tableView.rowHeight = UserInterface.Defaults.detailTableCellHeight
+        
+        title = "Notes"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     override func viewWillAppear(_ animated: Bool) {

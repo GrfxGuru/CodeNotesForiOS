@@ -29,6 +29,7 @@ final class DefaultLanguageListData: NSObject {
         doDeleteRequest(deleteRequest)
     }
     func removeLanguage(languageID: NSManagedObjectID) {
+        print("languageID: \(languageID)")
         let deleteRequest = NSBatchDeleteRequest(objectIDs: [languageID])
         doDeleteRequest(deleteRequest)
     }
