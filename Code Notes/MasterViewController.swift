@@ -18,8 +18,10 @@ class MasterViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         if let split = self.splitViewController {
             let controllers = split.viewControllers
+            // swiftlint:disable force_cast
             self.detailViewController = (controllers[controllers.count - 1] as!
                 UINavigationController).topViewController as? DetailViewController
+            // swiftlint:enable force_cast
         }
         self.tableView.rowHeight = UserInterface.Defaults.detailTableCellHeight
 
@@ -39,7 +41,7 @@ class MasterViewController: UITableViewController {
     }
 
     override func viewWillTransition(to size: CGSize,
-                    with coordinator: UIViewControllerTransitionCoordinator) {
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         if UIDevice.current.orientation.isLandscape {
             print("Landscape")
