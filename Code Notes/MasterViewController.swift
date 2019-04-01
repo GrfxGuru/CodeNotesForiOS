@@ -6,12 +6,11 @@
 //  Copyright © 2017 Peter Witham. All rights reserved.
 //
 
-import UIKit
 import CoreData
 import Evergreen
+import UIKit
 
 class MasterViewController: UITableViewController {
-
     var detailViewController: DetailViewController?
 
     override func viewDidLoad() {
@@ -19,18 +18,18 @@ class MasterViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         if let split = self.splitViewController {
             let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as? UINavigationController)!
-                                            .topViewController as? DetailViewController
+            self.detailViewController = (controllers[controllers.count - 1] as!
+                UINavigationController).topViewController as? DetailViewController
         }
         self.tableView.rowHeight = UserInterface.Defaults.detailTableCellHeight
-        
+
         title = "Notes"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getData()
+        self.getData()
         self.tableView.reloadData()
     }
 
@@ -39,7 +38,8 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize,
+                    with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         if UIDevice.current.orientation.isLandscape {
             print("Landscape")
@@ -53,19 +53,21 @@ class MasterViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showNote" {
-            segueShowNote(segue)
+            self.segueShowNote(segue)
         } else if segue.identifier == "addNote" {
-            segueAddNote(segue)
+            self.segueAddNote(segue)
         } else if segue.identifier == "appSettings" {
-            segueAppSettings()
+            self.segueAppSettings()
         }
     }
 
     fileprivate func segueShowNote(_ segue: UIStoryboardSegue) {
         if let indexPath = self.tableView.indexPathForSelectedRow {
-            let controller = ((segue.destination as? UINavigationController)!.topViewController
+            let controller = ((segue.destination as?
+                UINavigationController)!.topViewController
                 as? ViewNoteViewController)!
-            controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+            controller.navigationItem.leftBarButtonItem =
+                self.splitViewController?.displayModeButtonItem
             controller.navigationItem.leftItemsSupplementBackButton = true
             controller.detailItem = indexPath.row
         }
@@ -78,10 +80,11 @@ class MasterViewController: UITableViewController {
         (UIApplication.shared.delegate as? AppDelegate)!.notes.append(newNote)
         (UIApplication.shared.delegate as? AppDelegate)!.saveContext()
         self.tableView.reloadData()
-        let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0)-1, section: 0)
+        let newRow = NSIndexPath(row: tableView.numberOfRows(inSection: 0) - 1, section: 0)
         self.tableView.selectRow(at: newRow as IndexPath, animated: true, scrollPosition: .bottom)
         if self.tableView.indexPathForSelectedRow != nil {
-            let controller = ((segue.destination as? UINavigationController)!.topViewController
+            let controller = ((segue.destination as?
+                UINavigationController)!.topViewController
                 as? EditNoteViewController)!
             controller.title = "Add Note"
             controller.currentNoteIndex = newRow.item
@@ -90,8 +93,8 @@ class MasterViewController: UITableViewController {
 
     fileprivate func segueAppSettings() {
         log("Navigating to app settings", forLevel: .debug)
-        if (self.tableView.indexPathForSelectedRow) != nil {
-            self.tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
+        if self.tableView.indexPathForSelectedRow != nil {
+            self.tableView.deselectRow(at: self.tableView.indexPathForSelectedRow!, animated: true)
         }
     }
 
@@ -107,7 +110,7 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath)
-                    as? NoteListTableViewCell)!
+            as? NoteListTableViewCell)!
         let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[indexPath.row]
         cell.noteName.text = note.noteName
         cell.noteDate.text = dateFormatter.string(from: note.dateCreated! as Date)
@@ -123,7 +126,6 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-
             let displayAlert = UserDefaults.standard.bool(forKey: "confirmNoteDeletion")
             if displayAlert {
                 let alertController = UIAlertController(title: "Delete Note?",
@@ -156,9 +158,9 @@ class MasterViewController: UITableViewController {
         fetchRequestLanguages.sortDescriptors = [sortDescriptorLanguages]
         do {
             (UIApplication.shared.delegate as? AppDelegate)!.languages =
-                                                        try AppConfiguration.context.fetch(fetchRequestLanguages)
+                try AppConfiguration.context.fetch(fetchRequestLanguages)
             (UIApplication.shared.delegate as? AppDelegate)!.notes =
-                                                        try AppConfiguration.context.fetch(NoteRecord.fetchRequest())
+                try AppConfiguration.context.fetch(NoteRecord.fetchRequest())
         } catch {
             print("Data Fetch Failed")
         }

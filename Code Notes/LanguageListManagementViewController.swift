@@ -58,15 +58,15 @@ class LanguageListManagementViewController: UIViewController {
                 textField.placeholder = "Language Name"
         })
 
-         let addAction = UIAlertAction(title: "Add",
-         style: .default,
-         handler: {[weak self] (_: UIAlertAction!) in
-         if let textFields = alertController.textFields {
-            let theTextFields = textFields as [UITextField]
-            let enteredText = theTextFields[0].text
-            self?.saveNewLanguage(languageName: enteredText!)
-         }
-         })
+        let addAction = UIAlertAction(title: "Add",
+                                      style: .default,
+                                      handler: {[weak self] (_: UIAlertAction!) in
+                                        if let textFields = alertController.textFields {
+                                            let theTextFields = textFields as [UITextField]
+                                            let enteredText = theTextFields[0].text
+                                            self?.saveNewLanguage(languageName: enteredText!)
+                                        }
+        })
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_: UIAlertAction!) in
         }
@@ -124,14 +124,14 @@ class LanguageListManagementViewController: UIViewController {
     }
 
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
 
     func getData() {
         let fetchRequest: NSFetchRequest<LanguageList> = LanguageList.fetchRequest()
@@ -139,7 +139,7 @@ class LanguageListManagementViewController: UIViewController {
         fetchRequest.sortDescriptors = [sortDescriptor]
         do {
             (UIApplication.shared.delegate as? AppDelegate)!.languages =
-                                                            try AppConfiguration.context.fetch(fetchRequest)
+                try AppConfiguration.context.fetch(fetchRequest)
         } catch {
             print("Data Fetch Failed")
         }

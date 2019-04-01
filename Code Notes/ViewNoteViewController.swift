@@ -33,14 +33,14 @@ class ViewNoteViewController: UIViewController {
     }
 
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
 
     // MARK: - Segues
 
@@ -48,11 +48,11 @@ class ViewNoteViewController: UIViewController {
         if segue.identifier == "editNote" {
             log("Switching to edit mode", forLevel: .debug)
             let controller = ((segue.destination as? UINavigationController)!.topViewController
-                                as? EditNoteViewController)!
-                controller.title = "Edit Note"
-                controller.currentNoteIndex = detailItem
+                as? EditNoteViewController)!
+            controller.title = "Edit Note"
+            controller.currentNoteIndex = detailItem
 
-            }
+        }
     }
 
     func configureView() {
