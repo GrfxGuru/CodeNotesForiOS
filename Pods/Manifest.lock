@@ -1,20 +1,24 @@
 PODS:
   - Down (0.6.5)
   - Evergreen (1.0.1)
+  - MarkdownKit (1.5)
 
 DEPENDENCIES:
   - Down
   - Evergreen
+  - MarkdownKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Down
     - Evergreen
+    - MarkdownKit
 
 SPEC CHECKSUMS:
   Down: b91ef4869bf342eb3094e6ce0c68dbadb0029f7f
   Evergreen: 7cc0e5954ff0a22a736df1b634439a26ac957fc0
+  MarkdownKit: 379028e9cd3ebf05ccac87205cd9aead446159d4
 
-PODFILE CHECKSUM: b741a4d19fc7bcf6c01fd3650fbe777fb6a221cf
+PODFILE CHECKSUM: 1903dec4280fc0ac69f555ca3b06d7e73ab73653
 
 COCOAPODS: 1.5.3

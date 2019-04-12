@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 import Evergreen
-import Down
+import MarkdownKit
 
 class ViewNoteViewController: UIViewController {
 
@@ -51,9 +51,8 @@ class ViewNoteViewController: UIViewController {
         let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[detailItem]
         lblNoteName.text = note.noteName
         lblNoteLanguage.text = note.noteLanguage
-        let markdownText = Down(markdownString: note.noteContent ?? "Failed to render markdown")
-        let noteContent = try? markdownText.toAttributedString()
-        noteCode.attributedText = noteContent
+        let markdownParser = MarkdownParser()
+        noteCode.attributedText = markdownParser.parse(note.noteContent ?? "Failed to parse Markdown")
         title = note.noteName
 
         let orientation = UIApplication.shared.statusBarOrientation
