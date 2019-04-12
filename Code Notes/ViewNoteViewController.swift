@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Evergreen
+import Down
 
 class ViewNoteViewController: UIViewController {
 
@@ -32,16 +33,6 @@ class ViewNoteViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,7 +51,9 @@ class ViewNoteViewController: UIViewController {
         let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[detailItem]
         lblNoteName.text = note.noteName
         lblNoteLanguage.text = note.noteLanguage
-        noteCode.text = note.noteContent
+        let markdownText = Down(markdownString: note.noteContent ?? "Failed to render markdown")
+        let noteContent = try? markdownText.toAttributedString()
+        noteCode.attributedText = noteContent
         title = note.noteName
 
         let orientation = UIApplication.shared.statusBarOrientation
