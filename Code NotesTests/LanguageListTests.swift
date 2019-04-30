@@ -39,25 +39,6 @@ class LanguageListTests: XCTestCase {
             try XCTAssert(context.count(for: fetchRequest) == 0, "The list is empty")
         }
     }
-    func testRemoveLanguage() {
-        languageList.createLanguages()
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LanguageList")
-        let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
-        let objectID = 0
-        let deleteRequest = NSBatchDeleteRequest(objectIDs: [objectID])
-        var contextCountBeforeDelete: Int
-        do {
-            contextCountBeforeDelete = try context.count(for: fetchRequest)
-        } catch let error as NSError {
-            print(error)
-        }
-        do {
-            try AppConfiguration.context.execute(deleteRequest)
-        } catch let error as NSError {
-            print(error)
-        }
-        XCTAssert(context.deletedObjects.count > 0, "Language removed from context")
-    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
