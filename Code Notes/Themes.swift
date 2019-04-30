@@ -59,6 +59,9 @@ struct Theme {
         self.labelTextColor = UIColor.white
         self.textFieldTextColor = UIColor.white
         self.textFieldBackgroundColor = UIColor.darkGray
+        let viewColor = UIColor.darkGray
+        self.tableCellBackgroundSelectedColor = UIColor.darkGray
+        self.viewBackgroundColor = viewColor
         updateDisplay()
     }
     // MARK: Theme Controls
