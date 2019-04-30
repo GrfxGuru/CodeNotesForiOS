@@ -145,6 +145,10 @@ class MasterViewController: UITableViewController {
             }
         }
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        selectedCell.contentView.backgroundColor = Theme.tableCellBackgroundSelectedColor
+    }
 
     // MARK: - Data Handling
 

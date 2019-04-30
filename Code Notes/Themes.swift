@@ -24,20 +24,28 @@ struct Theme {
     static var textFieldTextColor: UIColor?
     static var textFieldBackgroundColor: UIColor?
     static var viewBackgroundColor: UIColor?
+    static var tableCellBackgroundSelectedColor: UIColor?
 
     // MARK: Themes
     static public func defaultTheme() {
         self.currentTheme = ThemeTypes.defaultTheme
         self.backgroundColor = UIColor.white
-        self.buttonTextColor = UIColor.blue
+        self.buttonTextColor = UIColor.red
         self.buttonTextColorDisabled = UIColor.lightGray
         self.buttonBackgroundColor = UIColor.clear
         self.navBackgroundColor = UIColor.white
         self.labelTextColor = UIColor.black
         self.textFieldTextColor = UIColor.black
-        let textFieldColor = UIColor(white: 0.9, alpha: 1)
+        let textFieldColor = UIColor(white: 0.9, alpha: 0)
         self.textFieldBackgroundColor = textFieldColor
-        let viewColor = UIColor(white: 0.85, alpha: 1)
+        let viewColor = UIColor(red: CGFloat(245.0/255.0),
+                                green: CGFloat(245.0/255.0),
+                                blue: CGFloat(245.0/255.0),
+                                alpha: CGFloat(1.0))
+        self.tableCellBackgroundSelectedColor = UIColor(red: CGFloat(245.0/255.0),
+                                                green: CGFloat(245.0/255.0),
+                                                blue: CGFloat(245.0/255.0),
+                                                alpha: CGFloat(1.0))
         self.viewBackgroundColor = viewColor
         updateDisplay()
     }
