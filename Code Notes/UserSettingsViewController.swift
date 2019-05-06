@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Evergreen
 
 class UserSettingsViewController: UIViewController {
 
@@ -60,7 +59,6 @@ class UserSettingsViewController: UIViewController {
     }
 
     @IBAction func btnResetDatabase(_ sender: UIButton) {
-        log("Removing all notes from the database", forLevel: .debug)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "NoteRecord")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 

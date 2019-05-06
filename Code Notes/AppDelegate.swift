@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Evergreen
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {

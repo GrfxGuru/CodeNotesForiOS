@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Evergreen
 
 class EditNoteViewController: UIViewController {
 
@@ -66,14 +65,12 @@ class EditNoteViewController: UIViewController {
     }
 
     @IBAction func btnClearContents(_ sender: UIButton) {
-        log("Clearing the contents of the note", forLevel: .debug)
         fieldNoteName.text = ""
         fieldNoteContent.text = ""
     }
 
     @IBAction func btnPasteClipboard(_ sender: UIButton) {
         if let pasteString = UIPasteboard.general.string {
-            log("Appending the clipboard string to the note content", forLevel: .debug)
             let pasteReplace = UserDefaults.standard.bool(forKey: "pasteReplace")
             if pasteReplace {
                 fieldNoteContent.text = pasteString
@@ -89,7 +86,6 @@ class EditNoteViewController: UIViewController {
         let navVC: UINavigationController = (self.splitViewController!.viewControllers[0] as? UINavigationController)!
         let sectionsVC: MasterViewController = (navVC.topViewController as? MasterViewController)!
         if segue.identifier == "storeNote" {
-            log("Storing the note", forLevel: .debug)
             let note = appDelegate?.notes[currentNoteIndex]
             note?.dateCreated = Date()
             note?.dateModified = Date()
@@ -99,7 +95,6 @@ class EditNoteViewController: UIViewController {
             (UIApplication.shared.delegate as? AppDelegate)!.saveContext()
             sectionsVC.tableView.reloadData()
         } else if segue.identifier == "openLanguageManagement" {
-            log("Storing the note", forLevel: .debug)
             let note = appDelegate?.notes[currentNoteIndex]
             note?.dateCreated = Date()
             note?.dateModified = Date()
@@ -110,9 +105,7 @@ class EditNoteViewController: UIViewController {
             note?.noteContent = fieldNoteContent.text!
             (UIApplication.shared.delegate as? AppDelegate)!.saveContext()
             sectionsVC.tableView.reloadData()
-            log("Going to language management screen", forLevel: .debug)
         } else {
-            log("Removing the new note", forLevel: .debug)
             let recordCount = (UIApplication.shared.delegate as? AppDelegate)!.notes.count
             (UIApplication.shared.delegate as? AppDelegate)!.notes.remove(at: recordCount-1)
             (UIApplication.shared.delegate as? AppDelegate)!.saveContext()

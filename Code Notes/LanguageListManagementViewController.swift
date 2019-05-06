@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Evergreen
 
 class LanguageListManagementViewController: UIViewController {
 
@@ -77,7 +76,6 @@ class LanguageListManagementViewController: UIViewController {
 
     func saveNewLanguage(languageName: String) {
         if languageName != "" {
-            log("Saving the new language", forLevel: .debug)
             let newLanguage = LanguageList(context: AppConfiguration.context)
             newLanguage.languageName = languageName
             newLanguage.languageID = 0
@@ -96,7 +94,6 @@ class LanguageListManagementViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
-            log("Removing selected language", forLevel: .debug)
             let selectedID = tblLanguages.indexPathForSelectedRow
             if let cellNum = selectedID?[1] {
                 let language = (UIApplication.shared.delegate as? AppDelegate)!.languages[cellNum]
@@ -110,14 +107,12 @@ class LanguageListManagementViewController: UIViewController {
     }
 
     @IBAction func btnResetLanguages(_ sender: UIButton) {
-        log("Resetting the language list", forLevel: .debug)
         languageListModel.createLanguages()
         getData()
         tblLanguages.reloadData()
     }
 
     @IBAction func btnClearAllLanguages(_ sender: UIButton) {
-        log("Clearing the language list", forLevel: .debug)
         languageListModel.clearLanguages()
         getData()
         tblLanguages.reloadData()

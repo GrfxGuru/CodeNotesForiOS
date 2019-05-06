@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Evergreen
 import MarkdownKit
 
 class ViewNoteViewController: UIViewController {
@@ -37,7 +36,6 @@ class ViewNoteViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editNote" {
-            log("Switching to edit mode", forLevel: .debug)
             let controller = ((segue.destination as? UINavigationController)!.topViewController
                 as? EditNoteViewController)!
             controller.title = "Edit Note"
@@ -63,7 +61,6 @@ class ViewNoteViewController: UIViewController {
     }
 
     @IBAction func btnDeleteNote(_ sender: UIButton) {
-        log("Deleting the note", forLevel: .debug)
         let displayAlert = UserDefaults.standard.bool(forKey: "confirmNoteDeletion")
         if displayAlert {
             let alertController = UIAlertController(title: "Delete Note?",
@@ -87,7 +84,6 @@ class ViewNoteViewController: UIViewController {
     }
 
     func deleteRecord() {
-        log("Deleting the record from CoreData", forLevel: .debug)
         let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[detailItem]
         let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
 
@@ -99,7 +95,6 @@ class ViewNoteViewController: UIViewController {
     }
 
     func navigateAfterDelete() {
-        log("Navigating after deletion", forLevel: .debug)
         let navVC: UINavigationController = (self.splitViewController!.viewControllers[0] as? UINavigationController)!
         let sectionsVC: MasterViewController = (navVC.topViewController as? MasterViewController)!
         sectionsVC.getData()
@@ -108,7 +103,6 @@ class ViewNoteViewController: UIViewController {
     }
 
     @IBAction func copyToClipboard(_ sender: UIButton) {
-        log("Copying the note content to the clipboard", forLevel: .debug)
         UIPasteboard.general.string = noteCode.text
     }
 

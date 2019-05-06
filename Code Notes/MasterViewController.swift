@@ -7,7 +7,6 @@
 //
 
 import CoreData
-import Evergreen
 import UIKit
 
 class MasterViewController: UITableViewController {
@@ -76,7 +75,6 @@ class MasterViewController: UITableViewController {
     }
 
     fileprivate func segueAddNote(_ segue: UIStoryboardSegue) {
-        log("Adding a new note", forLevel: .debug)
         let newNote = NoteRecord(context: AppConfiguration.context)
         newEmptyNote(newNote)
         (UIApplication.shared.delegate as? AppDelegate)!.notes.append(newNote)
@@ -94,7 +92,6 @@ class MasterViewController: UITableViewController {
     }
 
     fileprivate func segueAppSettings() {
-        log("Navigating to app settings", forLevel: .debug)
         if self.tableView.indexPathForSelectedRow != nil {
             self.tableView.deselectRow(at: self.tableView.indexPathForSelectedRow!, animated: true)
         }
@@ -173,7 +170,6 @@ class MasterViewController: UITableViewController {
     }
 
     func deleteRecord(tableIndexToDelete: Int) {
-        log("Deleting the record", forLevel: .debug)
         let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[tableIndexToDelete]
         let deleteRequest = NSBatchDeleteRequest(objectIDs: [note.objectID])
         do {
