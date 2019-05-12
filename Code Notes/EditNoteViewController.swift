@@ -11,7 +11,6 @@ import CoreData
 
 class EditNoteViewController: UIViewController {
 
-    //var note:Note = Note()
     let languagePicker = UIPickerView()
     @IBOutlet weak var fieldNoteName: UITextField!
     @IBOutlet weak var fieldNoteLanguage: UITextField!
@@ -42,7 +41,15 @@ class EditNoteViewController: UIViewController {
             self.splitViewController?.preferredDisplayMode = .primaryHidden
         }
         self.view.backgroundColor = Theme.viewBackgroundColor
-
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self,
+                                       selector: #selector(adjustForKeyboard),
+                                       name: UIResponder.keyboardWillHideNotification,
+                                       object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(adjustForKeyboard),
+                                       name: UIResponder.keyboardWillChangeFrameNotification,
+                                       object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,6 +86,25 @@ class EditNoteViewController: UIViewController {
             }
 
         }
+    }
+    // Credit to hackingwithswift.com for this func
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
+            as? NSValue else { return }
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            fieldNoteContent.contentInset = .zero
+        } else {
+            let bottomInsert = keyboardViewEndFrame.height - view.safeAreaInsets.bottom
+            fieldNoteContent.contentInset = UIEdgeInsets(top: 0,
+                                                         left: 0,
+                                                         bottom: bottomInsert,
+                                                         right: 0)
+        }
+        fieldNoteContent.scrollIndicatorInsets = fieldNoteContent.contentInset
+        let selectedRange = fieldNoteContent.selectedRange
+        fieldNoteContent.scrollRangeToVisible(selectedRange)
     }
     // MARK: - Segues
 
