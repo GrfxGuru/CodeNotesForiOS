@@ -49,7 +49,7 @@ class ViewNoteViewController: UIViewController {
         let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[detailItem]
         lblNoteName.text = note.noteName
         lblNoteLanguage.text = note.noteLanguage
-        let markdownParser = MarkdownParser()
+        let markdownParser = MarkdownParser(font: UIFont.systemFont(ofSize: 18))
         noteCode.attributedText = markdownParser.parse(note.noteContent ?? "Failed to parse Markdown")
         title = note.noteName
 
