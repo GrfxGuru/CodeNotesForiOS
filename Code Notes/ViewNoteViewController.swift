@@ -17,6 +17,7 @@ class ViewNoteViewController: UIViewController {
     @IBOutlet weak var noteCode: UITextView!
     var detailItem: Int = 0
 
+    // MARK: View Build
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
@@ -31,7 +32,30 @@ class ViewNoteViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    // MARK: - View Management
 
+    func configureView() {
+        // Update the user interface for the detail item.
+        let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[detailItem]
+        lblNoteName.text = note.noteName
+        lblNoteLanguage.text = note.noteLanguage
+        let markdownParser = MarkdownParser(font: UIFont.systemFont(ofSize: 18))
+        let markdownCodeBackgroundColor = Theme.markdownCodeBackgroundColor
+        markdownParser.code.textBackgroundColor = markdownCodeBackgroundColor
+        noteCode.attributedText = markdownParser.parse(note.noteContent ?? "Failed to parse Markdown")
+        title = note.noteName
+        let orientation = UIApplication.shared.statusBarOrientation
+        if orientation.isPortrait {
+            self.splitViewController?.preferredDisplayMode = .primaryHidden
+        }
+    }
+    func navigateAfterDelete() {
+        let navVC: UINavigationController = (self.splitViewController!.viewControllers[0] as? UINavigationController)!
+        let sectionsVC: MasterViewController = (navVC.topViewController as? MasterViewController)!
+        sectionsVC.getData()
+        sectionsVC.tableView.reloadData()
+        self.performSegue(withIdentifier: "unloadView", sender: nil)
+    }
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,23 +67,7 @@ class ViewNoteViewController: UIViewController {
 
         }
     }
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        let note = (UIApplication.shared.delegate as? AppDelegate)!.notes[detailItem]
-        lblNoteName.text = note.noteName
-        lblNoteLanguage.text = note.noteLanguage
-        let markdownParser = MarkdownParser(font: UIFont.systemFont(ofSize: 18))
-        noteCode.attributedText = markdownParser.parse(note.noteContent ?? "Failed to parse Markdown")
-        title = note.noteName
-
-        let orientation = UIApplication.shared.statusBarOrientation
-
-        if orientation.isPortrait {
-            self.splitViewController?.preferredDisplayMode = .primaryHidden
-        }
-    }
-
+    // MARK: - Buttons
     @IBAction func btnDeleteNote(_ sender: UIButton) {
         let displayAlert = UserDefaults.standard.bool(forKey: "confirmNoteDeletion")
         if displayAlert {
@@ -94,16 +102,7 @@ class ViewNoteViewController: UIViewController {
         }
     }
 
-    func navigateAfterDelete() {
-        let navVC: UINavigationController = (self.splitViewController!.viewControllers[0] as? UINavigationController)!
-        let sectionsVC: MasterViewController = (navVC.topViewController as? MasterViewController)!
-        sectionsVC.getData()
-        sectionsVC.tableView.reloadData()
-        self.performSegue(withIdentifier: "unloadView", sender: nil)
-    }
-
     @IBAction func copyToClipboard(_ sender: UIButton) {
         UIPasteboard.general.string = noteCode.text
     }
-
 }

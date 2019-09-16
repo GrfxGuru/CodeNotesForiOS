@@ -623,7 +623,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Code Notes/Pods-Code Notes-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Code Notes/Pods-Code Notes-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MarkdownKit/MarkdownKit.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 			);
@@ -634,7 +634,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Code Notes/Pods-Code Notes-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Code Notes/Pods-Code Notes-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DAEE7E98337E3F266D2A43B1 /* [CP] Check Pods Manifest.lock */ = {

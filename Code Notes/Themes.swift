@@ -13,7 +13,8 @@ struct Theme {
         case defaultTheme
         case darkTheme
     }
-
+    
+    // MARK: - UI Color Set
     static var currentTheme: ThemeTypes?
     static var backgroundColor: UIColor?
     static var buttonTextColor: UIColor?
@@ -25,6 +26,8 @@ struct Theme {
     static var textFieldBackgroundColor: UIColor?
     static var viewBackgroundColor: UIColor?
     static var tableCellBackgroundSelectedColor: UIColor?
+    // MARK: - Markdown Color Set
+    static var markdownCodeBackgroundColor: UIColor?
 
     // MARK: Themes
     static public func defaultTheme() {
@@ -47,6 +50,10 @@ struct Theme {
                                                 blue: CGFloat(245.0/255.0),
                                                 alpha: CGFloat(1.0))
         self.viewBackgroundColor = viewColor
+        self.markdownCodeBackgroundColor = UIColor(red: CGFloat(235.0/255.0),
+                                                   green: CGFloat(235.0/255.0),
+                                                   blue: CGFloat(235.0/255.0),
+                                                   alpha: CGFloat(1.0))
         updateDisplay()
     }
     static public func darkTheme() {
@@ -62,6 +69,10 @@ struct Theme {
         let viewColor = UIColor.darkGray
         self.tableCellBackgroundSelectedColor = UIColor.darkGray
         self.viewBackgroundColor = viewColor
+        self.markdownCodeBackgroundColor = UIColor(red: CGFloat(120.0/255.0),
+                                                   green: CGFloat(120.0/255.0),
+                                                   blue: CGFloat(120.0/255.0),
+                                                   alpha: CGFloat(1.0))
         updateDisplay()
     }
     // MARK: Theme Controls
